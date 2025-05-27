@@ -12,11 +12,11 @@ import ContactUs from './components/ContactUs';
 function App() {
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const numSections = 7; // Update if you add/remove sections
+  const numSections = 7; // Update this if sections change
+  const scrollLock = useRef(false); // Lock flag for scroll
 
   useEffect(() => {
     const container = containerRef.current;
-    let isScrolling = false;
 
     const scrollToSection = (index) => {
       const targetY = index * window.innerHeight;
@@ -26,28 +26,33 @@ function App() {
       });
     };
 
-    const onWheel = (e) => {
-      e.preventDefault();
-      if (isScrolling) return;
-      isScrolling = true;
+    const handleScroll = (direction) => {
+      if (scrollLock.current) return;
+      scrollLock.current = true;
 
-      if (e.deltaY > 0) {
-        setCurrentIndex((prev) => Math.min(prev + 1, numSections - 1));
-      } else {
-        setCurrentIndex((prev) => Math.max(prev - 1, 0));
-      }
+      setCurrentIndex((prev) => {
+        let next = prev + direction;
+        if (next < 0) next = 0;
+        if (next >= numSections) next = numSections - 1;
+        return next;
+      });
 
       setTimeout(() => {
-        isScrolling = false;
-      }, 600); // Match smooth scroll duration
+        scrollLock.current = false;
+      }, 1000); // Adjust to match scroll duration
+    };
+
+    const onWheel = (e) => {
+      e.preventDefault();
+      const direction = e.deltaY > 0 ? 1 : -1;
+      handleScroll(direction);
     };
 
     const onKeyDown = (e) => {
-      if (isScrolling) return;
       if (e.key === 'ArrowDown') {
-        setCurrentIndex((prev) => Math.min(prev + 1, numSections - 1));
+        handleScroll(1);
       } else if (e.key === 'ArrowUp') {
-        setCurrentIndex((prev) => Math.max(prev - 1, 0));
+        handleScroll(-1);
       }
     };
 
@@ -75,25 +80,25 @@ function App() {
       className="h-screen w-screen overflow-hidden"
       style={{ scrollSnapType: 'y mandatory', overflowY: 'scroll' }}
     >
-      <section className="h-screen w-full flex items-center justify-center bg-red-200">
+      <section className="h-screen flex items-center justify-center bg-red-200">
         <Hero />
       </section>
-      <section className="h-screen w-full flex items-center justify-center bg-blue-200">
+      <section className="h-screen flex items-center justify-center bg-blue-200">
         <About />
       </section>
-      <section className="h-screen w-full flex items-center justify-center bg-green-200">
+      <section className="h-screen flex items-center justify-center bg-green-200">
         <Prizes />
       </section>
-      <section className="h-screen w-full flex items-center justify-center bg-yellow-200">
+      <section className="h-screen flex items-center justify-center bg-yellow-200">
         <Timeline />
       </section>
-      <section className="h-screen w-full flex items-center justify-center bg-purple-200">
+      <section className="h-screen flex items-center justify-center bg-purple-200">
         <RegisterNow />
       </section>
-      <section className="h-screen w-full flex items-center justify-center bg-pink-200">
+      <section className="h-screen flex items-center justify-center bg-pink-200">
         <FAQ />
       </section>
-      <section className="h-screen w-full flex items-center justify-center bg-orange-200">
+      <section className="h-screen flex items-center justify-center bg-orange-200">
         <ContactUs />
       </section>
     </div>
