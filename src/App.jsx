@@ -1,0 +1,108 @@
+import { useEffect, useRef, useState } from 'react';
+import './App.css';
+
+import Hero from './components/Hero';
+import About from './components/About';
+import Prizes from './components/Prizes';
+import Timeline from './components/Timeline';
+import RegisterNow from './components/RegisterNow';
+import FAQ from './components/FAQ';
+import ContactUs from './components/ContactUs';
+
+function App() {
+  const containerRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const numSections = 7; // Update this if sections change
+  const scrollLock = useRef(false); // Lock flag for scroll
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const scrollToSection = (index) => {
+      const targetY = index * window.innerHeight;
+      container.scrollTo({
+        top: targetY,
+        behavior: 'smooth',
+      });
+    };
+
+    const handleScroll = (direction) => {
+      if (scrollLock.current) return;
+      scrollLock.current = true;
+
+      setCurrentIndex((prev) => {
+        let next = prev + direction;
+        if (next < 0) next = 0;
+        if (next >= numSections) next = numSections - 1;
+        return next;
+      });
+
+      setTimeout(() => {
+        scrollLock.current = false;
+      }, 1000); // Adjust to match scroll duration
+    };
+
+    const onWheel = (e) => {
+      e.preventDefault();
+      const direction = e.deltaY > 0 ? 1 : -1;
+      handleScroll(direction);
+    };
+
+    const onKeyDown = (e) => {
+      if (e.key === 'ArrowDown') {
+        handleScroll(1);
+      } else if (e.key === 'ArrowUp') {
+        handleScroll(-1);
+      }
+    };
+
+    container.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      container.removeEventListener('wheel', onWheel);
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [numSections]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const targetY = currentIndex * window.innerHeight;
+    container.scrollTo({
+      top: targetY,
+      behavior: 'smooth',
+    });
+  }, [currentIndex]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="h-screen w-screen overflow-hidden"
+      style={{ scrollSnapType: 'y mandatory', overflowY: 'scroll' }}
+    >
+      <section className="h-screen flex items-center justify-center bg-red-200">
+        <Hero />
+      </section>
+      <section className="h-screen flex items-center justify-center bg-blue-200">
+        <About />
+      </section>
+      <section className="h-screen flex items-center justify-center bg-green-200">
+        <Prizes />
+      </section>
+      <section className="h-screen flex items-center justify-center bg-yellow-200">
+        <Timeline />
+      </section>
+      <section className="h-screen flex items-center justify-center bg-purple-200">
+        <RegisterNow />
+      </section>
+      <section className="h-screen flex items-center justify-center bg-pink-200">
+        <FAQ />
+      </section>
+      <section className="h-screen flex items-center justify-center bg-orange-200">
+        <ContactUs />
+      </section>
+    </div>
+  );
+}
+
+export default App;
