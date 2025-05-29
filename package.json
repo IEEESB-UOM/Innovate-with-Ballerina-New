@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
+    "innovate-with-ballerina-2025": "file:",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "scrollbooster": "^3.0.2",
