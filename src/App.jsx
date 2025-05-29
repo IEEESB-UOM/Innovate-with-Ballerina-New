@@ -7,6 +7,7 @@ import RegisterNow from './components/RegisterNow';
 import FAQ from './components/FAQ';
 import ContactUs from './components/ContactUs';
 import NavigationDots from './components/NavigationDots';
+import GradientBorderButton from './components/common/GradientBorderButton';
 
 function App() {
   const containerRef = useRef(null);
@@ -66,32 +67,42 @@ function App() {
   }, [currentIndex]);
 
   return (
-    <div
-      ref={containerRef}
-      className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
-    >
-      <NavigationDots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} numSections={numSections} />
-      <section className="h-screen flex items-center justify-center">
-        <Hero />
-      </section>
-      <section className="h-screen flex items-center justify-center">
-        <About />
-      </section>
-      <section className="h-screen flex items-center justify-center">
-        <Prizes />
-      </section>
-      <section className="h-screen flex items-center justify-center">
-        <Timeline />
-      </section>
-      <section className="h-screen flex items-center justify-center">
-        <RegisterNow />
-      </section>
-      <section className="h-screen flex items-center justify-center">
-        <FAQ />
-      </section>
-      <section className="h-screen flex items-center justify-center">
-        <ContactUs />
-      </section>
+    <div className="relative font-space-grotesk">
+      <div className="fixed top-8 left-8 z-50">
+        <img src="./ballerina_icon.svg" alt="Ballerina Icon" className="w-auto" />
+      </div>
+      <div className="fixed top-9 right-8 z-50">
+        <GradientBorderButton onClick={() => setCurrentIndex(4)}>
+          REGISTER NOW
+        </GradientBorderButton>
+      </div>
+      <div
+        ref={containerRef}
+        className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
+      >
+        <NavigationDots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} numSections={numSections} />
+        <section className="h-screen flex items-center justify-center">
+          <Hero />
+        </section>
+        <section className="h-screen flex items-center justify-center">
+          <About />
+        </section>
+        <section className="h-screen flex items-center justify-center">
+          <Prizes />
+        </section>
+        <section className="h-screen flex items-center justify-center">
+          <Timeline />
+        </section>
+        <section className="h-screen flex items-center justify-center">
+          <RegisterNow />
+        </section>
+        <section className="h-screen flex items-center justify-center">
+          <FAQ />
+        </section>
+        <section className="h-screen flex items-center justify-center">
+          <ContactUs />
+        </section>
+      </div>
     </div>
   );
 }
