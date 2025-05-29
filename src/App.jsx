@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import './App.css';
-
 import Hero from './components/Hero';
 import About from './components/About';
 import Prizes from './components/Prizes';
@@ -12,8 +10,8 @@ import ContactUs from './components/ContactUs';
 function App() {
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const numSections = 7; // Update this if sections change
-  const scrollLock = useRef(false); // Lock flag for scroll
+  const numSections = 7;
+  const scrollLock = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -39,7 +37,7 @@ function App() {
 
       setTimeout(() => {
         scrollLock.current = false;
-      }, 1000); // Adjust to match scroll duration
+      }, 1000);
     };
 
     const onWheel = (e) => {
@@ -77,8 +75,7 @@ function App() {
   return (
     <div
       ref={containerRef}
-      className="h-screen w-screen overflow-hidden"
-      style={{ scrollSnapType: 'y mandatory', overflowY: 'scroll' }}
+      className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
     >
       <section className="h-screen flex items-center justify-center bg-red-200">
         <Hero />
