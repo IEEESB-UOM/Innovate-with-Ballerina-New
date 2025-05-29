@@ -6,6 +6,7 @@ import Timeline from './components/Timeline';
 import RegisterNow from './components/RegisterNow';
 import FAQ from './components/FAQ';
 import ContactUs from './components/ContactUs';
+import NavigationDots from './components/NavigationDots';
 
 function App() {
   const containerRef = useRef(null);
@@ -15,14 +16,6 @@ function App() {
 
   useEffect(() => {
     const container = containerRef.current;
-
-    const scrollToSection = (index) => {
-      const targetY = index * window.innerHeight;
-      container.scrollTo({
-        top: targetY,
-        behavior: 'smooth',
-      });
-    };
 
     const handleScroll = (direction) => {
       if (scrollLock.current) return;
@@ -77,25 +70,26 @@ function App() {
       ref={containerRef}
       className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
     >
-      <section className="h-screen flex items-center justify-center bg-red-200">
+      <NavigationDots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} numSections={numSections} />
+      <section className="h-screen flex items-center justify-center">
         <Hero />
       </section>
-      <section className="h-screen flex items-center justify-center bg-blue-200">
+      <section className="h-screen flex items-center justify-center">
         <About />
       </section>
-      <section className="h-screen flex items-center justify-center bg-green-200">
+      <section className="h-screen flex items-center justify-center">
         <Prizes />
       </section>
-      <section className="h-screen flex items-center justify-center bg-yellow-200">
+      <section className="h-screen flex items-center justify-center">
         <Timeline />
       </section>
-      <section className="h-screen flex items-center justify-center bg-purple-200">
+      <section className="h-screen flex items-center justify-center">
         <RegisterNow />
       </section>
-      <section className="h-screen flex items-center justify-center bg-pink-200">
+      <section className="h-screen flex items-center justify-center">
         <FAQ />
       </section>
-      <section className="h-screen flex items-center justify-center bg-orange-200">
+      <section className="h-screen flex items-center justify-center">
         <ContactUs />
       </section>
     </div>
