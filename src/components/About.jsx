@@ -1,12 +1,18 @@
 const About = () => {
    const Bold = ({ children }) => <strong className="font-semibold text-white">{children}</strong>; 
-    return (
-    <div className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41] snap-start h-screen w-full flex items-center justify-center p-4 font-sans relative">
+    return (    <div className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41] snap-start h-screen w-full flex items-center justify-center p-4 font-sans relative">
       {/* Background Vector - Left Bottom */}
       <img 
         src="/Vector.svg" 
         alt="Background Vector" 
         className="absolute bottom-10 left-4 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 md:opacity-80 opacity-25 z-11"
+      />
+      
+      {/* Background Vector - Top Left Corner */}
+      <img 
+        src="./about_Vector.png" 
+        alt="Background Star" 
+        className="absolute bottom-36 left-2 w-16 h-12 sm:w-20 sm:h-20 md:w-40 md:h-[500px] opacity-100 z-20"
       />
       
       {/* Terminal Window main container */}
