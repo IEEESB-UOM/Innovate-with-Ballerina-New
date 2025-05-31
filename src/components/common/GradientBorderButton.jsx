@@ -1,12 +1,17 @@
-const GradientBorderButton = ({ children, onClick, filled }) => {
+const GradientBorderButton = ({
+  children,
+  onClick,
+  filled,
+  className = "",
+}) => {
   return (
     <button
       type="button"
-      className="transtion group flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#FBB934] to-[#10C3BD] p-[1.5px] text-white duration-300 hover:bg-gradient-to-l hover:shadow-xl hover:shadow-[#0E9F9B]/10 cursor-pointer"
+      className={`transition group flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#FBB934] to-[#10C3BD] p-[1.5px] text-white duration-300 hover:bg-gradient-to-l hover:shadow-xl hover:shadow-[#0E9F9B]/10 cursor-pointer ${className}`}
       onClick={onClick}
     >
       <div
-        className={`py-2 px-8 tracking-wide flex items-center justify-center rounded-2xl transition duration-300 ease-in-out ${
+        className={`py-2 px-8 tracking-wide flex items-center justify-center rounded-2xl transition duration-300 ease-in-out w-full ${
           filled
             ? "bg-gradient-to-r from-[#FBB934] to-[#10C3BD]"
             : "bg-[#0A2324] group-hover:bg-gradient-to-br group-hover:from-gray-700 group-hover:to-gray-900"
