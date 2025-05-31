@@ -15,9 +15,8 @@ const About = () => {
             alt="Background Star"
             className="absolute -bottom-15 -left-15 w-36 h-72 sm:w-20 sm:h-20 md:w-44 md:h-[550px] md:bottom-24 md:left-0 opacity-80 z-0"
           />
-          
-          {/* Terminal Window main container */}
-          <div className="bg-[#0A2324] w-full max-w-4xl rounded-lg overflow-hidden relative z-10 h-auto md:h-auto">
+            {/* Terminal Window main container */}
+          <div className="bg-[#0A2324] w-11/12 md:w-full max-w-4xl rounded-lg overflow-hidden relative z-10 h-auto md:h-auto">
             <div className="bg-[#05383C] h-9 flex items-center justify-end px-3 sm:px-4">
               <div className="flex space-x-1.5 sm:space-x-2">
                 <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -29,7 +28,7 @@ const About = () => {
             {/* Content Area - Different layouts for mobile vs desktop */}
             
             {/* Mobile Layout */}
-            <div className="block md:hidden px-6 py-8 text-slate-300">
+            <div className="block md:hidden px-2 py-8 text-slate-300">
               {/* Logo Section - Mobile */}
               <div className="text-center mb-8">
                 <img 
@@ -40,13 +39,13 @@ const About = () => {
               </div>
               
               {/* Mobile Terminal Text Content */}
-              <div className="text-[16px] text-justify">
-                <p className="text-justify">
-                  <Bold>"Innovate With Ballerina"</Bold> Provides An Exclusive Platform For University Students To Elevate Their Coding Passion With The Ballerina Programming Language. This Pioneering Competition Aims To Drive The Future Of Technology By Fostering Teamwork, Innovation, And Outstanding Performance.
+              <div className="text-[13px] text-justify">
+                <p className="text-center">
+                  <Bold>"Innovate With Ballerina"</Bold> <br/>Provides An Exclusive Platform <br/>For University Students To<br/> Elevate Their Coding Passion <br/> With The Ballerina <br/> Programming Language. This <br/>Pioneering Competition Aims <br/> To Drive The Future Of <br/>Technology By Fostering <br/> Teamwork, Innovation, And <br/>Outstanding Performance.<br/>
                 </p>
                 
-                <p className="text-justify">
-                  Projects Can Be Submitted Via GitHub And Will Be Evaluated By The WSO2 Ballerina Team. Compelling Rewards And Certificates Will Be Awarded For Exceptional Contributions.
+                <p className="text-center">
+                  Projects Can Be Submitted Via <br/> GitHub And Will Be Evaluated <br/> By The WSO2 Ballerina Team.<br/> Compelling Rewards And <br/> Certificates Will Be Awarded<br/> For Exceptional Contributions.
                 </p>
               </div>
             </div>
