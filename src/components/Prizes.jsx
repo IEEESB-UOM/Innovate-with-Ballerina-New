@@ -1,4 +1,6 @@
-const Prizes = () => {  return (    <div className='h-screen w-full snap-start bg-[#0A2324] flex flex-col items-center text-4xl font-bold relative'>
+
+const Prizes = () => {  return (   
+   <div className='h-screen w-full snap-start bg-[#0A2324] flex flex-col items-center text-4xl font-bold relative'>
       {/* Spiral Vector - Top Left */}
       <img 
         src="/spiral_Vector.svg" 
