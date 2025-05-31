@@ -45,8 +45,21 @@ const FAQ = () => {
     },
   ]
 
+  // Utility hook to detect mobile view
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024
+
   const toggleItem = (index) => {
-    setOpenItems((prev) => (prev.includes(index) ? prev.filter((item) => item !== index) : [...prev, index]))
+    setOpenItems((prev) => {
+      if (isMobile) {
+        // In mobile, only one open at a time
+        return prev.includes(index) ? [] : [index]
+      } else {
+        // In desktop, allow multiple open
+        return prev.includes(index)
+          ? prev.filter((item) => item !== index)
+          : [...prev, index]
+      }
+    })
   }
 
   return (
@@ -94,27 +107,31 @@ const FAQ = () => {
         src={flower}
         alt="Flower decoration"
         className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block z-10 animate-spin-slow"
-        style={{ height: "25%", bottom: "-1.2rem" }}
+        style={{ height: "11rem", bottom: "-1.2rem" }}
       />
 
       {/* Mobile decorative elements */}
-      <div className="absolute right-4 bottom-1/4 w-16 h-20 lg:hidden">
-        <div className="w-full h-full border-2 border-yellow-400 rounded-full opacity-60 animate-spin-slow"></div>
-      </div>
+      {/* Right side spiral placeholder */}
+      <img
+        src={spiral}
+        alt="Spiral decoration"
+        className="absolute right-0 bottom-0 object-contain opacity-80 lg:hidden z-10 animate-pulse"
+        style={{ height: "8rem" }}
+      />
 
-      <div className="absolute right-8 bottom-8 w-6 h-6 lg:hidden">
-        <div
-          className="w-full h-full bg-teal-300 opacity-60 animate-pulse"
-          style={{
-            clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-          }}
-        ></div>
-      </div>
+      {/* Star decorative elements placeholder */}
+      <img
+        src={flower}
+        alt="Flower decoration"
+        className="absolute right-8 bottom-0 object-contain opacity-80 lg:hidden z-10 animate-spin-slow"
+        style={{ height: "5rem", bottom: "-1.2rem" }}
+      />
+
 
       {/* Main content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 lg:px-8">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-10 lg:px-8">
         <h2
-          className="gradient-text" // Using a custom class name
+          className="gradient-text text-left pt-8 w-full lg:text-center lg:pt-0" // Added text-left and w-full for mobile, lg:text-center for desktop
           style={{
             fontSize: "2.8rem",
             fontWeight: "bold",
@@ -140,7 +157,7 @@ const FAQ = () => {
                   onClick={() => toggleItem(index)}
                   style={{ minHeight: "40px", padding: 0 }} // Reduced height and removed extra padding
                 >
-                  <div className="p-2 lg:p-2 lg:pl-8 relative overflow-hidden"> {/* Added relative and overflow-hidden */}
+                  <div className="p-1 pl-2 lg:p-2 lg:pl-8 relative overflow-hidden"> {/* Added relative and overflow-hidden */}
                     <div className="flex items-center justify-between min-h-[32px]">
                       <span className="text-white text-sm lg:text-base font-medium transition-colors duration-300">
                         {item.question}
@@ -149,7 +166,7 @@ const FAQ = () => {
                       {/* Semi-transparent white background layer - only shows when closed */}
                       {!openItems.includes(index) && (
                         <div
-                          className="absolute inset-y-0 right-0 bg-white opacity-15"
+                          className="absolute inset-y-0 right-0 bg-white opacity-15 hidden lg:block"
                           style={{
                             width: "2.3rem",
                             borderTopRightRadius: "0.375rem", // rounded-tr-md equivalent
