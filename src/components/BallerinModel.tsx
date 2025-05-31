@@ -31,7 +31,7 @@ const ParticleModel = ({ scroll = 0, onHover }: ParticleModelProps) => {
         const geometry = child.geometry;
         const positionAttribute = geometry.getAttribute("position");
 
-        for (let i = 0; i < positionAttribute.count; i += 10) {
+        for (let i = 0; i < positionAttribute.count; i += 7) {
           positions.push(
             positionAttribute.getX(i),
             positionAttribute.getY(i),
