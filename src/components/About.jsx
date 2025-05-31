@@ -1,13 +1,12 @@
 const About = () => {
   const Bold = ({ children }) => <strong className="font-semibold text-white">{children}</strong>;
-    
-  return (
-    <div className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41] snap-start h-screen w-full flex items-center justify-center p-4 font-sans relative">
+      return (
+    <div className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41] snap-start h-screen w-full flex items-end md:items-center justify-center p-4 pb-15 md:pb-4 font-sans relative">
       {/* Background Vector - Left Bottom */}
       <img 
         src="/Vector.svg"
         alt="Background Vector"
-        className="absolute bottom-18 left-3 md:bottom-48 md:left-28 w-16 h-16 sm:w-40 sm:h-40 md:w-28 md:h-28 md:opacity-80 opacity-80 z-11000000"
+        className="absolute bottom-7 left-1 md:bottom-48 md:left-28 w-16 h-16 sm:w-40 sm:h-40 md:w-28 md:h-28 md:opacity-80 opacity-80 z-11000000"
       />
             
       {/* Background Vector - Top Left Corner */}
@@ -41,7 +40,7 @@ const About = () => {
           </div>
           
           {/* Mobile Terminal Text Content */}
-          <div className="text-[17px]  text-justify ">
+          <div className="text-[16px]  text-justify ">
             <p>
               <Bold>"Innovate With Ballerina"</Bold> Provides An Exclusive Platform For University Students To Elevate Their Coding Passion With The Ballerina Programming Language. This Pioneering Competition Aims To Drive The Future Of Technology By Fostering Teamwork, Innovation, And Outstanding Performance.
             </p>
