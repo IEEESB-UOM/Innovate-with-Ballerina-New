@@ -6,9 +6,10 @@ const About = () => {
           <img 
             src="/Vector.svg"
             alt="Background Vector"
-            className="absolute bottom-7 left-1 md:bottom-48 md:left-28 w-16 h-16 sm:w-40 sm:h-40 md:w-28 md:h-28 md:opacity-80 opacity-80 z-11000000"
+            className="absolute bottom-7 left-1 md:bottom-48 md:left-28 w-16 h-16 sm:w-40 sm:h-40 md:w-28 md:h-28 md:opacity-80 opacity-80 z-11000000 animate-spin"
+            style={{ animationDuration: '25s' }}
           />
-                
+
           {/* Background Vector - Top Left Corner */}
           <img
             src="./about_Vector.png" 
@@ -59,7 +60,8 @@ const About = () => {
                   alt="Innovate with Ballerina Logo"
                   className="mx-auto max-w-65 sm:max-w-52 md:max-w-80 w-full h-auto"
                 />
-              </div>              {/* Desktop Text Content Section */}
+              </div>           
+                 {/* Desktop Text Content Section */}
               <p className="text-xs sm:text-sm md:text-lg  sm:leading-loose text-center">
                 Innovate with Ballerina is an idea hackathon organized by the <Bold>IEEE Student<br/> Branch</Bold> in collaboration with the <Bold>IEEE CS Student Branch Chapter</Bold> of <Bold><br/>University of Moratuwa</Bold>, and proudly powered by <Bold>WSO2</Bold>. The competition is<br/> open to <Bold>university undergraduates</Bold> across Sri Lanka, where participants are <br/>challenged to integrate their innovative ideas using the <Bold>Ballerina <br/> programming language</Bold>. The journey features expert-led workshop guiding <br/> teams from concepts to implementation, and the <Bold>top 10 teams</Bold> will <br/> advanced to the finals which will be held at WSO2 premises.
               </p>
