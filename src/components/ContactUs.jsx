@@ -15,6 +15,8 @@ import wso2 from "../assets/ContactUs/wso2.png"
 import ieeecs from "../assets/ContactUs/ieeecs.png"
 import star1 from "../assets/ContactUs/star1.png"
 import star2 from "../assets/ContactUs/star2.png"
+import left from "../assets/ContactUs/left.png"
+import right from "../assets/ContactUs/right.png"
 
 // Sample data structure - replace with your actual data
 const sampleContacts = [
@@ -151,43 +153,58 @@ const ContactUs = () => {
       <img
         src={star1}
         alt="Star 1 decoration"
-        className="absolute w-full h-full object-contain z-10 animate-vanish-mobile lg:animate-vanish"
+        className="absolute w-full h-full object-contain z-10 hidden animate-vanish-mobile lg:animate-vanish lg:block"
         style={{ animationDelay: "1s", scale: isMobile ? "1" : "0.5", top: "-2rem", left: "1rem" }}
       />
       <img
         src={star2}
         alt="Star 2 decoration"
-        className="absolute w-full h-full object-contain z-10 animate-vanish-mobile lg:animate-vanish"
+        className="absolute w-full h-full object-contain z-10 hidden animate-vanish-mobile lg:animate-vanish lg:block"
         style={{ animationDelay: "2s", scale: isMobile ? "1" : "0.6", top: "3rem", left: "-2rem" }}
       />
 
       {/* Main content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 md:px-8 py-8">
+      <div
+        className={`relative z-10 h-full flex flex-col items-center justify-center px-4 md:px-8 py-8 lg:overflow-y-auto ${isMobile ? "overflow-y-auto w-full" : ""
+          }`}
+        style={isMobile ? { maxHeight: "100vh" } : {}}
+      >
         {/* Contact Us Title */}
-        <h2
-          className=" absolute top-25 text-center pt-8 md:pt-0"
-          style={{
-            fontSize: "2.8rem",
-            fontWeight: "bold",
-            display: "inline-block",
-            color: "transparent",
-            backgroundClip: "text",
-            marginBottom: "2rem",
-            letterSpacing: "0.05em",
-            animation: "fade-in 1s ease-in",
-            backgroundImage: "linear-gradient(15deg, #0E9F9B, #8FC18F, #FFB34A)",
-          }}
-        >
-          Contact Us
-        </h2>
+        {isMobile ? null : (
+          <h2
+            className=" absolute top-25 text-center pt-8 lg:pt-0"
+            style={{
+              fontSize: isMobile ? "1.8rem" : "2.8rem",
+              fontWeight: "bold",
+              top: isMobile ? "3rem" : "5rem",
+              display: "inline-block",
+              color: "transparent",
+              backgroundClip: "text",
+              marginBottom: "2rem",
+              letterSpacing: "0.05em",
+              animation: "fade-in 1s ease-in",
+              backgroundImage: "linear-gradient(15deg, #0E9F9B, #8FC18F, #FFB34A)",
+            }}
+          >
+            Contact Us
+          </h2>)}
 
         {/* Contact Cards Container */}
-        <div className="w-full max-w-6xl">
+        <div className="w-full">
           {isMobile ? (
             // Mobile layout - single column
-            <div className="flex flex-col gap-6 items-center">
+            <div className="flex flex-col gap-20 items-center mt-528 lg:mt-50">
               {contacts.map((person, index) => (
                 <ContactCard key={person.id} person={person} isMobile={true} index={index} />
+              ))}
+              {logos.map((logo, index) => (
+                <div key={index} className="md:h-12 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <img
+                    src={logo.logo || "/placeholder.svg"}
+                    alt={logo.name}
+                    className="w-full h-full pl-15 pr-15 object-contain hover:scale-110 duration-300"
+                  />
+                </div>
               ))}
             </div>
           ) : (
@@ -208,20 +225,70 @@ const ContactUs = () => {
               </div>
             </div>
           )}
+          {isMobile ? (
+            <div className="flex justify-center mt-20">
+              {/* Star images */}
+              <img
+                src={star1}
+                alt="Star 1 decoration"
+                className="absolute w-full h-full object-contain animate-vanish-mobile lg:animate-vanish"
+                style={{ animationDelay: "1s", scale: isMobile ? "1" : "0.5", top: "-2rem", left: "1rem", zIndex: -1 }}
+              />
+              <img
+                src={star2}
+                alt="Star 2 decoration"
+                className="absolute w-full h-full object-contain animate-vanish-mobile lg:animate-vanish"
+                style={{ animationDelay: "2s", scale: isMobile ? "1" : "0.6", top: "3rem", left: "-2rem", zIndex: -1 }}
+              />
+              <img
+                src={left}
+                alt="Left decoration"
+                className="absolute w-full h-full object-contain top-[8rem]"
+                style={{ scale: "0.5", left: "-6rem", zIndex: -1 }}
+              />
+              <img
+                src={right}
+                alt="Right decoration"
+                className="absolute w-full h-full object-contain top-[54rem]"
+                style={{ scale: "0.3", right: "-8rem", zIndex: -1 }}
+              />
+              <img
+                src={star1}
+                alt="Star 1 decoration"
+                className="absolute w-full h-full object-contain animate-vanish-mobile lg:animate-vanish"
+                style={{ animationDelay: "1s", scale: isMobile ? "1" : "0.5", top: "80rem", left: "1rem", zIndex: -1 }}
+              />
+              <img
+                src={star2}
+                alt="Star 2 decoration"
+                className="absolute w-full h-full object-contain animate-vanish-mobile lg:animate-vanish"
+                style={{ animationDelay: "2s", scale: isMobile ? "1" : "0.6", top: "83rem", left: "-2rem", zIndex: -1 }}
+              />
+              {/* Grid background image */}
+              <img
+                src={grid}
+                alt="Grid background decoration"
+                className="absolute w-full object-contain opacity-80 z-10"
+                style={{ height: "11rem", scale: "1.9", top: "115rem", left: "0", zIndex: -1 }}
+              />
+            </div>
+          ) : null}
         </div>
-      </div>
-      {/* Partner Logos */}
-      <div className="absolute bottom-10 left-0 right-0 pl-100 pr-100 flex flex-row justify-center gap-8 md:gap-10 z-11">
-        {logos.map((logo, index) => (
-          <div key={index} className="relative md:w-1/4 md:h-12 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-            <img
-              src={logo.logo || "/placeholder.svg"}
-              alt={logo.name}
-              className="w-full h-full object-contain hover:scale-110 duration-300"
-            />
+        {isMobile ? null : (
+          <div className="absolute bottom-10 left-0 right-0 pl-100 pr-100 flex flex-row justify-center gap-8 md:gap-10 z-11">
+            {logos.map((logo, index) => (
+              <div key={index} className="relative md:w-1/4 md:h-12 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                <img
+                  src={logo.logo || "/placeholder.svg"}
+                  alt={logo.name}
+                  className="w-full h-full object-contain hover:scale-110 duration-300"
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        )}
       </div>
+
       <style jsx>{`
         @keyframes fade-in {
           from {
@@ -305,22 +372,21 @@ const ContactCard = ({
   index,
 }) => {
   return (
-    <div className={`flex flex-row items-center animate-fade-in-up gap-12`} style={{ animationDelay: `${index * 100}ms` }}>
+    <div className={`flex ${isMobile ? "flex-col items-center" : "flex-row gap-12 items-center animate-fade-in-up"} `} style={{ animationDelay: `${index * 100}ms` }}>
       {/* Profile Image with background circle already included */}
       <img
         src={person.image || "/placeholder.svg"}
         alt={person.name}
         className="w-full h-full object-cover rounded-full"
-        style={{ scale: isMobile ? 0.8 : 1.5, width: isMobile ? "80px" : "100px", height: isMobile ? "80px" : "100px" }}
+        style={{ scale: isMobile ? 1.8 : 1.5, width: isMobile ? "90px" : "100px", height: isMobile ? "90px" : "100px" }}
       />
 
-
-      <div className="flex flex-col items-start justify-center w-full">
+      <div className="flex flex-col items-center gap-4">
         {/* Name Label */}
-        <div className="bg-white text-slate-900 px-4 py-1 font-medium text-center rounded-sm mb-2">{person.name}</div>
+        <div className="bg-white text-slate-900 px-4 py-1 font-medium text-center rounded-sm mt-12 lg:mt-2">{person.name}</div>
 
         {/* Contact Details */}
-        <div className="bg-white/0 backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 hover:bg-white/20 hover:p-4 hover:border-teal-400/50 transition-all duration-300 text-start space-y-1">
+        <div className="bg-white/0 lg:backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 hover:bg-white/20 hover:p-4 hover:border-teal-400/50 transition-all duration-300 text-start space-y-1">
           <p className="text-white text-sm">{person.title}</p>
           <p className="text-white text-xs">{person.organization}</p>
           <p className="text-gray-300 text-xs">{person.university}</p>
@@ -328,6 +394,8 @@ const ContactCard = ({
           <p className="text-gray-300 text-xs">{person.phone}</p>
         </div>
       </div>
+
+
     </div>
   )
 }
