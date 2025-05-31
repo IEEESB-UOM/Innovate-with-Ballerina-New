@@ -22,39 +22,38 @@ const Prizes = () => {  return (    <div className='h-screen w-full snap-start b
       </div>     
         {/* Place Awards - Above Prizes */}
       <div className="absolute left-45 mt-[350px] transform -translate-y-1/3 z-20">
-        <div className="flex items-start space-x-4 md:space-x-8">
-          {/* 1st Place */}
-          <div className="flex flex-col items-center">
-            <img 
-              src="/1stplace.png" 
-              alt="1st Place" 
-              className="w-16 h-16 sm:w-20 sm:h-20 md:w-20 md:h-12"
-            />
-            <p className="text-amber-300 text-xs sm:text-sm md:text-lg font-bold mt-2">
-              Rs 100,000/-
-            </p>
-          </div>
-          
+        <div className="flex items-start space-x-4 md:space-x-4 -ml-3.5">
           {/* 2nd Place */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center relative mt-12">
             <img 
               src="/2ndplace.png" 
               alt="2nd Place" 
-              className="w-14 h-14 sm:w-18 sm:h-18 md:w-28 md:h-28"
+              className="w-14 h-14 sm:w-18 sm:h-18 md:w-40 md:h-10 "
             />
-            <p className="text-amber-300 text-xs sm:text-sm md:text-lg font-bold mt-2">
+            <p className="text-amber-50 text-xs sm:text-sm md:text-2xl font-bold mt-2">
+              Rs 100,000/-
+            </p>
+          </div>
+            {/* 1st Place */}
+          <div className="flex flex-col items-center relative -mt-10">
+            <img 
+              src="/1stplace.png" 
+              alt="1st Place" 
+              className="w-14 h-14 sm:w-18 sm:h-18 md:w-40 md:h-10 "
+            />
+            <p className="text-amber-50 text-xs sm:text-sm md:text-3xl font-bold  mt-2">
               Rs 150,000/-
             </p>
           </div>
           
           {/* 3rd Place */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center relative mt-12">
             <img 
               src="/3rdplace.png" 
               alt="3rd Place" 
-              className="w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24"
+              className="w-14 h-14 sm:w-18 sm:h-18 md:w-40 md:h-10 "
             />
-            <p className="text-amber-300 text-xs sm:text-sm md:text-lg font-bold mt-2">
+            <p className="text-amber-50 text-xs sm:text-sm md:text-2xl font-bold  mt-2">
               Rs 75,000/-
             </p>
           </div>
