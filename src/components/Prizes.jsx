@@ -5,15 +5,14 @@ const Prizes = () => {  return (
       <img 
         src="/spiral_Vector.svg" 
         alt="Spiral Vector" 
-        className="absolute top-15 left-0 w-24 h-24 sm:w-32 sm:h-32 md:w-50 md:h-50 opacity-80 z-0"
+        className="absolute top-35 md:top-15 left-0 w-24 h-24 sm:w-32 sm:h-32 md:w-50 md:h-50 opacity-80 z-0"
       />
-      
-      {/* Background Spring Vector - Bottom Right */}
+        {/* Background Spring Vector - Bottom Right */}
       <img 
         src="/Spring_Vector.svg" 
         alt="Spring Vector" 
-        className="absolute bottom-0 right-[-70px] w-24 h-24 sm:w-32 sm:h-32 md:w-60 md:h-44 opacity-80 z-0"
-      />        
+        className="absolute bottom-3 right-[-30px] md:right-[-70px] w-24 h-24 sm:w-32 sm:h-32 md:w-60 md:h-44 opacity-80 z-0"
+      />
        {/* Left Side Ellipse Background - Desktop */}
       <div className="absolute left-8 bottom-10 z-10 hidden md:block">
         <img 
@@ -21,13 +20,12 @@ const Prizes = () => {  return (
           alt="Ellipse Background" 
           className="w-48 h-48 sm:w-56 sm:h-56 md:w-[800px] md:h-20"
         />
-      </div>
-        {/* Centered Ellipse Background - Mobile */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[320px] z-10 block md:hidden">
+      </div>        {/* Centered Ellipse Background - Mobile */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[420px] z-10  md:hidden">
         <img 
           src="/Ellipse 154.png" 
           alt="Ellipse Background" 
-          className="w-80 h-16"
+          className="w-screen h-8 max-w-none"
         />
       </div>{/* Place Awards - Above Prizes - Desktop */}
       <div className="absolute left-45 mt-[350px] transform -translate-y-1/3 z-20 hidden md:block">
@@ -67,17 +65,18 @@ const Prizes = () => {  return (
             </p>
           </div>
         </div>
-      </div>      {/* Place Awards - Mobile - Centered */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[250px] z-20 block md:hidden">
-        <div className="flex items-start space-x-4 justify-center">
+      </div>      
+      {/* Place Awards - Mobile - Centered */}
+      <div className="relative left-41 transform -translate-x-1/2 mt-[250px] z-20  md:hidden">
+        <div className="flex justify-center space-x-1 ">
           {/* 2nd Place */}
           <div className="flex flex-col items-center relative mt-8">
             <img 
               src="/2ndplace.png" 
               alt="2nd Place" 
-              className="w-12 h-8"
+              className="w-22 h-6"
             />
-            <p className="text-amber-50 text-xs font-bold mt-2">
+            <p className="text-amber-50 text-lg max-w-none font-bold mt-2">
               Rs 100,000/-
             </p>
           </div>
@@ -86,9 +85,9 @@ const Prizes = () => {  return (
             <img 
               src="/1stplace.png" 
               alt="1st Place" 
-              className="w-12 h-8"
+              className="w-22 h-6"
             />
-            <p className="text-amber-50 text-sm font-bold mt-2">
+            <p className="text-amber-50 text-lg font-bold mt-2">
               Rs 150,000/-
             </p>
           </div>
@@ -98,9 +97,9 @@ const Prizes = () => {  return (
             <img 
               src="/3rdplace.png" 
               alt="3rd Place" 
-              className="w-12 h-8"
+              className="w-22 h-6"
             />
-            <p className="text-amber-50 text-xs font-bold mt-2">
+            <p className="text-amber-50 text-lg font-bold mt-2">
               Rs 75,000/-
             </p>
           </div>
@@ -115,21 +114,20 @@ const Prizes = () => {  return (
       </div>
 
       {/* Prizes Image - Mobile Centered */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[370px] z-20 block md:hidden">
+      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[310px] z-20  md:hidden">
         <img 
           src="/prizes.png" 
           alt="Prizes" 
-          className="w-32 h-32"
+          className="w-72 h-32 max-w-none"
         />
-      </div>{/* Desktop title */}
+      </div>      {/* Desktop title */}
       <span className='hidden md:inline-block text-[2.5rem] mt-14 md:text-[4rem] font-bold bg-gradient-to-r from-[#FFB34A] via-[#8FC18F] to-[#0E9F9B] text-transparent bg-clip-text'>
         Win Exciting Prices
       </span>
-      
-      {/* Mobile title */}
-      <span className='inline-block md:hidden text-[2.5rem] mt-14 font-bold bg-gradient-to-r from-[#FFB34A] via-[#8FC18F] to-[#0E9F9B] text-transparent bg-clip-text'>
+        {/* Mobile title - Positioned at top */}
+      <span className='absolute top-24 left-1/2 transform -translate-x-1/2 md:hidden text-[2.5rem] font-bold bg-gradient-to-r from-[#FFB34A] via-[#8FC18F] to-[#0E9F9B] text-transparent bg-clip-text z-30 whitespace-nowrap'>
         Prize Pool
-      </span>        <div className='hidden md:flex justify-end w-full pr-20 md:pr-48 mt-20'>
+      </span><div className='hidden md:flex justify-end w-full pr-20 md:pr-48 mt-20'>
         <div className='text-right max-w-md'>
           <span className='text-lg md:text-4xl font-semibold bg-gradient-to-r from-[#FFB34A] via-[#8FC18F] to-[#0E9F9B] inline-block text-transparent bg-clip-text'>
             Most Popular Innovation
@@ -164,36 +162,30 @@ const Prizes = () => {  return (
 
       {/* Mobile Bottom Content */}
       <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full px-4 block md:hidden'>
-        <div className='text-center'>
-          <div className='mb-4'>
-            <span className='text-lg font-semibold bg-gradient-to-r from-[#FFB34A] via-[#8FC18F] to-[#0E9F9B] inline-block text-transparent bg-clip-text'>
-              Most Popular Innovation
-            </span>          
-            <p className='text-amber-50 text-xs text-center font-normal mt-2'>
-              Seperate top 10 teams are selected based on the reactions and community reaches through social media platforms and eligible to win exclusive <span className="text-amber-300">WSO2 gift hampers</span> at the awarding ceremony.
-            </p>
-          </div>
+        <div className='text-center '>
           
-          <div className='mb-4'>
-            <span className='text-base font-semibold text-amber-50'>
+          
+          <div className='mb-10'>
+            <span className='text-[25px] font-semibold text-amber-50'>
               Additional Prizes Of
             </span>
-            <p className='text-amber-50 text-sm font-bold mt-1'>
+            <p className='text-amber-50 text-[25px] font-bold mt-1'>
               Rs 10,000 /- Each
             </p>
-            <p className='text-amber-300 text-xs font-normal'>
+            <p className='text-amber-300 text-lg font-normal'>
               For Places 4th To 10th
             </p>
           </div>
           
-          <div className='flex justify-center items-center space-x-2'>
-            <span className='text-sm font-semibold bg-gradient-to-r from-[#0E9F9B] via-[#8FC18F] to-[#FFB34A] inline-block text-transparent bg-clip-text text-center'>
-              Valuable Certificates For Every Submission                  
-            </span>
+          <div className='flex -left-4  items-left mb-8 space-x-2'>
+            <span className='text-[18px]  font-semibold bg-gradient-to-r from-[#0E9F9B] via-[#8FC18F] to-[#FFB34A] inline-block text-transparent bg-clip-text text-center'>
+              Valuable Certificates <br />   For Every Submission               
+            </span> 
+            
             <img 
               src="/Arrow_Vector.png" 
               alt="Arrow Vector" 
-              className="w-6 h-6"
+              className="w-10 h-8"
             />
           </div>
         </div>
