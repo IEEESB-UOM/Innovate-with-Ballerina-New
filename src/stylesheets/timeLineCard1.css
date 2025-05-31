@@ -1,0 +1,96 @@
+.time-line-card {
+    width: 420px;
+    height: 160px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #ffffff11;
+    color: #E9E9E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden; /* Ensure content is clipped within the card */
+    
+  }
+  
+  
+    
+    
+   /* Default styles for laptops and larger screens */
+  .time-line-card .month {
+    position: absolute;
+    top: -5px;
+    /* right: 37.5%; */
+    right: 8.5%;
+    margin-top: 22px;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 101%; /* 19.955px */
+    letter-spacing: 0.198px;
+    text-transform: capitalize;
+  }
+  
+  .time-line-card .day {
+    /* margin-top: 25px; */
+    /* margin-right: -5px; */
+    position: absolute;
+    bottom: -15px;
+    right: -5px;
+    font-family: "Space Grotesk";
+    font-size: 139.82px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 101%; /* 161.418px */
+    letter-spacing: 1.598px;
+    text-transform: capitalize;
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* Standard property for background-clip */
+    background-color: #E9E9E9; /* Set the background color to match the section */
+  }
+  
+  .time-line-card .text {
+    margin-left: 35px;
+    margin-right: 150px;
+    font-size: 33px;
+    color: #FFF;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 101%; /* 33.402px */
+    letter-spacing: 0.331px;
+    text-transform: capitalize;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 1023px) {
+    .time-line-card .date {
+        font-size: 12px; /* Reduce font size for smaller screens */
+        top: -15%; /* Adjust positioning for smaller screens */
+        right: 33%; /* Adjust positioning for smaller screens */
+    }
+  
+    .time-line-card .day {
+        font-size: 110px; /* Reduce font size for smaller screens */
+        margin-top: 20px; /* Adjust margin-top for smaller screens */
+        margin-right: -10px; /* Adjust margin-right for smaller screens */
+    }
+  
+    .time-line-card .text {
+        font-size: 20px; /* Reduce font size for smaller screens */
+        margin-left: 8px; /* Adjust margins for smaller screens */
+        margin-right: 30px; /* Adjust margins for smaller screens */
+    }
+  }
+  
+  
+  
+    .time-line-card .inner-card{
+      display: flex;
+      flex-direction: row;
+  
+    }
+
+.special-card .date{
+    right:  42%;
+}

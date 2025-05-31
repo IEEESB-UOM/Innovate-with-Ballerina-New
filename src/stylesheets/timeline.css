@@ -1,0 +1,46 @@
+
+.text-background {
+  font-family: "Space Grotesk";
+  font-size: 184px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 101%; /* 347.44px */
+  letter-spacing: 3.44px;
+  text-transform: capitalize;
+  background: linear-gradient(to right, rgba(14, 159, 154, 0.305), rgba(143, 193, 143, 0.305), rgba(255, 179, 74, 0.305));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: absolute;
+}
+
+
+.text-background-div1 {
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    width:100%;
+}
+
+
+.text-background-div2 {
+    position: absolute;
+    top: 40%;
+    left: -35%;
+    width:100%;
+}
+
+
+
+.text-background-div3 {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+}
+
+.text-background-div4 {
+    position: absolute;
+    top: 70%;
+    left: 15%;
+}

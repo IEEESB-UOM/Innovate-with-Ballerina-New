@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Prizes from './components/Prizes';
 import Timeline from './components/Timeline';
+import Timeline2 from './components/Timeline2';
 import RegisterNow from './components/RegisterNow';
 import FAQ from './components/FAQ';
 import ContactUs from './components/ContactUs';
@@ -92,6 +93,9 @@ function App() {
         </section>
         <section className="h-screen flex items-center justify-center">
           <Timeline />
+        </section>
+        <section className="h-screen flex items-center justify-center">
+          <Timeline2 />
         </section>
         <section className="h-screen flex items-center justify-center">
           <RegisterNow />
