@@ -1,6 +1,101 @@
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
-const Prizes = () => {  return (   
-   <div className='h-screen w-full snap-start bg-[#0A2324] flex flex-col items-center text-4xl font-bold relative'>
+const Prizes = ({ isActive }) => {
+  const componentRef = useRef(null);  useEffect(() => {
+    if (isActive && componentRef.current) {      const ctx = gsap.context(() => {
+        const images = componentRef.current.querySelectorAll('img');
+        const spiralVector = componentRef.current.querySelector('img[src="/spiral_Vector.svg"]');
+        const springVector = componentRef.current.querySelector('img[src="/Spring_Vector.svg"]');
+        const otherImages = Array.from(images).filter(img => img !== spiralVector && img !== springVector);
+        
+        if (images.length > 0) {
+          // Reset all images to initial state first
+          gsap.set(images, { 
+            scale: 0, 
+            opacity: 0,
+          });
+          
+          // Special animation for spiral vector - slide from left
+          if (spiralVector) {
+            gsap.set(spiralVector, { 
+              x: -200, 
+              scale: 1, 
+              opacity: 0 
+            });
+            
+            gsap.to(spiralVector, {
+              x: 0, 
+              opacity: 1,
+              duration: 1.5,
+              ease: 'power.out',
+              onComplete: function() {
+                if (spiralVector.classList.contains('opacity-80')) {
+                  gsap.set(spiralVector, { opacity: 0.8 });
+                }
+              }
+            });
+          }
+          
+          // Special animation for spring vector - bounce up and down infinitely
+          if (springVector) {
+            gsap.set(springVector, { 
+              scale: 1, 
+              opacity: 0 
+            });
+            
+            gsap.to(springVector, {
+              opacity: 1,
+              duration: 0.8,
+              ease: 'power3.out',
+              delay: 0.5,
+              onComplete: function() {
+                if (springVector.classList.contains('opacity-80')) {
+                  gsap.set(springVector, { opacity: 0.8 });
+                }
+                
+                // Start infinite bouncing animation
+                gsap.to(springVector, {
+                  y: -15, 
+                  duration: 0.5,
+                  ease: 'power2.inOut',
+                  yoyo: true, 
+                  repeat: 2 
+                });
+              }
+            });
+          }
+          
+          // Animate other images with popup effect
+          if (otherImages.length > 0) {
+            gsap.to(otherImages, {
+              scale: 1,
+              opacity: 1,
+              duration: 0.8,
+              ease: 'power3.out',
+              stagger: 0.1, 
+              delay: 0.3, 
+              onComplete: function() {
+                
+                otherImages.forEach(img => {
+                  if (img.classList.contains('opacity-80')) {
+                    gsap.set(img, { opacity: 0.8 });
+                  }
+                });
+              }
+            });
+          }
+        }
+      }, componentRef);
+
+      return () => {
+        ctx.revert(); 
+      };
+    }
+  }, [isActive]); 
+
+  return (
+    <div ref={componentRef} className='h-screen w-full snap-start bg-[#0A2324] flex flex-col items-center text-4xl font-bold relative'>
       {/* Spiral Vector - Top Left */}
       <img 
         src="/spiral_Vector.svg" 

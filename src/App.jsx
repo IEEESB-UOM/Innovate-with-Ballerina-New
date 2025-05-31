@@ -80,27 +80,26 @@ function App() {
         ref={containerRef}
         className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
       >
-        <NavigationDots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} numSections={numSections} />
-        <section className="h-screen flex items-center justify-center">
-          <Hero />
+        <NavigationDots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} numSections={numSections} />        <section className="h-screen flex items-center justify-center">
+          <Hero isActive={currentIndex === 0} />
         </section>
         <section className="h-screen flex items-center justify-center">
-          <About />
+          <About isActive={currentIndex === 1} />
         </section>
         <section className="h-screen flex items-center justify-center">
-          <Prizes />
+          <Prizes isActive={currentIndex === 2} />
         </section>
         <section className="h-screen flex items-center justify-center">
-          <Timeline />
+          <Timeline isActive={currentIndex === 3} />
         </section>
         <section className="h-screen flex items-center justify-center">
-          <RegisterNow />
+          <RegisterNow isActive={currentIndex === 4} />
         </section>
         <section className="h-screen flex items-center justify-center">
-          <FAQ />
+          <FAQ isActive={currentIndex === 5} />
         </section>
         <section className="h-screen flex items-center justify-center">
-          <ContactUs />
+          <ContactUs isActive={currentIndex === 6} />
         </section>
       </div>
     </div>
