@@ -70,7 +70,7 @@ const FAQ = () => {
         src={topleft}
         alt="Top left decoration"
         className="absolute top-0 left-0 object-contain opacity-80 hidden lg:block z-10"
-        style={{ height: "65%" }}
+        style={{ height: "30rem" }}
       />
 
       {/* Bottom left decorative grid placeholder */}
@@ -78,7 +78,7 @@ const FAQ = () => {
         src={bottomleft}
         alt="Top left decoration"
         className="absolute bottom-0 left-0 object-contain opacity-80 hidden lg:block z-10"
-        style={{ height: "25%" }}
+        style={{ height: "11rem" }}
       />
 
       {/* Right side spiral placeholder */}
@@ -86,7 +86,7 @@ const FAQ = () => {
         src={spiral}
         alt="Spiral decoration"
         className="absolute right-0 bottom-1/4 object-contain opacity-80 hidden lg:block z-10 animate-pulse"
-        style={{ height: "25%" }}
+        style={{ height: "11rem" }}
       />
 
       {/* Star decorative elements placeholder */}
@@ -94,7 +94,7 @@ const FAQ = () => {
         src={flower}
         alt="Flower decoration"
         className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block z-10 animate-spin-slow"
-        style={{ height: "25%" }}
+        style={{ height: "25%", bottom: "-1.2rem" }}
       />
 
       {/* Mobile decorative elements */}
@@ -151,7 +151,7 @@ const FAQ = () => {
                         <div
                           className="absolute inset-y-0 right-0 bg-white opacity-15"
                           style={{
-                            width: "7%",
+                            width: "2.3rem",
                             borderTopRightRadius: "0.375rem", // rounded-tr-md equivalent
                             borderBottomRightRadius: "0.375rem" // rounded-br-md equivalent
                           }}
