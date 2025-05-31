@@ -8,14 +8,16 @@ const RegisterNow = () => {
   return (
     <div className="relative w-full min-h-screen bg-gradient-to-b from-teal-950 to-emerald-950 flex items-center justify-center overflow-hidden">
       <ParticleBackground />
-      {/* Background decorative elements */}{" "}      <motion.img
+      {/* Background decorative elements */}{" "}
+      <motion.img
         src="/Wrinkle.svg"
         alt="Decorative wrinkle"
-        className="absolute right-0 top-[80%] w-[300px] opacity-50 z-[1]"        initial={{ opacity: 0, x: 200 }}
-        whileInView={{ 
+        className="absolute right-0 top-[80%] w-[300px] opacity-50 z-[1]"
+        initial={{ opacity: 0, x: 200 }}
+        whileInView={{
           opacity: 0.5,
           x: 0,
-          y: [0, -5, 0]
+          y: [0, -5, 0],
         }}
         viewport={{ once: true }}
         transition={{
@@ -25,18 +27,19 @@ const RegisterNow = () => {
             duration: 3,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
-          }
+            delay: 1,
+          },
         }}
       />
       <motion.img
         src="/Spring1.png"
         alt="Decorative spring"
-        className="absolute left-0 top-[10%] w-[200px] opacity-70 z-[1]"        initial={{ opacity: 0, x: -200 }}
-        whileInView={{ 
+        className="absolute left-0 top-[10%] w-[200px] opacity-70 z-[1]"
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{
           opacity: 0.7,
           x: 0,
-          y: [0, 5, 0]
+          y: [0, 5, 0],
         }}
         viewport={{ once: true }}
         transition={{
@@ -46,18 +49,19 @@ const RegisterNow = () => {
             duration: 3,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
-          }
+            delay: 1,
+          },
         }}
       />
-      {/* Main content container */}      <motion.div
+      {/* Main content container */}{" "}
+      <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
         className="relative z-10 max-w-4xl mx-auto text-center px-4"
       >
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -66,7 +70,7 @@ const RegisterNow = () => {
         >
           Register Now
         </motion.h2>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -78,7 +82,7 @@ const RegisterNow = () => {
           contribute to shaping the future of technology. Secure your spot today
           and embark on an inspiring journey of learning and discovery.
         </motion.p>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -100,7 +104,9 @@ const RegisterNow = () => {
             whileInView={{ x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          >            <GradientBorderButton 
+          >
+            {" "}
+            <GradientBorderButton
               onClick={() => window.open("#", "_blank")}
               filled={true}
             >
