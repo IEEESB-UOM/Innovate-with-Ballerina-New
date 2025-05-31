@@ -1,6 +1,229 @@
+"use client"
+
+import { useState } from "react"
+import { Plus, Minus } from "lucide-react"
+import topleft from "../assets/FAQ/top_left.png"
+import bottomleft from "../assets/FAQ/bottom_left.png"
+import spiral from "../assets/FAQ/spiral.png"
+import flower from "../assets/FAQ/flower.png"
+
 const FAQ = () => {
+  const [openItems, setOpenItems] = useState([])
+
+  const faqData = [
+    {
+      question: "Question 1",
+      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+    },
+    {
+      question: "Question 1",
+      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+    },
+    {
+      question: "Question 1",
+      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+    },
+    {
+      question: "Question 1",
+      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+    },
+    {
+      question: "Question 1",
+      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+    },
+    {
+      question: "Question 1",
+      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+    },
+    {
+      question: "Question 1",
+      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+    },
+    {
+      question: "Question 1",
+      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+    },
+  ]
+
+  const toggleItem = (index) => {
+    setOpenItems((prev) => (prev.includes(index) ? prev.filter((item) => item !== index) : [...prev, index]))
+  }
+
   return (
-    <div className='h-screen w-full snap-start bg-blue-100 flex items-center justify-center text-4xl font-bold'>FAQ</div>
+    <div className="h-screen w-full snap-start relative overflow-hidden">
+      {/* Section 1: Background with start color */}
+      <div className="absolute inset-0 bg-[#0A2324] z-0"></div>
+
+      {/* Section 2: Bottom radial ellipse with end color */}
+      <div
+        className="absolute left-1/2 bottom-[-40%] -translate-x-1/2 z-0 pointer-events-none"
+        style={{
+          width: "120vw",
+          height: "60vh",
+          background: "radial-gradient(ellipse at center, #277E57 0%, transparent 70%)",
+          opacity: 0.85,
+        }}
+      ></div>
+
+      {/* Top left decorative image */}
+      <img
+        src={topleft}
+        alt="Top left decoration"
+        className="absolute top-0 left-0 object-contain opacity-80 hidden lg:block z-10"
+        style={{ height: "65%" }}
+      />
+
+      {/* Bottom left decorative grid placeholder */}
+      <img
+        src={bottomleft}
+        alt="Top left decoration"
+        className="absolute bottom-0 left-0 object-contain opacity-80 hidden lg:block z-10"
+        style={{ height: "25%" }}
+      />
+
+      {/* Right side spiral placeholder */}
+      <img
+        src={spiral}
+        alt="Spiral decoration"
+        className="absolute right-0 bottom-1/4 object-contain opacity-80 hidden lg:block z-10 animate-pulse"
+        style={{ height: "25%" }}
+      />
+
+      {/* Star decorative elements placeholder */}
+      <img
+        src={flower}
+        alt="Flower decoration"
+        className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block z-10 animate-spin-slow"
+        style={{ height: "25%" }}
+      />
+
+      {/* Mobile decorative elements */}
+      <div className="absolute right-4 bottom-1/4 w-16 h-20 lg:hidden">
+        <div className="w-full h-full border-2 border-yellow-400 rounded-full opacity-60 animate-spin-slow"></div>
+      </div>
+
+      <div className="absolute right-8 bottom-8 w-6 h-6 lg:hidden">
+        <div
+          className="w-full h-full bg-teal-300 opacity-60 animate-pulse"
+          style={{
+            clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
+          }}
+        ></div>
+      </div>
+
+      {/* Main content */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 lg:px-8">
+        <h2
+          className="gradient-text" // Using a custom class name
+          style={{
+            fontSize: "2.5rem",
+            fontWeight: "bold",
+            display: "inline-block",
+            color: "transparent",
+            backgroundClip: "text",
+            marginBottom: "2rem",
+            letterSpacing: "0.05em",
+            animation: "fade-in 1s ease-in",
+            backgroundImage: "linear-gradient(15deg, #0E9F9B, #8FC18F, #FFB34A)"
+          }}
+        >
+          FAQ
+        </h2>
+
+        {/* FAQ Items Container */}
+        <div className="w-full max-w-6xl">
+          {/* Desktop: 2 columns, Mobile: 1 column */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+            {faqData.map((item, index) => (
+              <div key={index} className="w-full animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                <div
+                  className={`bg-slate-700/50 backdrop-blur-sm rounded-lg cursor-pointer transition-all duration-500 ease-out hover:bg-slate-600/50 border border-slate-600/30 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-400/20 transform hover:scale-[1.02] ${openItems.includes(index) ? "bg-slate-600/60 border-teal-400/40 shadow-lg shadow-teal-400/10" : ""
+                    }`}
+                  onClick={() => toggleItem(index)}
+                >
+                  <div className="p-4 lg:p-6">
+                    <div className="flex items-center justify-between">
+                      <span className="text-white text-sm lg:text-base font-medium transition-colors duration-300">
+                        {item.question}
+                      </span>
+                      <div className="ml-4 flex-shrink-0">
+                        <div
+                          className={`transition-all duration-300 ease-out ${openItems.includes(index) ? "rotate-180 scale-110" : "rotate-0 scale-100"}`}
+                        >
+                          {openItems.includes(index) ? (
+                            <Minus className="w-5 h-5 text-teal-300" />
+                          ) : (
+                            <Plus className="w-5 h-5 text-teal-300" />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Expandable answer with smooth animation */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ease-out ${openItems.includes(index) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                        }`}
+                    >
+                      <div
+                        className={`pt-4 border-t border-slate-600/30 transition-all duration-300 delay-100 ${openItems.includes(index) ? "translate-y-0" : "-translate-y-2"
+                          }`}
+                      >
+                        <p className="text-slate-300 text-sm lg:text-base leading-relaxed">{item.answer}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 1s ease-out;
+        }
+
+        .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out both;
+        }
+
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+      `}</style>
+    </div>
   )
 }
 
