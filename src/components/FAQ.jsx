@@ -116,12 +116,12 @@ const FAQ = () => {
         <h2
           className="gradient-text" // Using a custom class name
           style={{
-            fontSize: "2.5rem",
+            fontSize: "2.8rem",
             fontWeight: "bold",
             display: "inline-block",
             color: "transparent",
             backgroundClip: "text",
-            marginBottom: "2rem",
+            marginBottom: "1rem",
             letterSpacing: "0.05em",
             animation: "fade-in 1s ease-in",
             backgroundImage: "linear-gradient(15deg, #0E9F9B, #8FC18F, #FFB34A)"
@@ -132,28 +132,42 @@ const FAQ = () => {
 
         {/* FAQ Items Container */}
         <div className="w-full max-w-6xl">
-          {/* Desktop: 2 columns, Mobile: 1 column */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-4">
             {faqData.map((item, index) => (
               <div key={index} className="w-full animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
                 <div
-                  className={`bg-slate-700/50 backdrop-blur-sm rounded-lg cursor-pointer transition-all duration-500 ease-out hover:bg-slate-600/50 border border-slate-600/30 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-400/20 transform hover:scale-[1.02] ${openItems.includes(index) ? "bg-slate-600/60 border-teal-400/40 shadow-lg shadow-teal-400/10" : ""
-                    }`}
+                  className={`bg-white/10 backdrop-blur-sm rounded-xl cursor-pointer transition-all duration-500 ease-out hover:bg-white/20 border border-slate-600/30 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-400/20 transform hover:scale-[1.02] ${openItems.includes(index) ? "bg-white/20 border-teal-400/40 shadow-lg shadow-teal-400/10" : ""}                    }`}
                   onClick={() => toggleItem(index)}
+                  style={{ minHeight: "40px", padding: 0 }} // Reduced height and removed extra padding
                 >
-                  <div className="p-4 lg:p-6">
-                    <div className="flex items-center justify-between">
+                  <div className="p-2 lg:p-2 lg:pl-8 relative overflow-hidden"> {/* Added relative and overflow-hidden */}
+                    <div className="flex items-center justify-between min-h-[32px]">
                       <span className="text-white text-sm lg:text-base font-medium transition-colors duration-300">
                         {item.question}
                       </span>
-                      <div className="ml-4 flex-shrink-0">
+
+                      {/* Semi-transparent white background layer - only shows when closed */}
+                      {!openItems.includes(index) && (
                         <div
-                          className={`transition-all duration-300 ease-out ${openItems.includes(index) ? "rotate-180 scale-110" : "rotate-0 scale-100"}`}
+                          className="absolute inset-y-0 right-0 bg-white opacity-15"
+                          style={{
+                            width: "7%",
+                            borderTopRightRadius: "0.375rem", // rounded-tr-md equivalent
+                            borderBottomRightRadius: "0.375rem" // rounded-br-md equivalent
+                          }}
+                        />
+                      )}
+
+                      <div className="ml-4 flex-shrink-0 relative z-10"> {/* Added z-10 to ensure icon is above the layer */}
+                        {/* Icon container with rotation */}
+                        <div
+                          className={`relative transition-all duration-300 ease-out ${openItems.includes(index) ? "rotate-180 scale-110" : "rotate-0 scale-100"
+                            }`}
                         >
                           {openItems.includes(index) ? (
-                            <Minus className="w-5 h-5 text-teal-300" />
+                            <Minus className="w-5 h-5 text-white" />
                           ) : (
-                            <Plus className="w-5 h-5 text-teal-300" />
+                            <Plus className="w-5 h-5 text-white" />
                           )}
                         </div>
                       </div>
@@ -165,10 +179,10 @@ const FAQ = () => {
                         }`}
                     >
                       <div
-                        className={`pt-4 border-t border-slate-600/30 transition-all duration-300 delay-100 ${openItems.includes(index) ? "translate-y-0" : "-translate-y-2"
+                        className={`pt-2 border-t border-slate-600/30 transition-all duration-300 delay-100 ${openItems.includes(index) ? "translate-y-0" : "-translate-y-2"
                           }`}
                       >
-                        <p className="text-slate-300 text-sm lg:text-base leading-relaxed">{item.answer}</p>
+                        <p className="text-slate-300 text-xs lg:text-sm leading-relaxed">{item.answer}</p>
                       </div>
                     </div>
                   </div>
