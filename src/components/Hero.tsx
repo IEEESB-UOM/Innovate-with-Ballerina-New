@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import BallerinModel from "./BallerinModel";
-import ParticleBackground from "./ParticleBackground";
 import NavigationDots from "./NavigationDots";
 
 const Hero: React.FC = () => {
@@ -103,8 +102,6 @@ const Hero: React.FC = () => {
         ease: "easeOut",
       }}
     >
-      <ParticleBackground />
-
       <motion.div
         className="relative h-full"
         style={{ translateY: scrollY * (isMobile ? -25 : -50) }}

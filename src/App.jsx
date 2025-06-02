@@ -9,6 +9,7 @@ import FAQ from "./components/FAQ";
 import ContactUs from "./components/ContactUs";
 import NavigationDots from "./components/NavigationDots";
 import GradientBorderButton from "./components/common/GradientBorderButton";
+import ParticleBackground from "./components/ParticleBackground";
 
 function App() {
   const containerRef = useRef(null);
@@ -111,6 +112,7 @@ function App() {
           <ContactUs isActive={currentIndex === 7} />
         </section>
       </div>
+      <ParticleBackground />
     </div>
   );
 }

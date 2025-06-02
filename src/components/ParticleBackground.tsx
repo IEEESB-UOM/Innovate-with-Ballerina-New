@@ -30,7 +30,7 @@ const ParticleBackground: React.FC = () => {
 
     const initParticles = () => {
       particles.current = [];
-      const particleCount = Math.min(Math.floor(window.innerWidth * 0.1), 100);
+      const particleCount = Math.min(Math.floor(window.innerWidth * 0.25), 250);
 
       for (let i = 0; i < particleCount; i++) {
         particles.current.push({

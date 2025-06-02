@@ -1,13 +1,9 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
 import { motion } from "framer-motion";
 import GradientBorderButton from "./common/GradientBorderButton";
-import ParticleBackground from "./ParticleBackground";
 
 const RegisterNow = () => {
   return (
     <div className="relative w-full min-h-screen bg-gradient-to-b from-teal-950 to-emerald-950 flex items-center justify-center overflow-hidden px-4 py-16 sm:px-6">
-      <ParticleBackground />
       {/* Background decorative elements */}
       <motion.img
         src="/Wrinkle.svg"
