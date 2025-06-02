@@ -203,7 +203,7 @@ const Prizes = ({ isActive }) => {
           </div>
         </div>
       </div>       {/* Prizes Image */}
-      <div className="absolute left-45 mt-[455px] transform -translate-y-1/3 z-20 hidden md:block">
+      <div className="absolute left-45 -bottom-2 transform -translate-y-1/3 z-20 hidden md:block">
         <img
           src="/prizes.png"
           alt="Prizes"
