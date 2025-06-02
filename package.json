@@ -16,6 +16,7 @@
     "@types/three": "^0.176.0",
     "framer-motion": "^12.15.0",
     "gsap": "^3.13.0",
+    "lucide-react": "^0.511.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "scrollbooster": "^3.0.2",
