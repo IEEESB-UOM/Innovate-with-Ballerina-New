@@ -1,5 +1,3 @@
-import React from 'react';
-
 import '../stylesheets/timeLineCard1.css'
 
 const TimeLineCard = ({text,month,day,id,className}) => {

@@ -13,7 +13,7 @@ import GradientBorderButton from "./components/common/GradientBorderButton";
 function App() {
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const numSections = 7;
+  const numSections = 8;
   const scrollLock = useRef(false);
 
   useEffect(() => {
