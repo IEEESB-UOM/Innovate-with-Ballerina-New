@@ -84,32 +84,28 @@ function App() {
         ref={containerRef}
         className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
       >
-        <NavigationDots
-          currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
-          numSections={numSections}
-        />
-        <div className="snap-start h-screen flex items-center justify-center">
-          <Hero />
-        </div>
-        <div className="snap-start h-screen flex items-center justify-center">
-          <About />
-        </div>
-        <div className="snap-start h-screen flex items-center justify-center">
-          <Prizes />
-        </div>
-        <div className="snap-start h-screen flex items-center justify-center">
-          <Timeline />
-        </div>
-        <div className="snap-start h-screen flex items-center justify-center">
-          <RegisterNow />
-        </div>
-        <div className="snap-start h-screen flex items-center justify-center">
-          <FAQ />
-        </div>
-        <div className="snap-start h-screen flex items-center justify-center">
-          <ContactUs />
-        </div>
+        <NavigationDots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} numSections={numSections} />
+        <section className="snap-start h-screen flex items-center justify-center">
+          <Hero isActive={currentIndex === 0} />
+        </section>
+        <section className="snap-start h-screen flex items-center justify-center">
+          <About isActive={currentIndex === 1} />
+        </section>
+        <section className="snap-start h-screen flex items-center justify-center">
+          <Prizes isActive={currentIndex === 2} />
+        </section>
+        <section className="snap-start h-screen flex items-center justify-center">
+          <Timeline isActive={currentIndex === 3} />
+        </section>
+        <section className="snap-start h-screen flex items-center justify-center">
+          <RegisterNow isActive={currentIndex === 4} />
+        </section>
+        <section className="snap-start h-screen flex items-center justify-center">
+          <FAQ isActive={currentIndex === 5} />
+        </section>
+        <section className="snap-start h-screen flex items-center justify-center">
+          <ContactUs isActive={currentIndex === 6} />
+        </section>
       </div>
     </div>
   );
