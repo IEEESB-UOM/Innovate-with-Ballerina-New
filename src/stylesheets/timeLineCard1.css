@@ -1,5 +1,5 @@
 .time-line-card {
-    width: 420px;
+    width: 90%;
     height: 160px;
     flex-shrink: 0;
     border-radius: 20px;
@@ -10,14 +10,11 @@
     justify-content: center;
     position: relative;
     font-family: 'Space Grotesk', sans-serif;
-    overflow: hidden; /* Ensure content is clipped within the card */
+    overflow: hidden;
     
   }
   
   
-    
-    
-   /* Default styles for laptops and larger screens */
   .time-line-card .month {
     position: absolute;
     top: -5px;
@@ -64,22 +61,26 @@
   
   /* Media query for smaller screens */
   @media (max-width: 1023px) {
-    .time-line-card .date {
-        font-size: 12px; /* Reduce font size for smaller screens */
-        top: -15%; /* Adjust positioning for smaller screens */
-        right: 33%; /* Adjust positioning for smaller screens */
+    .time-line-card .day {
+        font-size: 96px; /* Reduce font size for smaller screens */
+        margin-top: 0px; 
     }
   
-    .time-line-card .day {
-        font-size: 110px; /* Reduce font size for smaller screens */
-        margin-top: 20px; /* Adjust margin-top for smaller screens */
-        margin-right: -10px; /* Adjust margin-right for smaller screens */
+    .time-line-card .month {
+        font-size:20px; /* Reduce font size for smaller screens */
+        margin-top: 45px; /* Adjust margin-top for smaller screens */
+        margin-right: 10px; /* Adjust margin-right for smaller screens */
     }
   
     .time-line-card .text {
-        font-size: 20px; /* Reduce font size for smaller screens */
-        margin-left: 8px; /* Adjust margins for smaller screens */
-        margin-right: 30px; /* Adjust margins for smaller screens */
+        font-size: 24px; /* Reduce font size for smaller screens */
+        margin-left: 15px; /* Adjust margins for smaller screens */
+        margin-right: 60px; /* Adjust margins for smaller screens */
+    }
+    .time-line-card {
+      padding: px;
+      margin: 0px;
+      height: 130px;
     }
   }
   
