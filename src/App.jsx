@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
-import Hero from './components/Hero';
-import About from './components/About';
-import Prizes from './components/Prizes';
-import Timeline from './components/Timeline';
-import RegisterNow from './components/RegisterNow';
-import FAQ from './components/FAQ';
-import ContactUs from './components/ContactUs';
-import NavigationDots from './components/NavigationDots';
-import GradientBorderButton from './components/common/GradientBorderButton';
+import { useEffect, useRef, useState } from "react";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Prizes from "./components/Prizes";
+import Timeline from "./components/Timeline";
+import RegisterNow from "./components/RegisterNow";
+import FAQ from "./components/FAQ";
+import ContactUs from "./components/ContactUs";
+import NavigationDots from "./components/NavigationDots";
+import GradientBorderButton from "./components/common/GradientBorderButton";
 
 function App() {
   const containerRef = useRef(null);
@@ -41,19 +41,19 @@ function App() {
     };
 
     const onKeyDown = (e) => {
-      if (e.key === 'ArrowDown') {
+      if (e.key === "ArrowDown") {
         handleScroll(1);
-      } else if (e.key === 'ArrowUp') {
+      } else if (e.key === "ArrowUp") {
         handleScroll(-1);
       }
     };
 
-    container.addEventListener('wheel', onWheel, { passive: false });
-    window.addEventListener('keydown', onKeyDown);
+    container.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("keydown", onKeyDown);
 
     return () => {
-      container.removeEventListener('wheel', onWheel);
-      window.removeEventListener('keydown', onKeyDown);
+      container.removeEventListener("wheel", onWheel);
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [numSections]);
 
@@ -62,14 +62,18 @@ function App() {
     const targetY = currentIndex * window.innerHeight;
     container.scrollTo({
       top: targetY,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, [currentIndex]);
 
   return (
     <div className="relative font-space-grotesk">
       <div className="fixed top-8 left-8 z-50">
-        <img src="./ballerina_icon.svg" alt="Ballerina Icon" className="w-auto" />
+        <img
+          src="./ballerina_icon.svg"
+          alt="Ballerina Icon"
+          className="w-auto"
+        />
       </div>
       <div className="fixed top-9 right-8 z-50">
         <GradientBorderButton onClick={() => setCurrentIndex(4)}>
@@ -80,25 +84,26 @@ function App() {
         ref={containerRef}
         className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
       >
-        <NavigationDots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} numSections={numSections} />        <section className="h-screen flex items-center justify-center">
+        <NavigationDots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} numSections={numSections} />
+        <section className="snap-start h-screen flex items-center justify-center">
           <Hero isActive={currentIndex === 0} />
         </section>
-        <section className="h-screen flex items-center justify-center">
+        <section className="snap-start h-screen flex items-center justify-center">
           <About isActive={currentIndex === 1} />
         </section>
-        <section className="h-screen flex items-center justify-center">
+        <section className="snap-start h-screen flex items-center justify-center">
           <Prizes isActive={currentIndex === 2} />
         </section>
-        <section className="h-screen flex items-center justify-center">
+        <section className="snap-start h-screen flex items-center justify-center">
           <Timeline isActive={currentIndex === 3} />
         </section>
-        <section className="h-screen flex items-center justify-center">
+        <section className="snap-start h-screen flex items-center justify-center">
           <RegisterNow isActive={currentIndex === 4} />
         </section>
-        <section className="h-screen flex items-center justify-center">
+        <section className="snap-start h-screen flex items-center justify-center">
           <FAQ isActive={currentIndex === 5} />
         </section>
-        <section className="h-screen flex items-center justify-center">
+        <section className="snap-start h-screen flex items-center justify-center">
           <ContactUs isActive={currentIndex === 6} />
         </section>
       </div>
