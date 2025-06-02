@@ -98,17 +98,17 @@ function App() {
         <section className="snap-start h-screen flex items-center justify-center">
           <Timeline isActive={currentIndex === 3} />
         </section>
-        <section className="h-screen flex items-center justify-center">
-          <Timeline2 isActive={currentIndex === 3} />
+        <section className="snap-start h-screen flex items-center justify-center">
+          <Timeline2 isActive={currentIndex === 4} />
         </section>
         <section className="snap-start h-screen flex items-center justify-center">
-          <RegisterNow isActive={currentIndex === 4} />
+          <RegisterNow isActive={currentIndex === 5} />
         </section>
         <section className="snap-start h-screen flex items-center justify-center">
-          <FAQ isActive={currentIndex === 5} />
+          <FAQ isActive={currentIndex === 6} />
         </section>
         <section className="snap-start h-screen flex items-center justify-center">
-          <ContactUs isActive={currentIndex === 6} />
+          <ContactUs isActive={currentIndex === 7} />
         </section>
       </div>
     </div>
