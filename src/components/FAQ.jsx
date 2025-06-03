@@ -6,8 +6,6 @@ import topleft from "../assets/FAQ/top_left.png"
 import bottomleft from "../assets/FAQ/bottom_left.png"
 import spiral from "../assets/FAQ/spiral.png"
 import flower from "../assets/FAQ/flower.png"
-import star1 from "../assets/ContactUs/star1.png"
-import star2 from "../assets/ContactUs/star2.png"
 
 const FAQ = () => {
   const [openItems, setOpenItems] = useState([])
@@ -127,20 +125,6 @@ const FAQ = () => {
         alt="Flower decoration"
         className="absolute right-8 bottom-0 object-contain opacity-80 lg:hidden z-10 animate-spin-slow"
         style={{ height: "5rem", bottom: "-1.2rem" }}
-      />
-
-      {/* Star images */}
-      <img
-        src={star1}
-        alt="Star 1 decoration"
-        className="absolute w-full h-full object-contain z-10 animate-vanish-mobile lg:animate-vanish"
-        style={{ animationDelay: "1s", scale: isMobile ? "1" : "0.5", top: "-2rem", left: "1rem" }}
-      />
-      <img
-        src={star2}
-        alt="Star 2 decoration"
-        className="absolute w-full h-full object-contain z-10 animate-vanish-mobile lg:animate-vanish"
-        style={{ animationDelay: "2s", scale: isMobile ? "1" : "0.6", top: "3rem", left: "-2rem" }}
       />
 
 
