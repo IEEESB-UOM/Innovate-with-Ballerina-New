@@ -90,8 +90,8 @@ const About = () => {
         });
       },
       {
-        threshold: 0.1, // Trigger when 10% of the component is visible
-        rootMargin: '50px 0px' // Start animation 50px before component comes into view
+        threshold: 0.1, 
+        rootMargin: '50px 0px' 
       }
     );
 
@@ -105,7 +105,7 @@ const About = () => {
         observer.unobserve(currentSectionRef);
       }
     };
-  }, [animationCompleted]);// Animation effects
+  }, [animationCompleted]);
   useEffect(() => {
     // Small delay to ensure elements are rendered
     const timer = setTimeout(() => {
@@ -184,11 +184,11 @@ const About = () => {
     const getTypingSpeed = (char, isCommand = false) => {
       if (isCommand) {
         // Faster typing for commands
-        if (char === ' ') return 150; // Pause at spaces
-        if (char === '.') return 200; // Pause at periods
-        return Math.random() * 40 + 60; // 60-100ms range
+        if (char === ' ') return 150; 
+        if (char === '.') return 200; 
+        return Math.random() * 40 + 60; 
       }
-      return Math.random() * 30 + 20; // 20-50ms for regular text
+      return Math.random() * 30 + 20; 
     };
 
     const typeTerminal = () => {
@@ -230,10 +230,10 @@ const About = () => {
             const dotsAnimation = '.'.repeat(dotCount);
             setLoadingDots(dotsAnimation);
             
-            if (cycleCount >= 12) { // 3 full cycles of 4 dots each
-              // After 3 full cycles, show the actual loading content
+            if (cycleCount >= 12) { 
+              
               timeoutId = setTimeout(() => {
-                // Remove the "Loading..." text and replace with compilation output
+               
                 const loadingIndex = currentText.lastIndexOf('Loading');
                 if (loadingIndex !== -1) {
                   currentText = currentText.substring(0, loadingIndex);
@@ -291,7 +291,7 @@ const About = () => {
         setTypedText(currentText);
         commandIndex++;
         charIndex = 0;
-        timeoutId = setTimeout(typeTerminal, 500); // Realistic pause before execution
+        timeoutId = setTimeout(typeTerminal, 500); 
       }
     };
 
