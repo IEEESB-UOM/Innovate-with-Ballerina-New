@@ -6,11 +6,11 @@ const Prizes = ({ isActive }) => {
 
   useEffect(() => {
     if (isActive && componentRef.current) {
-      const ctx = gsap.context(() => {
-        const images = componentRef.current.querySelectorAll('img');
+      const ctx = gsap.context(() => {        const images = componentRef.current.querySelectorAll('img');
         const spiralVector = componentRef.current.querySelector('img[src="/spiral_Vector.svg"]');
         const springVector = componentRef.current.querySelector('img[src="/Spring_Vector.svg"]');
-        const otherImages = Array.from(images).filter(img => img !== spiralVector && img !== springVector);
+        const arrowVectors = componentRef.current.querySelectorAll('img[src="/Arrow_Vector.png"]');
+        const otherImages = Array.from(images).filter(img => img !== spiralVector && img !== springVector && ![...arrowVectors].includes(img));
 
         if (images.length > 0) {
           // Reset all images to initial state first
@@ -67,9 +67,7 @@ const Prizes = ({ isActive }) => {
                 });
               }
             });
-          }
-
-          // Animate other images with popup effect
+          }          // Animate other images with popup effect
           if (otherImages.length > 0) {
             gsap.to(otherImages, {
               scale: 1,
@@ -86,6 +84,55 @@ const Prizes = ({ isActive }) => {
                   }
                 });
               }
+            });
+          }
+
+          // Animate arrow vectors with pointing animation
+          if (arrowVectors.length > 0) {
+          
+            gsap.set(arrowVectors, {
+              scale: 1,
+              opacity: 0
+            });
+
+            // Fade in arrow vectors
+            gsap.to(arrowVectors, {
+              opacity: 1,
+              duration: 0.4,
+              ease: 'power3.out',
+              delay: 0.5
+            });
+
+           
+            gsap.delayedCall(1.5, () => {
+              arrowVectors.forEach(arrow => {
+              
+                gsap.timeline({ repeat: -1, repeatDelay: 2 })
+                  .to(arrow, {
+                    x: 10,
+                    scale: 1.2,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                  })
+                  .to(arrow, {
+                    x: 0,
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                  })
+                  .to(arrow, {
+                    x: 10,
+                    scale: 1.1,
+                    duration: 0.2,
+                    ease: 'power2.out'
+                  })
+                  .to(arrow, {
+                    x: 0,
+                    scale: 1,
+                    duration: 0.2,
+                    ease: 'power2.out'
+                  });
+              });
             });
           }
         }
