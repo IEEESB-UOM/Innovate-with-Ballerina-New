@@ -12,36 +12,28 @@ const FAQ = () => {
 
   const faqData = [
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "How many people can be there in a team?",
+      answer: "A team can consist of 3-4 participants.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "Can a team consist of participants from different universities?",
+      answer: "No, All participants must be currently enrolled undergraduates from the same university or institution.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "Can we change our team members after registration close?",
+      answer: "No, After the registration period, teams won’t be able to change their members. But can make changes of the team content within registration period.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: 'Does "Innovate With Ballerina" require any prior coding skills to participate in?',
+      answer: "While prior coding experience can be advantageous, it's not a requirement. Because we'll conduct 3 workshops which'll help you to get a fundamental knowledge about coding and about Ballerina language.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "Will I get a certificate of participation?",
+      answer: "Yes, all participants who have submitted their GitHub repositories  will receive certificates as recognition of their participation and contribution to the event.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
-    },
-    {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
-    },
-    {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "Do the participants need to attend physically?",
+      answer: "No, All workshops and submission procedure will be in online mode.",
     },
   ]
 
