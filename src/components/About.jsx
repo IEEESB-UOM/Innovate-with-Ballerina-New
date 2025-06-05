@@ -33,9 +33,7 @@ const About = () => {
   const [isDesktop, setIsDesktop] = useState(false);
   const [animationCompleted, setAnimationCompleted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [currentlyTyping, setCurrentlyTyping] = useState(false);
-  const [loadingDots, setLoadingDots] = useState('');
-  const [terminalFlash, setTerminalFlash] = useState(false);
+  const [currentlyTyping, setCurrentlyTyping] = useState(false);  const [loadingDots, setLoadingDots] = useState('');
 
   // Terminal commands and responses for realistic terminal behavior
   const terminalCommands = useMemo(() => [
@@ -268,14 +266,9 @@ const About = () => {
           return;
         }
       }
-      
-      if (currentCommand.type === 'command' && charIndex < currentCommand.content.length) {
+        if (currentCommand.type === 'command' && charIndex < currentCommand.content.length) {
         // Type command character by character with realistic speed
         setCurrentlyTyping(true);
-        
-        // Add flash effect for typing feedback
-        setTerminalFlash(true);
-        setTimeout(() => setTerminalFlash(false), 50);
         
         currentText += currentCommand.content[charIndex];
         setTypedText(currentText);
@@ -393,12 +386,9 @@ const About = () => {
         ref={aboutVectorRef}
         src="./about_Vector.png" 
         alt="Background Star"
-        className="absolute -bottom-15 -left-15 w-36 h-72 sm:w-20 sm:h-20 md:w-44 md:h-[550px] md:bottom-24 md:left-0 opacity-80 z-0"      />      {/* Terminal Window main container */}
-      <div 
+        className="absolute -bottom-15 -left-15 w-36 h-72 sm:w-20 sm:h-20 md:w-44 md:h-[550px] md:bottom-24 md:left-0 opacity-80 z-0"      />      {/* Terminal Window main container */}      <div 
         ref={terminalRef} 
-        className={`w-full md:w-full max-w-5xl overflow-hidden relative z-10 h-[530px] md:h-[550px] transition-all duration-75 ${
-          terminalFlash ? 'brightness-110' : ''
-        }`} 
+        className="w-full md:w-full max-w-5xl overflow-hidden relative z-10 h-[530px] md:h-[550px]" 
         style={{
           background: 'rgba(255, 255, 255, 0.19)',
           borderRadius: '16px',
@@ -496,7 +486,8 @@ const About = () => {
                                                                                                                                                                                                                                                                                   
                                                                                                                                                                                                                                                                                   `}
             </pre>          </div>{/* Mobile Terminal Text Content with Typing Animation */}
-          <div className="text-[14px] h-full font-mono rounded p-1.5">            <div className="whitespace-pre-line min-h-[140px]">
+          <div className="text-[14px] h-full font-mono rounded p-1.5">            
+            <div className="whitespace-pre-line min-h-[140px]">
               {renderTerminalText(typedText)}
               {!animationCompleted && (
                 <span 
@@ -509,8 +500,9 @@ const About = () => {
               )}
             </div>
           </div>
-        </div>        {/* Desktop Layout - Reduced Padding */}
-        <div className="hidden md:block px-2 py-1 text-white">          {/* ASCII Art Logo Section - Desktop */}
+        </div>        {/* Desktop Layout */}
+        <div className="hidden md:block px-2 py-1 text-white">        
+            {/* ASCII Art Logo Section - Desktop */}
           <div className="text-left mb-1 sm:mb-2">
             <pre 
               ref={logoRef}
@@ -576,7 +568,7 @@ const About = () => {
                                                                                                                                                                                                                                                                                
                                                                                                                                                                                                                                                                                `}
             </pre>
-          </div>          {/* Desktop Text Content Section with Typing Animation - Reduced Padding */}
+          </div>          {/* Desktop Text Content Section with Typing Animation  */}
           <div className="text-sm sm:text-sm md:text-base font-mono rounded p-2 min-h-[180px]">           
              <div className="whitespace-pre-line">
               {renderTerminalText(typedText)}
