@@ -3,23 +3,23 @@ import { gsap } from 'gsap';
 
 const About = () => {
   const Bold = ({ children }) => <strong className="font-semibold text-white">{children}</strong>;
-  
+
   // Function to format date for terminal login message
   const formatLoginDate = () => {
     const now = new Date();
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    
+
     const dayName = days[now.getDay()];
     const monthName = months[now.getMonth()];
     const date = now.getDate().toString().padStart(2, ' ');
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const seconds = now.getSeconds().toString().padStart(2, '0');
-    
+
     return `${dayName} ${monthName} ${date} ${hours}:${minutes}:${seconds}`;
   };
-  
+
   // Refs for animations
   const vectorRef = useRef(null);
   const aboutVectorRef = useRef(null);
@@ -27,19 +27,19 @@ const About = () => {
   const logoMobileRef = useRef(null);
   const terminalRef = useRef(null);
   const sectionRef = useRef(null);
-  
+
   // State for typing animation
   const [typedText, setTypedText] = useState('');
   const [isDesktop, setIsDesktop] = useState(false);
   const [animationCompleted, setAnimationCompleted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [currentlyTyping, setCurrentlyTyping] = useState(false);  const [loadingDots, setLoadingDots] = useState('');
+  const [currentlyTyping, setCurrentlyTyping] = useState(false); const [loadingDots, setLoadingDots] = useState('');
 
   // Terminal commands and responses for realistic terminal behavior
   const terminalCommands = useMemo(() => [
     {
       type: 'init',
-      content: isDesktop 
+      content: isDesktop
         ? `Last login: ${formatLoginDate()} on ttys000\n`
         : ""
     },
@@ -54,7 +54,7 @@ const About = () => {
     },
     {
       type: 'loading',
-      content: "Compiling source\n\t'iwb_25.bal'\n\nRunning executable",
+      content: "Compiling source 'iwb_25.bal'\nRunning executable",
       delay: 1200
     },
     {
@@ -72,7 +72,7 @@ const About = () => {
     const checkDesktop = () => {
       setIsDesktop(window.innerWidth >= 768);
     };
-    
+
     checkDesktop();
     window.addEventListener('resize', checkDesktop);
     return () => window.removeEventListener('resize', checkDesktop);
@@ -88,8 +88,8 @@ const About = () => {
         });
       },
       {
-        threshold: 0.1, 
-        rootMargin: '50px 0px' 
+        threshold: 0.1,
+        rootMargin: '50px 0px'
       }
     );
 
@@ -108,11 +108,11 @@ const About = () => {
     // Small delay to ensure elements are rendered
     const timer = setTimeout(() => {
       const elements = [vectorRef.current, aboutVectorRef.current, logoRef.current, logoMobileRef.current].filter(Boolean);
-      
+
       if (elements.length === 0) return;
 
       const tl = gsap.timeline();
-      
+
       gsap.set(elements, {
         opacity: 0,
         scale: 0,
@@ -182,11 +182,11 @@ const About = () => {
     const getTypingSpeed = (char, isCommand = false) => {
       if (isCommand) {
         // Faster typing for commands
-        if (char === ' ') return 150; 
-        if (char === '.') return 200; 
-        return Math.random() * 40 + 60; 
+        if (char === ' ') return 150;
+        if (char === '.') return 200;
+        return Math.random() * 40 + 60;
       }
-      return Math.random() * 30 + 20; 
+      return Math.random() * 30 + 20;
     };
 
     const typeTerminal = () => {
@@ -195,9 +195,9 @@ const About = () => {
         setCurrentlyTyping(false);
         return;
       }
-      
+
       const currentCommand = terminalCommands[commandIndex];
-      
+
       if (charIndex === 0) {
         // Starting new command/output
         if (currentCommand.type === 'init') {
@@ -220,18 +220,18 @@ const About = () => {
           // Display loading with animated dots
           setCurrentlyTyping(true);
           let cycleCount = 0;
-          
+
           // Animate loading dots
           const animateLoadingDots = () => {
             cycleCount++;
             const dotCount = (cycleCount % 4);
             const dotsAnimation = '.'.repeat(dotCount);
             setLoadingDots(dotsAnimation);
-            
-            if (cycleCount >= 12) { 
-              
+
+            if (cycleCount >= 8) {
+
               timeoutId = setTimeout(() => {
-               
+
                 const loadingIndex = currentText.lastIndexOf('Loading');
                 if (loadingIndex !== -1) {
                   currentText = currentText.substring(0, loadingIndex);
@@ -248,15 +248,16 @@ const About = () => {
             }
             timeoutId = setTimeout(animateLoadingDots, 300);
           };
-          
+
           // Show loading message immediately
           currentText += 'Loading';
           setTypedText(currentText);
-          
+
           timeoutId = setTimeout(() => {
             animateLoadingDots();
           }, 400);
-          return;        } else if (currentCommand.type === 'output') {
+          return;
+        } else if (currentCommand.type === 'output') {
           // Show output instantly without typing effect
           currentText += currentCommand.content + '\n\n';
           setTypedText(currentText);
@@ -266,14 +267,14 @@ const About = () => {
           return;
         }
       }
-        if (currentCommand.type === 'command' && charIndex < currentCommand.content.length) {
+      if (currentCommand.type === 'command' && charIndex < currentCommand.content.length) {
         // Type command character by character with realistic speed
         setCurrentlyTyping(true);
-        
+
         currentText += currentCommand.content[charIndex];
         setTypedText(currentText);
         charIndex++;
-        
+
         const char = currentCommand.content[charIndex - 1];
         const typingSpeed = getTypingSpeed(char, true);
         timeoutId = setTimeout(typeTerminal, typingSpeed);
@@ -284,7 +285,7 @@ const About = () => {
         setTypedText(currentText);
         commandIndex++;
         charIndex = 0;
-        timeoutId = setTimeout(typeTerminal, 500); 
+        timeoutId = setTimeout(typeTerminal, 500);
       }
     };
 
@@ -305,7 +306,7 @@ const About = () => {
         clearTimeout(timeoutId);
       }
     };
-  }, [terminalCommands, animationCompleted, isVisible]);const renderTerminalText = (text) => {
+  }, [terminalCommands, animationCompleted, isVisible]); const renderTerminalText = (text) => {
     const lines = text.split('\n');
     return lines.map((line, lineIndex) => {
       // Handle login info
@@ -316,17 +317,17 @@ const About = () => {
           </div>
         );
       }
-      
+
       // Handle command prompts
       if (line.startsWith('user@MacBook-Pro ~ %')) {
         const promptPart = 'user@MacBook-Pro ~ %';
         const commandPart = line.substring(promptPart.length).trim();
-        
+
         return (
           <div key={lineIndex} className="font-mono flex items-start animate-slideInLeft">
-            <span className="text-green-400 font-bold">{promptPart}</span>
+            <span className="text-green-400 font-bold text-sm">{promptPart}</span>
             {commandPart && (
-              <span className="ml-2 text-white">{commandPart}</span>
+              <span className="ml-2 text-white text-sm">{commandPart}</span>
             )}
           </div>
         );
@@ -338,7 +339,7 @@ const About = () => {
           </div>
         );
       }
-      
+
       // Handle loading state with dots
       if (line.includes('Loading')) {
         return (
@@ -347,7 +348,7 @@ const About = () => {
           </div>
         );
       }
-      
+
       // Handle regular output text (long paragraphs)
       if (line.trim() && line.length > 50) {
         return (
@@ -356,7 +357,7 @@ const About = () => {
           </div>
         );
       }
-      
+
       // Handle regular output text (short lines)
       if (line.trim()) {
         return (
@@ -365,15 +366,15 @@ const About = () => {
           </div>
         );
       }
-      
+
       // Handle empty lines
       return <div key={lineIndex} className="h-4"></div>;
     });
   };
   return (
-    <div ref={sectionRef} className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41] snap-start h-screen w-full flex items-end md:items-center justify-center p-4 pb-15 md:pb-4 font-sans relative">
+    <div ref={sectionRef} className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41] snap-start h-screen w-full flex items-center md:items-center justify-center p-4 pb-15 md:pb-4 font-sans relative">
       {/* Background Vector - Left Bottom */}
-      <img 
+      <img
         ref={vectorRef}
         src="/Vector.svg"
         alt="Background Vector"
@@ -384,11 +385,13 @@ const About = () => {
       {/* Background Vector - Top Left Corner */}
       <img
         ref={aboutVectorRef}
-        src="./about_Vector.png" 
+        src="./about_Vector.png"
         alt="Background Star"
-        className="absolute -bottom-15 -left-15 w-36 h-72 sm:w-20 sm:h-20 md:w-44 md:h-[550px] md:bottom-24 md:left-0 opacity-80 z-0"      />      {/* Terminal Window main container */}      <div 
-        ref={terminalRef} 
-        className="w-full md:w-full max-w-5xl overflow-hidden relative z-10 h-[530px] md:h-[550px]" 
+        className="absolute -bottom-15 -left-15 w-36 h-72 sm:w-20 sm:h-20 md:w-44 md:h-[550px] md:bottom-24 md:left-0 opacity-80 z-0" />
+      {/* Terminal Window main container */}
+      <div
+        ref={terminalRef}
+        className="w-full md:w-full max-w-5xl overflow-hidden relative z-10 h-[530px] md:h-[550px]"
         style={{
           background: 'rgba(255, 255, 255, 0.19)',
           borderRadius: '16px',
@@ -409,12 +412,12 @@ const About = () => {
             <div className="w-3 h-3 bg-yellow-400 rounded-full shadow-sm hover:bg-yellow-500 transition-colors cursor-pointer"></div>
             <div className="w-3 h-3 bg-green-400 rounded-full shadow-sm hover:bg-green-500 transition-colors cursor-pointer"></div>
           </div>
-            {/* Center - Terminal title */}
+          {/* Center - Terminal title */}
           <div className="text-white/90 text-xs font-medium tracking-wide flex items-center">
             <span className="text-gray-300 mr-2">●</span>
             <span>Terminal</span>
           </div>
-          
+
           {/* Right side - Empty space for balance */}
           <div className="w-12"></div>
         </div>
@@ -422,12 +425,12 @@ const About = () => {
         {/* Content Area - Different layouts for mobile vs desktop */}        {/* Mobile Layout */}
         <div className="block md:hidden px-1 py-1 text-white h-full">{/* ASCII Art Logo Section - Mobile */}
           <div className="text-left mb-1">
-            <pre 
+            <pre
               ref={logoMobileRef}
               className="text-gray-300 font-mono whitespace-pre overflow-x-auto overflow-y-hidden w-full drop-shadow-lg"
               style={{ fontSize: '1px', lineHeight: '1px', maxWidth: '100%' }}
             >
-{`                                                                                                                                                                                                                                                                                               
+              {`                                                                                                                                                                                                                                                                                               
                                                                                                                                                                                                                                                                                   
                                                                                                                                                                                                                                                                                   
                                                                                                                                                                                                                                                                                   
@@ -486,14 +489,13 @@ const About = () => {
                                                                                                                                                                                                                                                                                   
                                                                                                                                                                                                                                                                                   `}
             </pre>          </div>{/* Mobile Terminal Text Content with Typing Animation */}
-          <div className="text-[14px] h-full font-mono rounded p-1.5">            
+          <div className="text-[14px] h-full font-mono rounded p-1.5">
             <div className="whitespace-pre-line min-h-[140px]">
               {renderTerminalText(typedText)}
               {!animationCompleted && (
-                <span 
-                  className={`ml-1 font-bold text-green-400 transition-all duration-150 ${
-                    currentlyTyping ? 'opacity-100 animate-none' : 'cursor-blink'
-                  }`}
+                <span
+                  className={`ml-1 font-bold text-green-400 transition-all duration-150 ${currentlyTyping ? 'opacity-100 animate-none' : 'cursor-blink'
+                    }`}
                 >
                   █
                 </span>
@@ -501,15 +503,15 @@ const About = () => {
             </div>
           </div>
         </div>        {/* Desktop Layout */}
-        <div className="hidden md:block px-2 py-1 text-white">        
-            {/* ASCII Art Logo Section - Desktop */}
+        <div className="hidden md:block px-2 py-1 text-white">
+          {/* ASCII Art Logo Section - Desktop */}
           <div className="text-left mb-1 sm:mb-2">
-            <pre 
+            <pre
               ref={logoRef}
               className="text-gray-400 font-mono whitespace-pre overflow-x-auto overflow-y-hidden w-full drop-shadow-lg"
               style={{ fontSize: '2px', lineHeight: '2px', maxWidth: '100%', textAlign: 'left', paddingLeft: '0' }}
             >
-{`                                                                                                                                                                                                                                                                                             
+              {`                                                                                                                                                                                                                                                                                             
                                                                                                                                                                                                                                                                                
                                                                                                                                                                                                                                                                                
                                                                                                                                                                                                                                                                                
@@ -569,14 +571,13 @@ const About = () => {
                                                                                                                                                                                                                                                                                `}
             </pre>
           </div>          {/* Desktop Text Content Section with Typing Animation  */}
-          <div className="text-sm sm:text-sm md:text-base font-mono rounded p-2 min-h-[180px]">           
-             <div className="whitespace-pre-line">
+          <div className="text-sm sm:text-sm md:text-base font-mono rounded p-2 min-h-[180px]">
+            <div className="whitespace-pre-line">
               {renderTerminalText(typedText)}
               {!animationCompleted && (
-                <span 
-                  className={`ml-1 font-bold text-green-400 transition-all duration-150 ${
-                    currentlyTyping ? 'opacity-100 animate-none' : 'cursor-blink'
-                  }`}
+                <span
+                  className={`ml-1 font-bold text-green-400 transition-all duration-150 ${currentlyTyping ? 'opacity-100 animate-none' : 'cursor-blink'
+                    }`}
                 >
                   █
                 </span>

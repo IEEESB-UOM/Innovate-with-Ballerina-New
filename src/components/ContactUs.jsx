@@ -112,18 +112,6 @@ const ContactUs = () => {
         }}
       ></div>
 
-      {/* Grid lines */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #277E57 1px, transparent 1px), linear-gradient(to bottom, #277E57 1px, transparent 1px)",
-            backgroundSize: "100px 100px",
-          }}
-        ></div>
-      </div>
-
       {/* Decorative elements */}
       {/* Left curved shape */}
       <img
@@ -150,18 +138,18 @@ const ContactUs = () => {
 
       {/* Main content */}
       <div
-        className={`relative z-10 h-full flex flex-col items-center justify-center px-4 md:px-8 py-8 lg:overflow-y-auto ${isMobile ? "overflow-y-auto w-full" : ""
+        className={`relative z-10 h-full flex flex-col items-center justify-center px-4 md:px-8 py-8 lg:overflow-y-auto ${isMobile ? "overflow-y-auto w-full pb-0" : ""
           }`}
         style={isMobile ? { maxHeight: "100vh" } : {}}
       >
         {/* Contact Us Title */}
-        {isMobile ? null : (
+        {/* {isMobile ? null : ( */}
           <h2
             className=" absolute top-25 text-center pt-8 lg:pt-0"
             style={{
-              fontSize: isMobile ? "1.8rem" : "2.8rem",
+              fontSize: isMobile ? "2.4rem" : "2.8rem",
               fontWeight: "bold",
-              top: isMobile ? "3rem" : "5rem",
+              top: isMobile ? "6rem" : "6rem",
               display: "inline-block",
               color: "transparent",
               backgroundClip: "text",
@@ -172,25 +160,36 @@ const ContactUs = () => {
             }}
           >
             Contact Us
-          </h2>)}
+          </h2>
+        {/* )} */}
 
         {/* Contact Cards Container */}
         <div className="w-full">
           {isMobile ? (
             // Mobile layout - single column
-            <div className="flex flex-col gap-20 items-center mt-528 lg:mt-50">
+            <div className="flex flex-col gap-20 items-center mt-520 lg:mt-50">
               {contacts.map((person, index) => (
                 <ContactCard key={person.id} person={person} isMobile={true} index={index} />
               ))}
-              {logos.map((logo, index) => (
-                <div key={index} className="md:h-12 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <div className="flex flex-col gap-10 items-center justify-center">
+                {logos.map((logo, index) => (
+                  <div key={index} className="w-3/4 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                    <img
+                      src={logo.logo || "/placeholder.svg"}
+                      alt={logo.name}
+                      className="w-full h-full pl-15 pr-15 object-contain hover:scale-110 duration-300"
+                    />
+                  </div>
+                ))}
+                <div className="relative w-full h-40">
+                  {/* Grid background image */}
                   <img
-                    src={logo.logo || "/placeholder.svg"}
-                    alt={logo.name}
-                    className="w-full h-full pl-15 pr-15 object-contain hover:scale-110 duration-300"
+                    src={grid}
+                    alt="Grid background decoration"
+                    className="absolute w-full object-contain opacity-80 z-99 scale-[1.5] bottom-[26px] left-0"
                   />
                 </div>
-              ))}
+              </div>
             </div>
           ) : (
             // Desktop layout - two rows
@@ -211,28 +210,20 @@ const ContactUs = () => {
             </div>
           )}
           {isMobile ? (
-            <div className="flex justify-center mt-20">
+            <div className="flex justify-center">
               {/* Star images */}
 
               <img
                 src={left}
                 alt="Left decoration"
                 className="absolute w-full h-full object-contain top-[8rem]"
-                style={{ scale: "0.5", left: "-6rem", zIndex: -1 }}
+                style={{ scale: "0.6", left: "-10rem", zIndex: -1 }}
               />
               <img
                 src={right}
                 alt="Right decoration"
                 className="absolute w-full h-full object-contain top-[54rem]"
-                style={{ scale: "0.3", right: "-8rem", zIndex: -1 }}
-              />
-
-              {/* Grid background image */}
-              <img
-                src={grid}
-                alt="Grid background decoration"
-                className="absolute w-full object-contain opacity-80 z-10"
-                style={{ height: "11rem", scale: "1.9", top: "115rem", left: "0", zIndex: -1 }}
+                style={{ scale: "0.4", right: "-10rem", zIndex: -1 }}
               />
             </div>
           ) : null}

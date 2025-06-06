@@ -20,7 +20,7 @@ const Timeline = () => {
         {/* Timeline Card */}
         <div className="md:absolute md:left-[185px] md:top-[180px] md:w-auto w-4/5 mx-auto mt-[150px] md:mt-0">
           
-          <TimeLineCard text={"Registrations Open"} month={"June"} day={"15"} />
+          <TimeLineCard text={"Registrations Opening"} month={"May"} day={"19"} />
 
         {/* Line 1 - Desktop*/}
            <svg
@@ -114,7 +114,7 @@ const Timeline = () => {
         
 
         <div className="md:absolute md:left-[885px] md:top-[387px] w-4/5 mx-auto md:w-auto">
-          <TimeLineCard text={"Registrations Open"} month={"June"} day={"15"} />
+          <TimeLineCard text={"Introductory Session"} month={"June"} day={"4"} />
         </div>
 
         {/* Line 5 - desktop */}
@@ -164,7 +164,7 @@ const Timeline = () => {
         </svg>
 
         <div className="md:absolute md:left-[435px] md:top-[575px] w-4/5 mx-auto md:w-auto">
-          <TimeLineCard text={"Registrations Open"} month={"June"} day={"15"} />
+          <TimeLineCard text={"Workshop 01 & Submission Opening"} month={"July"} day={"08"} />
         </div>
         {/* Mobile Lines */}
         <svg

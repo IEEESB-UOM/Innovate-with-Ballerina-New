@@ -10,7 +10,7 @@ import ContactUs from "./components/ContactUs";
 import NavigationDots from "./components/NavigationDots";
 import GradientBorderButton from "./components/common/GradientBorderButton";
 import ParticleBackground from "./components/ParticleBackground";
-import Gallery from "./components/Gallery";
+import Gallery from "./components/Gallery2";
 
 function App() {
   const containerRef = useRef(null);
@@ -34,7 +34,7 @@ function App() {
 
       setTimeout(() => {
         scrollLock.current = false;
-      }, 1000);
+      }, 1500);
     };
 
     const onWheel = (e) => {
@@ -76,12 +76,15 @@ function App() {
           src="./ballerina_icon.svg"
           alt="Ballerina Icon"
           className="w-auto"
+          onClick={() => setCurrentIndex(0)}
         />
       </div>
       <div className="fixed top-9 right-8 z-50">
-        <GradientBorderButton onClick={() => setCurrentIndex(4)}>
-          REGISTER NOW
-        </GradientBorderButton>
+        {currentIndex !== 5 && (
+          <GradientBorderButton onClick={() => setCurrentIndex(5)}>
+            REGISTER NOW
+          </GradientBorderButton>
+        )}
       </div>
       <div
         ref={containerRef}

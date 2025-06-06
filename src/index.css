@@ -5,6 +5,12 @@
   --font-space-grotesk: "Space Grotesk", sans-serif; 
 }
 
+@layer base {
+  body {
+    background: #0A2324;
+  }
+}
+
 /* Terminal animations for smooth user experience */
 @keyframes fadeIn {
   from { opacity: 0; }
