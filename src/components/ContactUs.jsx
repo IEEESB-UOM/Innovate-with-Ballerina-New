@@ -13,8 +13,6 @@ import ballerina from "../assets/ContactUs/ballerina.png"
 import ieee from "../assets/ContactUs/ieee.png"
 import wso2 from "../assets/ContactUs/wso2.png"
 import ieeecs from "../assets/ContactUs/ieeecs.png"
-import star1 from "../assets/ContactUs/star1.png"
-import star2 from "../assets/ContactUs/star2.png"
 import left from "../assets/ContactUs/left.png"
 import right from "../assets/ContactUs/right.png"
 
@@ -149,19 +147,6 @@ const ContactUs = () => {
         className="absolute bottom-0 w-full object-contain opacity-80 hidden lg:block z-10"
         style={{ height: "11rem", scale: "1.9" }}
       />
-      {/* Star images */}
-      <img
-        src={star1}
-        alt="Star 1 decoration"
-        className="absolute w-full h-full object-contain z-10 hidden animate-vanish-mobile lg:animate-vanish lg:block"
-        style={{ animationDelay: "1s", scale: isMobile ? "1" : "0.5", top: "-2rem", left: "1rem" }}
-      />
-      <img
-        src={star2}
-        alt="Star 2 decoration"
-        className="absolute w-full h-full object-contain z-10 hidden animate-vanish-mobile lg:animate-vanish lg:block"
-        style={{ animationDelay: "2s", scale: isMobile ? "1" : "0.6", top: "3rem", left: "-2rem" }}
-      />
 
       {/* Main content */}
       <div
@@ -228,18 +213,7 @@ const ContactUs = () => {
           {isMobile ? (
             <div className="flex justify-center mt-20">
               {/* Star images */}
-              <img
-                src={star1}
-                alt="Star 1 decoration"
-                className="absolute w-full h-full object-contain animate-vanish-mobile lg:animate-vanish"
-                style={{ animationDelay: "1s", scale: isMobile ? "1" : "0.5", top: "-2rem", left: "1rem", zIndex: -1 }}
-              />
-              <img
-                src={star2}
-                alt="Star 2 decoration"
-                className="absolute w-full h-full object-contain animate-vanish-mobile lg:animate-vanish"
-                style={{ animationDelay: "2s", scale: isMobile ? "1" : "0.6", top: "3rem", left: "-2rem", zIndex: -1 }}
-              />
+
               <img
                 src={left}
                 alt="Left decoration"
@@ -252,18 +226,7 @@ const ContactUs = () => {
                 className="absolute w-full h-full object-contain top-[54rem]"
                 style={{ scale: "0.3", right: "-8rem", zIndex: -1 }}
               />
-              <img
-                src={star1}
-                alt="Star 1 decoration"
-                className="absolute w-full h-full object-contain animate-vanish-mobile lg:animate-vanish"
-                style={{ animationDelay: "1s", scale: isMobile ? "1" : "0.5", top: "80rem", left: "1rem", zIndex: -1 }}
-              />
-              <img
-                src={star2}
-                alt="Star 2 decoration"
-                className="absolute w-full h-full object-contain animate-vanish-mobile lg:animate-vanish"
-                style={{ animationDelay: "2s", scale: isMobile ? "1" : "0.6", top: "83rem", left: "-2rem", zIndex: -1 }}
-              />
+
               {/* Grid background image */}
               <img
                 src={grid}

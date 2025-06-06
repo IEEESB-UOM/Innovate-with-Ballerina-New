@@ -6,44 +6,34 @@ import topleft from "../assets/FAQ/top_left.png"
 import bottomleft from "../assets/FAQ/bottom_left.png"
 import spiral from "../assets/FAQ/spiral.png"
 import flower from "../assets/FAQ/flower.png"
-import star1 from "../assets/ContactUs/star1.png"
-import star2 from "../assets/ContactUs/star2.png"
 
 const FAQ = () => {
   const [openItems, setOpenItems] = useState([])
 
   const faqData = [
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "How many people can be there in a team?",
+      answer: "A team can consist of 3-4 participants.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "Can a team consist of participants from different universities?",
+      answer: "No, All participants must be currently enrolled undergraduates from the same university or institution.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "Can we change our team members after registration close?",
+      answer: "No, After the registration period, teams won’t be able to change their members. But can make changes of the team content within registration period.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: 'Does "Innovate With Ballerina" require any prior coding skills to participate in?',
+      answer: "While prior coding experience can be advantageous, it's not a requirement. Because we'll conduct 3 workshops which'll help you to get a fundamental knowledge about coding and about Ballerina language.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "Will I get a certificate of participation?",
+      answer: "Yes, all participants who have submitted their GitHub repositories  will receive certificates as recognition of their participation and contribution to the event.",
     },
     {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
-    },
-    {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
-    },
-    {
-      question: "Question 1",
-      answer: "This is the answer to question 1. You can replace this with your actual FAQ content.",
+      question: "Do the participants need to attend physically?",
+      answer: "No, All workshops and submission procedure will be in online mode.",
     },
   ]
 
@@ -127,20 +117,6 @@ const FAQ = () => {
         alt="Flower decoration"
         className="absolute right-8 bottom-0 object-contain opacity-80 lg:hidden z-10 animate-spin-slow"
         style={{ height: "5rem", bottom: "-1.2rem" }}
-      />
-
-      {/* Star images */}
-      <img
-        src={star1}
-        alt="Star 1 decoration"
-        className="absolute w-full h-full object-contain z-10 animate-vanish-mobile lg:animate-vanish"
-        style={{ animationDelay: "1s", scale: isMobile ? "1" : "0.5", top: "-2rem", left: "1rem" }}
-      />
-      <img
-        src={star2}
-        alt="Star 2 decoration"
-        className="absolute w-full h-full object-contain z-10 animate-vanish-mobile lg:animate-vanish"
-        style={{ animationDelay: "2s", scale: isMobile ? "1" : "0.6", top: "3rem", left: "-2rem" }}
       />
 
 
