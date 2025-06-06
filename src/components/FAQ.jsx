@@ -98,8 +98,8 @@ const FAQ = () => {
       <img
         src={flower}
         alt="Flower decoration"
-        className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block z-10 animate-spin-slow"
-        style={{ height: "11rem", bottom: "-1.2rem" }}
+        className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block animate-spin-slow"
+        style={{ height: "11rem", bottom: "-1.2rem", zIndex: 0 }}
       />
 
       {/* Mobile decorative elements */}
@@ -115,8 +115,8 @@ const FAQ = () => {
       <img
         src={flower}
         alt="Flower decoration"
-        className="absolute right-8 bottom-0 object-contain opacity-80 lg:hidden z-10 animate-spin-slow"
-        style={{ height: "5rem", bottom: "-1.2rem" }}
+        className="absolute right-8 bottom-0 object-contain opacity-80 lg:hidden z-0 animate-spin-slow"
+        style={{ height: "5rem", bottom: "1.5rem" }}
       />
 
 

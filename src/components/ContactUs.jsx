@@ -112,6 +112,16 @@ const ContactUs = () => {
         }}
       ></div>
 
+      <div
+        className="absolute left-1/2 top-[-40%] -translate-x-1/2 z-0 pointer-events-none"
+        style={{
+          width: "120vw",
+          height: "60vh",
+          background: "radial-gradient(ellipse at center, #277E57 0%, transparent 70%)",
+          opacity: 0.85,
+        }}
+      ></div>
+
       {/* Grid lines */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -349,7 +359,7 @@ const ContactCard = ({
         <div className="bg-white text-slate-900 px-4 py-1 font-medium text-center rounded-sm mt-12 lg:mt-2">{person.name}</div>
 
         {/* Contact Details */}
-        <div className="bg-white/0 lg:backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 hover:bg-white/20 hover:p-4 hover:border-teal-400/50 transition-all duration-300 text-start space-y-1">
+        <div className="bg-white/0 lg:backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 text-start space-y-1">
           <p className="text-white text-sm">{person.title}</p>
           <p className="text-white text-xs">{person.organization}</p>
           <p className="text-gray-300 text-xs">{person.university}</p>
