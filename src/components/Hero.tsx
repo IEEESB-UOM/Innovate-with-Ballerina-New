@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
       ref={heroRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative h-[100svh] w-full overflow-hidden bg-gradient-to-b from-teal-950 to-emerald-950"
+      className="relative h-[100svh] w-full overflow-hidden bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41]"
       style={{
         perspective: "1000px",
       }}
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
           }}
         >
           <motion.div
-            className="w-full h-full max-w-[280px] sm:max-w-xl md:max-w-2xl lg:max-w-3xl"
+            className="w-full h-3/5 max-w-[280px] sm:h-full md:-translate-y-12 sm:max-w-xl md:max-w-2xl lg:max-w-3xl"
             whileHover={{
               scale: 1.05,
               transition: { duration: 0.3 },
@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="absolute inset-0 flex flex-col items-center justify-end text-center z-10 px-4 pb-8 sm:pb-16"
+          className="absolute inset-0 flex flex-col items-center justify-end text-center z-10 px-4 pb-32 sm:pb-28"
           style={{
             translateY: scrollY * -30,
           }}
@@ -155,11 +155,11 @@ const Hero: React.FC = () => {
             <motion.h1
               variants={titleVariants}
               whileHover="hover"
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 cursor-pointer"
+              className="text-4xl text-[2.6rem] md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 cursor-pointer tracking-tight"
             >
               {" "}
               <motion.span
-                className="block bg-gradient-to-r from-[#FBB934] to-[#10C3BD] text-transparent bg-clip-text mb-2"
+                className="block bg-gradient-to-r from-[#FBB934] to-[#10C3BD] text-transparent bg-clip-text"
                 initial={{
                   opacity: 0,
                   y: -50,
@@ -216,24 +216,24 @@ const Hero: React.FC = () => {
                   translateZ: scrollY * (isMobile ? 35 : 75),
                 }}
               >
-                C*ding Challenge
+                C✽ding Challenge
               </motion.span>
             </motion.h1>{" "}
             <motion.p
               variants={taglineVariants}
               whileHover={{ scale: isMobile ? 1.05 : 1.1 }}
               whileTap={{ scale: isMobile ? 0.98 : 0.95 }}
-              className="text-base sm:text-lg md:text-xl text-white/80 tracking-widest mt-2 sm:mt-4 cursor-pointer"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(255,255,255,0.8) 0%, #10C3BD 50%, rgba(255,255,255,0.8) 100%)",
-                backgroundSize: "200% auto",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                translateY: scrollY * -150,
-                translateZ: scrollY * 100,
-                scale: 1 + scrollY * 0.2,
-              }}
+              className="text-base sm:text-lg md:text-xl text-white tracking-widest mt-2 sm:mt-4 cursor-pointer"
+              // style={{
+              //   background:
+              //     "linear-gradient(to right, rgba(255,255,255,0.8) 0%, #10C3BD 50%, rgba(255,255,255,0.8) 100%)",
+              //   backgroundSize: "200% auto",
+              //   WebkitBackgroundClip: "text",
+              //   WebkitTextFillColor: "transparent",
+              //   translateY: scrollY * -150,
+              //   translateZ: scrollY * 100,
+              //   scale: 1 + scrollY * 0.2,
+              // }}
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -243,7 +243,7 @@ const Hero: React.FC = () => {
                 repeat: Infinity,
               }}
             >
-              Let the Ballet Change the Future
+              Code . Compete . Conquer
             </motion.p>
           </motion.div>
         </motion.div>

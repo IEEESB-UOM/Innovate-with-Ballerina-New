@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
 
 interface Particle {
   x: number;
@@ -52,6 +51,10 @@ const ParticleBackground: React.FC = () => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
+        
+        // Apply dynamic friction based on speed
+        particle.speedX *= 0.999;
+        particle.speedY *= 0.999;
 
         particle.x += particle.speedX;
         particle.y += particle.speedY;

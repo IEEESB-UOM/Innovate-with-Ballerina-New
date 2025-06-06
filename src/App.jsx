@@ -10,11 +10,12 @@ import ContactUs from "./components/ContactUs";
 import NavigationDots from "./components/NavigationDots";
 import GradientBorderButton from "./components/common/GradientBorderButton";
 import ParticleBackground from "./components/ParticleBackground";
+import Gallery from "./components/Gallery2";
 
 function App() {
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const numSections = 8;
+  const numSections = 9;
   const scrollLock = useRef(false);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ function App() {
 
       setTimeout(() => {
         scrollLock.current = false;
-      }, 1000);
+      }, 1500);
     };
 
     const onWheel = (e) => {
@@ -75,18 +76,25 @@ function App() {
           src="./ballerina_icon.svg"
           alt="Ballerina Icon"
           className="w-auto"
+          onClick={() => setCurrentIndex(0)}
         />
       </div>
       <div className="fixed top-9 right-8 z-50">
-        <GradientBorderButton onClick={() => setCurrentIndex(4)}>
-          REGISTER NOW
-        </GradientBorderButton>
+        {currentIndex !== 5 && (
+          <GradientBorderButton onClick={() => setCurrentIndex(5)}>
+            REGISTER NOW
+          </GradientBorderButton>
+        )}
       </div>
       <div
         ref={containerRef}
         className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
       >
-        <NavigationDots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} numSections={numSections} />
+        <NavigationDots
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          numSections={numSections}
+        />
         <section className="snap-start h-screen flex items-center justify-center">
           <Hero isActive={currentIndex === 0} />
         </section>
@@ -101,15 +109,18 @@ function App() {
         </section>
         <section className="snap-start h-screen flex items-center justify-center">
           <Timeline2 isActive={currentIndex === 4} />
-        </section>
+        </section>{" "}
         <section className="snap-start h-screen flex items-center justify-center">
           <RegisterNow isActive={currentIndex === 5} />
         </section>
         <section className="snap-start h-screen flex items-center justify-center">
-          <FAQ isActive={currentIndex === 6} />
+          <Gallery isActive={currentIndex === 6} />
         </section>
         <section className="snap-start h-screen flex items-center justify-center">
-          <ContactUs isActive={currentIndex === 7} />
+          <FAQ isActive={currentIndex === 7} />
+        </section>
+        <section className="snap-start h-screen flex items-center justify-center">
+          <ContactUs isActive={currentIndex === 8} />
         </section>
       </div>
       <ParticleBackground />

@@ -38,19 +38,19 @@ const FAQ = () => {
   ]
 
   // Utility hook to detect mobile view
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024
+  // const isMobile = typeof window !== "undefined" && window.innerWidth < 1024
 
   const toggleItem = (index) => {
     setOpenItems((prev) => {
-      if (isMobile) {
-        // In mobile, only one open at a time
-        return prev.includes(index) ? [] : [index]
-      } else {
-        // In desktop, allow multiple open
-        return prev.includes(index)
-          ? prev.filter((item) => item !== index)
-          : [...prev, index]
-      }
+      // if (isMobile) {
+      // In mobile, only one open at a time
+      return prev.includes(index) ? [] : [index]
+      // } else {
+      //   // In desktop, allow multiple open
+      //   return prev.includes(index)
+      //     ? prev.filter((item) => item !== index)
+      //     : [...prev, index]
+      // }
     })
   }
 
@@ -121,7 +121,7 @@ const FAQ = () => {
 
 
       {/* Main content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-10 lg:px-8">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center mx-16 lg:px-8">
         <h2
           className="gradient-text text-left pt-8 w-full lg:text-center lg:pt-0" // Added text-left and w-full for mobile, lg:text-center for desktop
           style={{
@@ -141,7 +141,7 @@ const FAQ = () => {
 
         {/* FAQ Items Container */}
         <div className="w-full max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-4">
+          <div className="flex flex-col gap-4">
             {faqData.map((item, index) => (
               <div key={index} className="w-full animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
                 <div
