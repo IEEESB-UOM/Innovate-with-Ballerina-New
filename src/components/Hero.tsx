@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
       ref={heroRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative h-[100svh] w-full overflow-hidden bg-gradient-to-b from-teal-950 to-emerald-950"
+      className="relative h-[100svh] w-full overflow-hidden bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41]"
       style={{
         perspective: "1000px",
       }}
