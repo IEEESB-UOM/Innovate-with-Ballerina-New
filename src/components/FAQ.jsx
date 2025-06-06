@@ -60,7 +60,7 @@ const FAQ = () => {
       <div className="absolute inset-0 bg-[#0A2324] z-0"></div>
 
       {/* Section 2: Bottom radial ellipse with end color */}
-      <div
+      {/* <div
         className="absolute left-1/2 bottom-[-40%] -translate-x-1/2 z-0 pointer-events-none"
         style={{
           width: "120vw",
@@ -68,7 +68,7 @@ const FAQ = () => {
           background: "radial-gradient(ellipse at center, #277E57 0%, transparent 70%)",
           opacity: 0.85,
         }}
-      ></div>
+      ></div> */}
 
       {/* Top left decorative image */}
       <img

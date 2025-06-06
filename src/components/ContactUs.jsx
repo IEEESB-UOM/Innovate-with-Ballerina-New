@@ -112,7 +112,7 @@ const ContactUs = () => {
         }}
       ></div>
 
-      <div
+      {/* <div
         className="absolute left-1/2 top-[-40%] -translate-x-1/2 z-0 pointer-events-none"
         style={{
           width: "120vw",
@@ -120,7 +120,7 @@ const ContactUs = () => {
           background: "radial-gradient(ellipse at center, #277E57 0%, transparent 70%)",
           opacity: 0.85,
         }}
-      ></div>
+      ></div> */}
 
       {/* Grid lines */}
       <div className="absolute inset-0 opacity-5">
@@ -165,25 +165,27 @@ const ContactUs = () => {
         style={isMobile ? { maxHeight: "100vh" } : {}}
       >
         {/* Contact Us Title */}
-        {/* {isMobile ? null : ( */}
-        <h2
-          className=" absolute top-25 text-center pt-8 lg:pt-0"
-          style={{
-            fontSize: isMobile ? "2.4rem" : "2.8rem",
-            fontWeight: "bold",
-            top: isMobile ? "6rem" : "6rem",
-            display: "inline-block",
-            color: "transparent",
-            backgroundClip: "text",
-            marginBottom: "2rem",
-            letterSpacing: "0.05em",
-            animation: "fade-in 1s ease-in",
-            backgroundImage: "linear-gradient(15deg, #0E9F9B, #8FC18F, #FFB34A)",
-          }}
-        >
-          Contact Us
-        </h2>
-        {/* )} */}
+        {!isMobile && (
+          <h2
+            className="absolute top-25 text-center hidden lg:block pt-8 lg:pt-0"
+            style={{
+              fontSize: "2.8rem",
+              fontWeight: "bold",
+              top: "6rem",
+              display: "inline-block",
+              color: "transparent",
+              backgroundClip: "text",
+              marginBottom: "2rem",
+              letterSpacing: "0.05em",
+              animation: "fade-in 1s ease-in",
+              backgroundImage: "linear-gradient(15deg, #0E9F9B, #8FC18F, #FFB34A)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Contact Us
+          </h2>
+        )}
 
         {/* Contact Cards Container */}
         <div className="w-full">
