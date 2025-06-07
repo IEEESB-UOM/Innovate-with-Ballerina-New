@@ -149,7 +149,7 @@ const Prizes = ({ isActive }) => {
       <img
         src="/spiral_Vector.svg"
         alt="Spiral Vector"
-        className="absolute top-35 sm:top-20 lg:top-15 left-0 w-24 h-24 sm:w-36 sm:h-36 lg:w-50 lg:h-50 opacity-80 z-0"
+        className="absolute top-25 sm:top-20 lg:top-15 left-0 w-24 h-24 sm:w-36 sm:h-36 lg:w-50 lg:h-50 opacity-80 z-0"
       />
       {/* Background Spring Vector - Bottom Right */}
       <img
@@ -165,7 +165,7 @@ const Prizes = ({ isActive }) => {
         />
       </div>        
       {/* Centered Ellipse Background - Mobile and Tablet */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[420px] sm:mt-[380px] z-10 lg:hidden">
+      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[370px] sm:mt-[380px] z-10 lg:hidden">
         <img
           src="/Ellipse 154.png"
           alt="Ellipse Background"
@@ -207,7 +207,7 @@ const Prizes = ({ isActive }) => {
         </div>
       </div>
       {/* Place Awards - Mobile and Tablet - Centered */}
-      <div className="relative left-41 sm:left-1/2 transform -translate-x-1/2 mt-[250px] sm:mt-[200px] z-20 lg:hidden">
+      <div className="relative left-41 sm:left-1/2 transform -translate-x-1/2 mt-[190px] sm:mt-[200px] z-20 lg:hidden">
         <div className="flex justify-center space-x-1 sm:space-x-3">          {/* 2nd Place */}
           <div className="flex flex-col items-center relative mt-8 sm:mt-10">
             <img
@@ -247,16 +247,23 @@ const Prizes = ({ isActive }) => {
           alt="Prizes"
           className="w-32 h-32 sm:w-40 sm:h-40 lg:w-[500px] lg:h-64"
         />
-      </div>
-
-      {/* Prizes Image - Mobile and Tablet Centered */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[310px] sm:mt-[280px] z-20 lg:hidden">
+      </div>      {/* Prizes Image - Mobile and Tablet Centered */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[260px] sm:mt-[280px] z-20 lg:hidden">
         <img
           src="/prizes.png"
           alt="Prizes"
           className="w-72 h-32 sm:w-80 sm:h-36 max-w-none"
         />
-      </div>      {/* Desktop title */}
+      </div>
+
+      {/* Most Popular Text - Mobile Only */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[420px] z-20 block sm:hidden">
+        <p className="text-amber-50 text-sm text-center px-1">
+          <span className="font-semibold">Most Popular:</span> Top 10 teams win <span className="text-amber-300">WSO2 hampers</span> for social media reach.
+        </p>
+      </div>
+
+      {/* Desktop title */}
       <span className='hidden lg:inline-block text-[2.5rem] mt-14 lg:text-[4rem] font-bold bg-gradient-to-r from-[#FFB34A] via-[#8FC18F] to-[#0E9F9B] text-transparent bg-clip-text'>
         Win Exciting Prices
       </span>
