@@ -391,7 +391,7 @@ const About = () => {
       {/* Terminal Window main container */}
       <div
         ref={terminalRef}
-        className="w-full md:w-full max-w-5xl overflow-hidden relative z-10 h-[530px] md:h-[550px]"
+        className="w-full md:w-full max-w-5xl overflow-hidden relative  mt-20 z-10 h-[530px] md:h-[550px]"
         style={{
           background: 'rgba(255, 255, 255, 0.19)',
           borderRadius: '16px',
