@@ -155,7 +155,7 @@ const Prizes = ({ isActive }) => {
       <img
         src="/Spring_Vector.svg"
         alt="Spring Vector"
-        className="absolute bottom-55 sm:bottom-20 lg:bottom-3 right-[-30px] sm:right-[-50px] lg:right-[-70px] w-24 h-24 sm:w-40 sm:h-30 lg:w-60 lg:h-44 opacity-80 z-0"
+        className="absolute bottom-5 sm:bottom-20 lg:bottom-3 right-[-30px] sm:right-[-50px] lg:right-[-70px] w-24 h-24 sm:w-40 sm:h-30 lg:w-60 lg:h-44 opacity-80 z-0"
       />      {/* Left Side Ellipse Background - Desktop */}
       <div className="absolute left-8 bottom-10 z-10 hidden lg:block">
         <img
@@ -294,14 +294,10 @@ const Prizes = ({ isActive }) => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Mobile and Tablet Bottom Content */}
-      <div className='absolute bottom-45 sm:bottom-40 left-1/2 transform -translate-x-1/2 w-full px-4 block lg:hidden'>
-        <div className='text-center '>
-
-
-          <div className='mb-5'>
+      </div>      {/* Mobile and Tablet Bottom Content */}
+      <div className='absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-full px-4 block lg:hidden'>
+        <div className='text-center'>
+          <div className='mb-4'>
             <span className='text-[25px] sm:text-[30px] font-semibold text-amber-50'>
               Additional Prizes Of
             </span>
@@ -313,9 +309,9 @@ const Prizes = ({ isActive }) => {
             </p>
           </div>
 
-          <div className='flex -left-4 items-left mb-15 space-x-2 sm:space-x-4'>
+          <div className='flex justify-center items-center space-x-2 sm:space-x-4 mb-4'>
             <span className='text-[18px] sm:text-[22px] font-semibold bg-gradient-to-r from-[#0E9F9B] via-[#8FC18F] to-[#FFB34A] inline-block text-transparent bg-clip-text text-center'>
-              Valuable Certificates <br />   For Every Submission
+              Valuable Certificates <br />For Every Submission
             </span>
 
             <img
