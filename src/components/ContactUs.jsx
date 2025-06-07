@@ -112,6 +112,28 @@ const ContactUs = () => {
         }}
       ></div>
 
+      {/* <div
+        className="absolute left-1/2 top-[-40%] -translate-x-1/2 z-0 pointer-events-none"
+        style={{
+          width: "120vw",
+          height: "60vh",
+          background: "radial-gradient(ellipse at center, #277E57 0%, transparent 70%)",
+          opacity: 0.85,
+        }}
+      ></div> */}
+
+      {/* Grid lines */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, #277E57 1px, transparent 1px), linear-gradient(to bottom, #277E57 1px, transparent 1px)",
+            backgroundSize: "100px 100px",
+          }}
+        ></div>
+      </div>
+
       {/* Decorative elements */}
       {/* Left curved shape */}
       <img
@@ -143,13 +165,13 @@ const ContactUs = () => {
         style={isMobile ? { maxHeight: "100vh" } : {}}
       >
         {/* Contact Us Title */}
-        {/* {isMobile ? null : ( */}
+        {!isMobile && (
           <h2
-            className=" absolute top-25 text-center pt-8 lg:pt-0"
+            className="absolute top-25 text-center hidden lg:block pt-8 lg:pt-0"
             style={{
-              fontSize: isMobile ? "2.4rem" : "2.8rem",
+              fontSize: "2.8rem",
               fontWeight: "bold",
-              top: isMobile ? "6rem" : "6rem",
+              top: "6rem",
               display: "inline-block",
               color: "transparent",
               backgroundClip: "text",
@@ -157,11 +179,13 @@ const ContactUs = () => {
               letterSpacing: "0.05em",
               animation: "fade-in 1s ease-in",
               backgroundImage: "linear-gradient(15deg, #0E9F9B, #8FC18F, #FFB34A)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
           >
             Contact Us
           </h2>
-        {/* )} */}
+        )}
 
         {/* Contact Cards Container */}
         <div className="w-full">
@@ -340,7 +364,7 @@ const ContactCard = ({
         <div className="bg-white text-slate-900 px-4 py-1 font-medium text-center rounded-sm mt-12 lg:mt-2">{person.name}</div>
 
         {/* Contact Details */}
-        <div className="bg-white/0 lg:backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 hover:bg-white/20 hover:p-4 hover:border-teal-400/50 transition-all duration-300 text-start space-y-1">
+        <div className="bg-white/0 lg:backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 text-start space-y-1">
           <p className="text-white text-sm">{person.title}</p>
           <p className="text-white text-xs">{person.organization}</p>
           <p className="text-gray-300 text-xs">{person.university}</p>

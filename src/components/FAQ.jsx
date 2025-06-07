@@ -60,7 +60,7 @@ const FAQ = () => {
       <div className="absolute inset-0 bg-[#0A2324] z-0"></div>
 
       {/* Section 2: Bottom radial ellipse with end color */}
-      <div
+      {/* <div
         className="absolute left-1/2 bottom-[-40%] -translate-x-1/2 z-0 pointer-events-none"
         style={{
           width: "120vw",
@@ -68,7 +68,7 @@ const FAQ = () => {
           background: "radial-gradient(ellipse at center, #277E57 0%, transparent 70%)",
           opacity: 0.85,
         }}
-      ></div>
+      ></div> */}
 
       {/* Top left decorative image */}
       <img
@@ -98,8 +98,8 @@ const FAQ = () => {
       <img
         src={flower}
         alt="Flower decoration"
-        className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block z-10 animate-spin-slow"
-        style={{ height: "11rem", bottom: "-1.2rem" }}
+        className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block animate-spin-slow"
+        style={{ height: "11rem", bottom: "-1.2rem", zIndex: 0 }}
       />
 
       {/* Mobile decorative elements */}
@@ -115,8 +115,8 @@ const FAQ = () => {
       <img
         src={flower}
         alt="Flower decoration"
-        className="absolute right-8 bottom-0 object-contain opacity-80 lg:hidden z-10 animate-spin-slow"
-        style={{ height: "5rem", bottom: "-1.2rem" }}
+        className="absolute right-8 bottom-0 object-contain opacity-80 lg:hidden z-0 animate-spin-slow"
+        style={{ height: "5rem", bottom: "1.5rem" }}
       />
 
 
