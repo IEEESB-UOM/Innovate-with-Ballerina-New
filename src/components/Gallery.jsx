@@ -8,51 +8,27 @@ const Gallery = ({ isActive }) => {
   const images = [
     {
       src: "/past-events/1.jpg",
-      alt: "Opening Ceremony",
-      title: "Opening Ceremony",
-      description: "The grand launch event that kickstarted our journey",
     },
     {
       src: "/past-events/2.jpg",
-      alt: "Technical Workshop",
-      title: "Technical Workshop",
-      description: "Expert-led session on Ballerina programming",
     },
     {
       src: "/past-events/3.jpg",
-      alt: "Team Collaboration",
-      title: "Team Collaboration",
-      description: "Teams working together to create innovative solutions",
     },
     {
       src: "/past-events/4.jpg",
-      alt: "Mentoring Session",
-      title: "Mentoring Session",
-      description: "One-on-one guidance from industry experts",
     },
     {
       src: "/past-events/5.jpg",
-      alt: "Project Presentations",
-      title: "Project Presentations",
-      description: "Teams showcasing their innovative projects",
     },
     {
       src: "/past-events/6.jpg",
-      alt: "Networking Event",
-      title: "Networking Event",
-      description: "Building connections in the tech community",
     },
     {
       src: "/past-events/7.jpg",
-      alt: "Award Ceremony",
-      title: "Award Ceremony",
-      description: "Recognizing outstanding achievements",
     },
     {
       src: "/past-events/8.jpg",
-      alt: "Closing Ceremony",
-      title: "Closing Ceremony",
-      description: "Celebrating the successful completion",
     },
   ];
 
@@ -118,15 +94,9 @@ const Gallery = ({ isActive }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] bg-clip-text text-transparent px-4 text-center"
+        className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] bg-clip-text text-transparent px-4 text-center"
       >
         Gallery
-        <motion.span
-          className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] rounded-full"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        />
       </motion.h2>
 
       {/* Main Gallery Container */}
@@ -149,7 +119,7 @@ const Gallery = ({ isActive }) => {
             >
               <img
                 src={images[slideIndices.leftMost].src}
-                alt={images[slideIndices.leftMost].alt}
+                alt=""
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -170,7 +140,7 @@ const Gallery = ({ isActive }) => {
             >
               <img
                 src={images[slideIndices.left].src}
-                alt={images[slideIndices.left].alt}
+                alt=""
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -199,23 +169,14 @@ const Gallery = ({ isActive }) => {
             >
               <img
                 src={images[slideIndices.center].src}
-                alt={images[slideIndices.center].alt}
+                alt=""
                 className="w-full h-full object-cover transform transition-all duration-500"
               />
               <motion.div
                 className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0"
                 whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-              >
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                  <h3 className="text-white text-lg sm:text-xl font-semibold mb-1 sm:mb-2">
-                    {images[slideIndices.center].title}
-                  </h3>
-                  <p className="text-gray-200 text-xs sm:text-sm">
-                    {images[slideIndices.center].description}
-                  </p>
-                </div>
-              </motion.div>
+              />
             </motion.div>
 
             {/* Right Card */}
@@ -234,7 +195,7 @@ const Gallery = ({ isActive }) => {
             >
               <img
                 src={images[slideIndices.right].src}
-                alt={images[slideIndices.right].alt}
+                alt=""
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -255,55 +216,11 @@ const Gallery = ({ isActive }) => {
             >
               <img
                 src={images[slideIndices.rightMost].src}
-                alt={images[slideIndices.rightMost].alt}
+                alt=""
                 className="w-full h-full object-cover"
               />
             </motion.div>
           </AnimatePresence>
-
-          {/* Navigation Buttons */}
-          <motion.button
-            onClick={prevSlide}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all z-20"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-4 h-4 sm:w-6 sm:h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5L8.25 12l7.5-7.5"
-              />
-            </svg>
-          </motion.button>
-          <motion.button
-            onClick={nextSlide}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all z-20"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-4 h-4 sm:w-6 sm:h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </motion.button>
         </div>
 
         {/* Dots Navigation */}

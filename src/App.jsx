@@ -10,7 +10,7 @@ import ContactUs from "./components/ContactUs";
 import NavigationDots from "./components/NavigationDots";
 import GradientBorderButton from "./components/common/GradientBorderButton";
 import ParticleBackground from "./components/ParticleBackground";
-import Gallery from "./components/Gallery2";
+import Gallery from "./components/Gallery";
 
 function App() {
   const containerRef = useRef(null);

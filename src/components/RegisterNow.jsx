@@ -66,7 +66,7 @@ const RegisterNow = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] bg-clip-text text-transparent"
+          className="text-4xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] bg-clip-text text-transparent"
         >
           Register Now
         </motion.h2>
@@ -89,35 +89,19 @@ const RegisterNow = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-4"
         >
-          <motion.div
-            initial={{ x: -50 }}
-            whileInView={{ x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          <GradientBorderButton
+            onClick={() => window.open("#", "_blank")}
             className="w-full sm:w-auto"
           >
-            <GradientBorderButton
-              onClick={() => window.open("#", "_blank")}
-              className="w-full sm:w-auto"
-            >
-              REGISTER NOW
-            </GradientBorderButton>
-          </motion.div>
-          <motion.div
-            initial={{ x: 50 }}
-            whileInView={{ x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            REGISTER NOW
+          </GradientBorderButton>
+          <GradientBorderButton
+            onClick={() => window.open("#", "_blank")}
+            filled={true}
             className="w-full sm:w-auto"
           >
-            <GradientBorderButton
-              onClick={() => window.open("#", "_blank")}
-              filled={true}
-              className="w-full sm:w-auto"
-            >
-              DOWNLOAD BOOKLET
-            </GradientBorderButton>
-          </motion.div>
+            DOWNLOAD BOOKLET
+          </GradientBorderButton>
         </motion.div>
       </motion.div>
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0A1B23] to-transparent z-0"></div>
