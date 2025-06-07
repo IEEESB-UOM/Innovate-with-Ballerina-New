@@ -156,7 +156,7 @@ const Prizes = ({ isActive }) => {
       <img
         src="/Spring_Vector.svg"
         alt="Spring Vector"
-        className="absolute bottom-3 right-[-30px] md:right-[-70px] w-24 h-24 sm:w-32 sm:h-32 md:w-60 md:h-44 opacity-80 z-0"
+        className="absolute md:bottom-3 bottom-55 right-[-30px] md:right-[-70px] w-24 h-24 sm:w-32 sm:h-32 md:w-60 md:h-44 opacity-80 z-0"
       />
       {/* Left Side Ellipse Background - Desktop */}
       <div className="absolute left-8 bottom-10 z-10 hidden md:block">
@@ -174,38 +174,34 @@ const Prizes = ({ isActive }) => {
         />
       </div>{/* Place Awards - Above Prizes - Desktop */}
       <div className="absolute left-45 mt-[350px] transform -translate-y-1/3 z-20 hidden md:block">
-        <div className="flex items-start space-x-4 md:space-x-4 -ml-3.5">
-          {/* 2nd Place */}
+        <div className="flex items-start space-x-4 md:space-x-4 -ml-3.5">          {/* 2nd Place */}
           <div className="flex flex-col items-center relative mt-12">
             <img
               src="/2ndplace.png"
               alt="2nd Place"
               className="w-14 h-14 sm:w-18 sm:h-18 md:w-40 md:h-10 "
             />
-            <p className="text-amber-50 text-xs sm:text-sm md:text-2xl font-bold mt-2">
+            <p className="text-amber-50 text-xs sm:text-sm md:text-2xl font-bold mt-2 relative z-30">
               Rs 100,000/-
             </p>
-          </div>
-          {/* 1st Place */}
+          </div>          {/* 1st Place */}
           <div className="flex flex-col items-center relative -mt-10">
             <img
               src="/1stplace.png"
               alt="1st Place"
               className="w-14 h-14 sm:w-18 sm:h-18 md:w-40 md:h-10 "
             />
-            <p className="text-amber-50 text-xs sm:text-sm md:text-3xl font-bold  mt-2">
+            <p className="text-amber-50 text-xs sm:text-sm md:text-3xl font-bold  mt-2 relative z-30">
               Rs 150,000/-
             </p>
-          </div>
-
-          {/* 3rd Place */}
+          </div>          {/* 3rd Place */}
           <div className="flex flex-col items-center relative mt-12">
             <img
               src="/3rdplace.png"
               alt="3rd Place"
               className="w-14 h-14 sm:w-18 sm:h-18 md:w-40 md:h-10 "
             />
-            <p className="text-amber-50 text-xs sm:text-sm md:text-2xl font-bold  mt-2">
+            <p className="text-amber-50 text-xs sm:text-sm md:text-2xl font-bold  mt-2 relative z-30">
               Rs 75,000/-
             </p>
           </div>
@@ -213,38 +209,34 @@ const Prizes = ({ isActive }) => {
       </div>
       {/* Place Awards - Mobile - Centered */}
       <div className="relative left-41 transform -translate-x-1/2 mt-[250px] z-20  md:hidden">
-        <div className="flex justify-center space-x-1 ">
-          {/* 2nd Place */}
+        <div className="flex justify-center space-x-1 ">          {/* 2nd Place */}
           <div className="flex flex-col items-center relative mt-8">
             <img
               src="/2ndplace.png"
               alt="2nd Place"
               className="w-22 h-6"
             />
-            <p className="text-amber-50 text-lg max-w-none font-bold mt-2">
+            <p className="text-amber-50 text-lg max-w-none font-bold mt-2 relative z-30">
               Rs 100,000/-
             </p>
-          </div>
-          {/* 1st Place */}
+          </div>          {/* 1st Place */}
           <div className="flex flex-col items-center relative -mt-6">
             <img
               src="/1stplace.png"
               alt="1st Place"
               className="w-22 h-6"
             />
-            <p className="text-amber-50 text-lg font-bold mt-2">
+            <p className="text-amber-50 text-lg font-bold mt-2 relative z-30">
               Rs 150,000/-
             </p>
-          </div>
-
-          {/* 3rd Place */}
+          </div>          {/* 3rd Place */}
           <div className="flex flex-col items-center relative mt-8">
             <img
               src="/3rdplace.png"
               alt="3rd Place"
               className="w-22 h-6"
             />
-            <p className="text-amber-50 text-lg font-bold mt-2">
+            <p className="text-amber-50 text-lg font-bold mt-2 relative z-30">
               Rs 75,000/-
             </p>
           </div>
@@ -306,11 +298,11 @@ const Prizes = ({ isActive }) => {
       </div>
 
       {/* Mobile Bottom Content */}
-      <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full px-4 block md:hidden'>
+      <div className='absolute bottom-45 left-1/2 transform -translate-x-1/2 w-full px-4 block md:hidden'>
         <div className='text-center '>
 
 
-          <div className='mb-10'>
+          <div className='mb-5'>
             <span className='text-[25px] font-semibold text-amber-50'>
               Additional Prizes Of
             </span>
@@ -322,7 +314,7 @@ const Prizes = ({ isActive }) => {
             </p>
           </div>
 
-          <div className='flex -left-4  items-left mb-8 space-x-2'>
+          <div className='flex -left-4  items-left mb-15 space-x-2'>
             <span className='text-[18px]  font-semibold bg-gradient-to-r from-[#0E9F9B] via-[#8FC18F] to-[#FFB34A] inline-block text-transparent bg-clip-text text-center'>
               Valuable Certificates <br />   For Every Submission
             </span>
