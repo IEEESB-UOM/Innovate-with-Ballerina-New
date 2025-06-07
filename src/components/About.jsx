@@ -105,7 +105,7 @@ const About = () => {
     };
   }, [animationCompleted]);
   useEffect(() => {
-    // Small delay to ensure elements are rendered
+    // Small delay
     const timer = setTimeout(() => {
       const elements = [vectorRef.current, aboutVectorRef.current, logoRef.current, logoMobileRef.current].filter(Boolean);
 
@@ -352,7 +352,7 @@ const About = () => {
       // Handle regular output text (long paragraphs)
       if (line.trim() && line.length > 50) {
         return (
-          <div key={lineIndex} className="text-gray-200 font-mono text-sm md:text-lg leading-relaxed text-justify animate-typewriter">
+          <div key={lineIndex} className="text-gray-200 font-mono text-sm tracking-tighter md:tracking-normal md:text-lg leading-relaxed text-left md:text-justify animate-typewriter">
             {line}
           </div>
         );
@@ -391,7 +391,7 @@ const About = () => {
       {/* Terminal Window main container */}
       <div
         ref={terminalRef}
-        className="w-full md:w-full max-w-4xl overflow-hidden relative mt-5 z-10 h-[530px] md:h-[550px]"
+        className="w-full md:w-full max-w-4xl overflow-hidden relative mt-20 md:mt-5 z-10 h-[530px] md:h-[550px]"
         style={{
           background: 'rgba(255, 255, 255, 0.19)',
           borderRadius: '16px',
@@ -425,7 +425,7 @@ const About = () => {
         {/* Content Area - Different layouts for mobile vs desktop */}        {/* Mobile Layout */}
         <div className="block md:hidden px-1 py-1 text-white h-full">
           {/* ASCII Art Logo Section - Mobile */}
-          <div className="text-left mb-1">
+          <div className="text-left mt-2">
             <pre
               ref={logoMobileRef}
               className="text-gray-300 font-mono whitespace-pre overflow-x-auto overflow-y-hidden w-full drop-shadow-lg"
@@ -477,7 +477,7 @@ const About = () => {
                                                                                                                                                                                                                                                                                                             `}
             </pre>          </div>
           {/* Terminal Text Content - Mobile */}
-          <div className="text-[14px] font-mono text-white overflow-y-auto h-[calc(100%-100px)] p-1.5 custom-scrollbar-mobile">
+          <div className="text-[14px] font-mono text-white overflow-y-auto h-[calc(100%-100px)] px-1.5 pt-1 pb-1.5 custom-scrollbar-mobile">
             {renderTerminalText(typedText)}
             {currentlyTyping && <span className="animate-blink">_</span>}
           </div>
@@ -486,7 +486,7 @@ const About = () => {
         {/* Desktop Layout */}
         <div className="hidden md:block px-4 py-2 text-white h-full">
           {/* ASCII Art Logo Section - Desktop */}
-          <div className="text-center mb-2"> {/* Changed text-left to text-center */}
+          <div className="text-center mt-2"> {/* Changed mb-2 to mt-2 */}
             <pre
               ref={logoRef}
               className="text-gray-400 font-mono whitespace-pre overflow-x-auto overflow-y-hidden w-full drop-shadow-lg"
@@ -538,7 +538,7 @@ const About = () => {
                                                                                                                                                                                                                                                                                                             `}
             </pre>          </div>
           {/* Terminal Text Content - Desktop */}
-          <div className="text-sm sm:text-sm md:text-lg font-mono text-white overflow-y-auto h-[calc(100%-160px)] px-4 pt-4 pb-0 custom-scrollbar">
+          <div className="text-sm sm:text-sm md:text-lg font-mono text-white overflow-y-auto h-[calc(100%-160px)] px-4 pt-2 pb-0 custom-scrollbar">
             {renderTerminalText(typedText)}
             {currentlyTyping && <span className="animate-blink">|</span>}
           </div>
