@@ -11,9 +11,9 @@ const Timeline = () => {
         <img src="/Ellipse 9.png" className="absolute right-[-30px] top-[450px] hidden md:block" />
 
          {/* Background Text */}
-        <div className='absolute top-[10%] left-[45%] w-full hidden md:block'>
+        <div className='absolute top-[10%] left-[67%] w-full hidden md:block'>
           <p className='text-[184px] font-bold leading-[101%] tracking-[3.44px] capitalize bg-gradient-to-r from-[rgba(14,159,154,0.305)] via-[rgba(143,193,143,0.305)] to-[rgba(255,179,74,0.305)] bg-clip-text text-transparent absolute'>
-            Stay Updated
+            TimeLine
           </p>
         </div>
 

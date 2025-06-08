@@ -99,7 +99,7 @@ function App() {
       {/* Main content, only render after pre-loader is done */}
       {isPreloaderDone && (
         <div>
-          <div className="fixed top-8 left-8 z-50">
+          <div className="fixed top-8 left-8 z-100 md:w-auto w-12">
             <img
               src="./ballerina_icon.svg"
               alt="Ballerina Icon"
@@ -107,7 +107,7 @@ function App() {
               onClick={() => setCurrentIndex(0)}
             />
           </div>
-          <div className="fixed top-9 right-8 z-50">
+          <div className="fixed top-9 right-8 z-100">
             {currentIndex !== 5 && (
               <GradientBorderButton onClick={() => window.location.href = '/register'}>
                 REGISTER NOW

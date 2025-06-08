@@ -94,13 +94,13 @@ const Gallery = ({ isActive }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] bg-clip-text text-transparent px-4 text-center"
+        className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-10 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] bg-clip-text text-transparent px-2 text-center"
       >
         Gallery
       </motion.h2>
 
       {/* Main Gallery Container */}
-      <div className="relative w-full max-w-7xl h-[400px] sm:h-[450px] md:h-[500px] px-4">
+      <div className="relative w-full max-w-7xl h-[350px] sm:h-[450px] md:h-[500px] px-4">
         <div className="relative h-full flex items-center justify-center">
           <AnimatePresence mode="sync">
             {/* Left Most Card */}
@@ -224,12 +224,12 @@ const Gallery = ({ isActive }) => {
         </div>
 
         {/* Dots Navigation */}
-        <div className="flex justify-center space-x-1 sm:space-x-2 mt-2 sm:mt-2">
+        <div className="flex justify-center space-x-1 sm:space-x-2 mt-0 sm:mt-0">
           {images.map((_, index) => (
             <motion.button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
                   ? "w-6 sm:w-8 bg-gradient-to-r from-[#FBB934] to-[#10C3BD]"
                   : "bg-gray-400/30 hover:bg-gray-400/50"
