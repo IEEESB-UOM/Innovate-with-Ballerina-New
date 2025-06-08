@@ -206,28 +206,28 @@ const ContactUs = () => {
                     />
                   </div>
                 ))}
-                <div className="relative w-full">
-                  {/* Grid background image */}
+                {/* Grid background image */}
+                {/* <div className="relative w-full">
                   <img
                     src={grid}
                     alt="Grid background decoration"
                     className="absolute bottom-0 w-full object-contain opacity-80 z-10 scale-[1.5] top-[-5rem] left-0"
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           ) : (
             // Desktop layout - two rows
-            <div className="space-y-12 mt-15">
+            <div className="space-y-12 mt-20">
               {/* First row - 2 cards */}
-              <div className="flex justify-center gap-24">
+              <div className="flex justify-center gap-32">
                 {contacts.slice(0, 2).map((person, index) => (
                   <ContactCard key={person.id} person={person} index={index} />
                 ))}
               </div>
 
               {/* Second row - 3 cards */}
-              <div className="flex justify-center gap-12">
+              <div className="flex justify-center gap-24">
                 {contacts.slice(2, 5).map((person, index) => (
                   <ContactCard key={person.id} person={person} index={index + 2} />
                 ))}
@@ -254,7 +254,7 @@ const ContactUs = () => {
           ) : null}
         </div>
         {isMobile ? null : (
-          <div className="absolute bottom-10 left-0 right-0 pl-100 pr-100 flex flex-row justify-center gap-10 md:gap-12 z-11">
+          <div className="absolute bottom-5 left-0 right-0 pl-100 pr-100 flex flex-row justify-center gap-10 md:gap-12 z-11">
             {logos.map((logo, index) => (
               <div key={index} className="relative animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <img

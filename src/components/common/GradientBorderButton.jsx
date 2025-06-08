@@ -11,10 +11,10 @@ const GradientBorderButton = ({
       onClick={onClick}
     >
       <div
-        className={`py-2 px-8 tracking-wide flex items-center justify-center rounded-2xl transition duration-300 ease-in-out w-full ${
+        className={`py-1.5 px-4 sm:py-2 sm:px-8 text-sm sm:text-base tracking-wide flex items-center justify-center rounded-2xl transition duration-300 ease-in-out w-full ${
           filled
-            ? "bg-gradient-to-r from-[#FBB934] to-[#10C3BD]"
-            : "bg-[#0A2324] group-hover:bg-gradient-to-br group-hover:from-gray-700 group-hover:to-gray-900"
+            ? 'bg-gradient-to-r from-[#FBB934] to-[#10C3BD]'
+            : 'bg-[#0A2324] group-hover:bg-gradient-to-br group-hover:from-gray-700 group-hover:to-gray-900'
         } cursor-pointer`}
       >
         {children}

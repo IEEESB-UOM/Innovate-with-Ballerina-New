@@ -7,9 +7,9 @@ const Timeline = () => {
       <div className="relative w-full flex flex-col items-center h-full md:block">
         <img src="/Ellipse 9.png" className="absolute right-[-30px] top-[-300px] hidden md:block"/>
         <img src="/Ellipse 10.png" className="absolute right-[250px] top-[550px] h-36 animate-spin-slow hidden md:block"/>
-        <div className='absolute top-[45%] left-[-35%] w-full hidden md:block'>
+        <div className='absolute top-[45%] left-[-31%] w-full hidden md:block'>
           <p className='text-[184px] font-bold leading-[101%] tracking-[3.44px] capitalize bg-gradient-to-r from-[rgba(14,159,154,0.305)] via-[rgba(143,193,143,0.305)] to-[rgba(255,179,74,0.305)] bg-clip-text text-transparent absolute'>
-            Stay Updated
+            TimeLine
           </p>
         </div>
         <svg
