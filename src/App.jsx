@@ -109,7 +109,7 @@ function App() {
           </div>
           <div className="fixed top-9 right-8 z-50">
             {currentIndex !== 5 && (
-              <GradientBorderButton onClick={() => setCurrentIndex(5)}>
+              <GradientBorderButton onClick={() => window.location.href = '/register'}>
                 REGISTER NOW
               </GradientBorderButton>
             )}
