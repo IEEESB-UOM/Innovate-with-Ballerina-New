@@ -243,7 +243,7 @@ const Hero: React.FC = () => {
                 repeat: Infinity,
               }}
             >
-              Code . Compete . Conquer
+              Let the Ballet Code the Future!
             </motion.p>
           </motion.div>
         </motion.div>

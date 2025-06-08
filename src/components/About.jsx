@@ -105,7 +105,7 @@ const About = () => {
     };
   }, [animationCompleted]);
   useEffect(() => {
-    // Small delay to ensure elements are rendered
+    // Small delay
     const timer = setTimeout(() => {
       const elements = [vectorRef.current, aboutVectorRef.current, logoRef.current, logoMobileRef.current].filter(Boolean);
 
@@ -325,9 +325,9 @@ const About = () => {
 
         return (
           <div key={lineIndex} className="font-mono flex items-start animate-slideInLeft">
-            <span className="text-green-400 font-bold text-sm">{promptPart}</span>
+            <span className="text-green-400 font-bold text-sm md:text-lg">{promptPart}</span>
             {commandPart && (
-              <span className="ml-2 text-white text-sm">{commandPart}</span>
+              <span className="ml-2 text-white text-sm md:text-lg">{commandPart}</span>
             )}
           </div>
         );
@@ -352,7 +352,7 @@ const About = () => {
       // Handle regular output text (long paragraphs)
       if (line.trim() && line.length > 50) {
         return (
-          <div key={lineIndex} className="text-gray-200 font-mono text-sm md:text-lg leading-relaxed text-justify animate-typewriter">
+          <div key={lineIndex} className="text-gray-200 font-mono text-sm tracking-tighter md:tracking-normal md:text-lg leading-relaxed text-left md:text-justify animate-typewriter">
             {line}
           </div>
         );
@@ -391,7 +391,7 @@ const About = () => {
       {/* Terminal Window main container */}
       <div
         ref={terminalRef}
-        className="w-full md:w-full max-w-5xl overflow-hidden relative z-10 h-[530px] md:h-[550px]"
+        className="w-full md:w-full max-w-4xl overflow-hidden relative mt-20 md:mt-5 z-10 h-[530px] md:h-[550px]"
         style={{
           background: 'rgba(255, 255, 255, 0.19)',
           borderRadius: '16px',
@@ -423,171 +423,129 @@ const About = () => {
         </div>
 
         {/* Content Area - Different layouts for mobile vs desktop */}        {/* Mobile Layout */}
-        <div className="block md:hidden px-1 py-1 text-white h-full">{/* ASCII Art Logo Section - Mobile */}
-          <div className="text-left mb-1">
+        <div className="block md:hidden px-1 py-1 text-white h-full">
+          {/* ASCII Art Logo Section - Mobile */}
+          <div className="text-left mt-2">
             <pre
               ref={logoMobileRef}
               className="text-gray-300 font-mono whitespace-pre overflow-x-auto overflow-y-hidden w-full drop-shadow-lg"
-              style={{ fontSize: '1px', lineHeight: '1px', maxWidth: '100%' }}
+              style={{ fontSize: '1.5px', lineHeight: '1.5px', maxWidth: '100%',textAlign: 'center' }}
             >
-              {`                                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                        '''''                             ''''                                    
-                                                                                                                                                                                                   ;ok0KXXXXO;                          ,kXXXXK0ko:                               
-                                                                                                                                                                                                 :kNMMMMMMMMK:                          ,0MMMMMMMMNO:                             
-                                                                                                                                                                                                cXMMMMMWNXKKk,                          'xKKXNWMMMMMXo                            
-                                                                                                                                                                                               ;0MMMMW0l;'                                  ',cOWMMMMK:                           
-                                                                                                                                                                                               oNMMMM0;                                        'OMMMMWd                           
-                                                                             ::                                                                                   'cc         ,:,              xWMMMWx                      ;:'                 oWMMMMk'                          
-                                                                            :K0;                                                  ,xk,                            ;kx,  lOl   dNd              kMMMMWo                  :xO0NK:                 lNMMMMO'                          
-                                                                            :KK; lolodxl,  cdlodxo,   cdxxxl, :d:   :d:':dxxxdc''lONNOo, ;oxxxl'     ;d: ;dxo, co,,do,:dKWKxc'dNOodxd:        'kMMMMWo                 'kMMMMK:                 lNMMMM0,                          
-                                                                            :KK;,0WOccxXO,'OWOl:dX0;'kXkc:dK0:cK0; ;KK:,dkoldONd,;dXXd:,lXKxokX0;    :XO;xK0Ko:0K;:K0;,cOWOl,'dWKo:oKXc       'OMMMMWo                 'xNWMXo                  lNMMMM0,                          
-                                                                            :KK;,0Xc  ,0K:'ONl  'OXc:K0;   xNo'dXd,xXo :kkxdx0Wk  ;0K; 'kW0ddxOk:    ,O0o0Ol0OdKk':K0,  dNd   dNx   dNd       'OMMMMWo                  ;dXMXd:;'               cNMMMM0,                          
-                                                                            :XK;,0X:  ,0X:'OXc  'OXc,kXkccdK0: ,OKOXO''kNOlldOW0: ;0Xd;'lX0ocdkl      xXKXd,xXKXo :K0,  dNOl, dNd   dNd       'OMMMMNl              'lk0KNMMMWNXXOo;            cXMMMM0;                          
-                                                                            'ol' lo'   lo' co,   co,  cdxxdl,   ;odo;  ,oxxolcldc  :ddl' ;oxxxl,      ;odo, ;odo, 'll   ,ldd: ;o:   :d:       ,0MMMMNl           ':d0K00NMMMMNx:ldkOkdol:,      :XMMMMK:                          
-                                                                                                                                                                                              :KMMMMX:        ;lxkkdc' 'dNMMMNo     ,:loddddo,  ;0MMMMXc                          
-                                                                                                                                                                                              oNMMMMO'     cdxxoc,      ,0MMM0;            :dl'  kWMMMWd                          
-                                                                                                                               ;;;                                                           :KMMMMXl    ,od:'      ';cokNMMMNxc:::::;;'         :KMMMMXc                         
-           'xKKKKKKKKKKKKKKKK0kdc,                              dKKK0l    :OKKKx,                                           'c0NWN0c                                                       ,oKMMMMXo           'oO0KXNWMMMMMMMMWWWWWWNKx,         lXMMMMXd;                       
-           ,0MMMMMMMMMMMMMMMMMMMWXd,                           'kMMMWd    lNMMM0;                                          'cOMMMMMO'                                                  :dx0XWMMMNO:             ck0NWMMMMMMMMMMMMWWXOo;            ;kNMMMMN0kd:                   
-            cddkNMMMMKkxxxxxOXWMMMWO,                          'kMMMWd    lNMMM0;                                            c0NNN0c                                                   xWMMMMW0d;                  ,ldkXWMMMMMW0oc:,                 ,o0WMMMMMk                   
-               ;0MMMWd       ,kWMMMXc                          'OMMMWd    lNMMM0;                                              ,;,                                                     xWMMMMW0d;                      cXMMMMMXl                     ,o0WMMMMMk                   
-               ;KMMMWd        lNMMMXc      ;lxO0000Oko:'       'OMMMWd    lNMMM0;       'cdkO000Okdc,       ,odddl''cdxxd;   ,odddl'    cdddd; 'cdkkkkxo:'          ;lxk0000Okdc'      :dk0NWMMMNk:                    ,OMMMMWk'                   ;xXMMMMNKkx:                   
-               ;KMMMWd      ':OWMMWx'    cONMMMMWWMMMMWKo      'OMMMWd    lNMMM0;     ;xKWMMMMMMMMMWXx;     cXMMMXO0WMMMNo   cXMMMK:    kMMMWOdKWMMMMMMMW0l       :ONMMMMMWMMMMWKo         ;dXMMMMXl                    dWMMMK:                   cKMMMMXx;                       
-               ;KMMMMX0OOOO0KNMWNOl     oNMMMXxlcclxKWMMNd     'OMMMWd    lNMMM0;    lKMMMWKxdoox0NMMMXl    cXMMMMMWX0OOk:   cXMMMK:    kMMMMWWXOdddx0NMMMWx'    lXMMMXklccldKWMMWx          :KMMMMXc                   lNMMNl                   :KMMMMXc                         
-               ;KMMMMMMMMMMMMMMNx;      ,ldkk:      cKMMMK:    'OMMMWd    lNMMM0;   cXMMMXo'      lKMMMXc   cXMMMW0c'        cXMMMK:   'kMMMMWk,      oXMMMNl    ,cdkkc      :KMMMX:          oNMMMMO'                  oNMWk                    xWMMMWd                          
-               ;KMMMMXOOOOOO0NWMWKx;       ;clllllllxXMMMXc    'OMMMWd    lNMMM0;   xWMMMXxoooooooxKMMMMk   cXMMMXc          cXMMMK:    kMMMMO,       'kMMMWd       ;cllllllldXMMMXc          :KMMMMK:                 ,0MMWx                   ;0MMMMXc                          
-               ;KMMMWd       ;kWMMM0;   ;d0NWMMMMMMMMMMMMXc    'OMMMWd    lNMMM0;  ,OMMMMMMMMMMMMMMMMMMMO,  cXMMMK:          cXMMMK:    kMMMWx         xMMMWx    ;d0NWMMMMMMMMMMMMXc          ,0MMMMNl                 oWMMWx                   cXMMMMK:                          
-               ;KMMMWd        :KMMMNo  cXMMMW0kxdxxdkNMMMXc    'OMMMWd    lNMMM0;  'kMMMMKdoooooooooooooc   cXMMMK:          cXMMMK:    kMMMWd         xMMMWx   cKMMMWKkxdxxdkNMMMXc          ,OMMMMWo                 dWMMM0,                  lNMMMMK;                          
-               ;KMMMWd       'dNMMMNo 'kMMMWx'      cXMMMXc    'OMMMWd    lNMMM0;   oNMMMK:        :l:      cXMMMK:          cXMMMK:    kMMMWd         xMMMWx  'kMMMWk,      :KMMMXc          'OMMMMWo                 lNNXWK:                  lNMMMM0,                          
-            cookNMMMWKxddddxkKWMMMW0; 'kWMMW0c'  ';dKMMMMNxc;  'OMMMWd    lNMMM0;   'xWMMMXxc;,,;ckNMNKl    cXMMMK:          cXMMMK:    kMMMWd         xMMMWx   xWMMM0c'  ';oKWMMMWkc;        'OMMMMWo                 cKd:0K:                  lNMMMM0,                          
-           ,0MMMMMMMMMMMMMMMMMMMMXx;   :0WMMMWXKKXNWX0XMMMMW0; 'OMMMWd    lNMMM0;    'oKWMMMWNNNNWMMMNk;    cXMMMK:          cXMMMK:    kMMMWd         xMMMWx   ;OWMMMWXKKXNWXOXMMMMWK:       'kMMMMWd                'kO; dK:                  lNMMMM0,                          
-           ,kXXXXXXXKKXKKXXKKKOxl;      'lOKNWWWWNKx; ckKKKKk;  dKXKKl    :0XKXk,      'lkKXWWWWWNXOd;      ;OXXXk;          :OXXXO;    dKKKKo         oKKKKo    'lkKNWWWWNKx; :kKKXXO;        kMMMMWd                ;0O' o0:                  lNMMMMO'                          
-             '''''''''''''''               ';::::;       '''     ''''       '''            ,;::::;'           '''              '''       ''''           ''''        ';:c::;'      '''          xWMMMWx                ,OO' cKo                  oWMMMMk                           
-                                                                                                                                                                                               oNMMMM0,               'ol  cKo                 'kMMMMWd                           
-                                                                                                                                                                                               ;KMMMMWOc,                  ;o;               ,ckWMMMMXc                           
-                                                                                                                                                                                                lXMMMMMWXK00x,                          'd00KXWMMMMMNo                            
-                                                                                                                                                                                                 :ONMMMMMMMMK;                          ,0MMMMMMMMWOc                             
-                                                                                                                                                                                                   :ok0XXXNNO;                          ,kNNNXXKOd:                               
-                                                                                                                                                                                                       '',,,'                            ',,,''                                   
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                  `}
-            </pre>          </div>{/* Mobile Terminal Text Content with Typing Animation */}
-          <div className="text-[14px] h-full font-mono rounded p-1.5">
-            <div className="whitespace-pre-line min-h-[140px]">
-              {renderTerminalText(typedText)}
-              {!animationCompleted && (
-                <span
-                  className={`ml-1 font-bold text-green-400 transition-all duration-150 ${currentlyTyping ? 'opacity-100 animate-none' : 'cursor-blink'
-                    }`}
-                >
-                  █
-                </span>
-              )}
-            </div>
+              {`,c.                                        
+                                                                                                                                                                                                                                                                ,0O'  .;llc;.  ,ccccc:.                     
+                                                                                                                                                                                                               ...                             ...              .:.  ,O0oco0O'.OXxlllc'                     
+                                                                                                                                                                                                         'cdkO00K0c                          .oK000Oxo:.             ':.  .kX:'OKocll,.                     
+                                                                                                                                                                                                       ,xNMMMMMMMWo                          .kMMMMMMMWKd.            .;ldkkc..cdl::xKo.                    
+                                                                                                                                                                                                      :KMMMMMWXK00:                          .o0KKXWMMMMWO,          ,00o:'.  .ol.  ;Kk.                    
+                                                                                                                                                                                                     '0MMMMNx;....                             ....:kWMMMMx.         lK0xdddo'.cOkdxOk,                     
+                                                                                                                                                                                                     cNMMMWx.                                       .OMMMMK,         ........   ..,'.                       
+                                                                                      ',.                                                 .                              .:,    .    .,.             dWMMMNc                   ..,c'                 dWMMMN:                                                
+                                                                                     .kK,                                                :Oc                             'xl. .lk,  .xK;            .xMMMMX:                 .xKKNNl                 oWMMMNl                                                
+                                                                                     .OK, ;dllddl. .cdlldd:.  ,odddo, .o:. .co..:dddd;..l0W0o, .cdddo,.     .cl..oxo..lc..dc.,dKNOl..xNxlddl.       .xMMMMX:                 lNMMMNc                 oWMMMWl                                                
+                                                                                     .OK,.dNx,.lXx..ONo''xXl ;Kk;.,kK:.xK; :Kx..lxllKK;..dNx'..kNkodKXO:    .dK:l0k0l:Kd.,Kx..,kXo. .xNx'.oXd.      .xMMMMX:                 ,kKWNo.                 oWMMMWl                                                
+                                                                                     .OK,.dX:  '0k..O0'  :Xo.lXo.  oXl ,0x;k0, :OxloKX:  cXo  '0Nxclddo,     cKdkk:kkdKc ,Kx. .dX:  .xX;  ,Kk.      .xMMMMX;               ..,cOWW0ol:'              oWMMMWo                                                
+                                                                                     .k0, oK;  'Ox..kO'  :Ko .dOxoxOd.  l000l  c0kllkKx. ;00o'.:Okodxc'.     ,OK0l.l0KO, ,0x.  lKkc..d0;  ,0x.      .kMMMMX;             .lOXNWMMMMX0KKOl,.          oWMMMWd.                                               
+                                                                                      ..  ...   ..  ..   ...   .,;,.     .'.    .,;...'.  .''.  .';,.         .''. .''.   ..    .'.  ..    ..       .OMMMMK,         .'cdOkolOWMMMWk..,codddooc;.    cNMMMMx.                                               
+                                                                                                                                                                                                    ,KMMMMO.      .:odxo:.   .kMMMNl      ..',:ldd,  ;KMMMMO.                                               
+                                                                                                                                                                                                    oNMMMNo    .:ool;.       .dWMMXc            .,'. .kMMMMX:                                               
+                       ';;;;;;;;;;;;;;;,'.                               .;;;;.    .,;;;'                                           .;loc'                                                        .lXMMMWk.    ':'   ..,;cldkKNMMMMXkddddddoc.        ;KMMMM0:                                              
+                      .kWWWWWWWWWWWMMWWWNKOl.                            :XWWWx.   ,KWWWO'                                         .xWMMMX:                                                   ..,lOWMMMNx.           ,ONWMMMMMMMMMMMMMMMMWKxc.         ,OWMMMNkc,..                                         
+                      .xXXNWMMMMWNNNNNWMMMMMKc                           :NMMMx.   ,KMMM0'                                         .xWMMMX:                                                  ,OXWMMMWKx;              .:lkKNWMMMMMMMWKOkdc.             .:kXWMMMWXx.                                        
+                       ...cXMMMXl''''',cOWMMMK;                          :NMMMx.   ,KMMM0'                                          .:ddo,                                                   :XMMMMWO;                    .'lKMMMMMWk'                    .c0WMMMM0'                                        
+                          ,KMMMK;       ,0MMMNc       .';:cc:;'.         :NMMMx.   ,KMMM0'        ..,:cc:;'.         ...'.  ..'''.   .'''.     ...'.    .',;;'.             .';:cc:;'.       ,ONWMMMWKd,                    .dWMMMMX:                   .:kXWMMMNXk.                                        
+                          ,KMMMK;       :KMMMK,    .:xKNWMMMMWNKx;.      :NMMMx.   ,KMMM0'      ,d0XWMMMMWNKx:.     .xNNN0ccOXNNK;  ,0NNNx.   .kNNNk,;oxKNWWWNXOl.       .:xKNWMMMMWNKx;      ..;l0WMMMNx.                   ;XMMMWx.                  ,kWMMMNkc,..                                         
+                          ,KMMMNxccccclxXMMNO;    'kWMMWKkxxkXWMMNd.     :NMMMx.   ,KMMM0'    .xNMMMNKOO0XWMMWO;    .kMMMWNWMWNNK;  ;XMMMk.   '0MMMNKNMNK00KNWMMW0:     'OWMMWKkxxkXWMMNd.        .oXMMMWk.                  .OMMM0'                  ,0MMMMK:                                              
+                          ,KMMMMMMMMMMMMMNk;.     ,dOXKl.    'xWMMNc     :NMMMx.   ,KMMM0'   'OWMMXd,.  ..c0MMMK;   .kMMMMNx:,'..   ;XMMMk.   '0MMMMNxc,.. .'dNMMMK,    ,dOXKl.    'kWMMNc         .dWMMMNl                  .OMMK;                  .xWMMMX:                                               
+                          ,KMMMWNXXXXXNWMWKx:.      .';'.....'oNMMWd.    :NMMMx.   ,KMMM0'   oWMMMO:,,,,,,;dNMMMk.  .kMMMNo         ;XMMMk.   '0MMMK,         oWMMWo    .;dOKXNNNNNNWMMMWd          '0MMMMK,                .OMMMO.                  :NMMMMx.                                               
+                          ,KMMMXc......;xNMMWk.   .;dOKXNNNNNNWMMMWd.    :NMMMx.   ,KMMM0'  .kMMMMWWWWWWWWWWMMMM0'  .kMMMX;         ;XMMMk.   '0MMMK,         oWMMWo   'kWMMWX0OOOOOKWMMWd.         .OMMMMX;                ,KMMMK;                  lNMMMWd                                                
+                          ,KMMMK;       .kMMMNl  .kWMMWX0OOOOOKWMMWd.    :NMMMx.   ,KMMM0'  .kMMMWKxxxxxxxxxxxxxl.  .kMMMX;         ;XMMMk.   '0MMMK,         oWMMWo   oWMMWx.     .oWMMWd          .kMMMMX:                '0WNWNl                  lWMMMWo                                                
+                       '::dNMMMNxccccllxKWMMMK;  oWMMWk'   .'oXMMMMO;.   :NMMMx.   ,KMMM0'   .kWMMWOc'....:ONNOl.   .kMMMX;         ;XMMMk.   '0MMMK,         oWMMWo  .dWMMWx'   .'oXMMMMO;..       .kMMMMX:                .x0lkNl                  oWMMMWl                                                
+                      .OMMMMMMMMMMMMMMMMMMMNO;   'OWMMWXOkO0XW00WMMWNK:  :NMMMx.   ,KMMM0'    .oXMMMWNKKKXWMMW0:    .kMMMX;         ;XMMMk.   '0MMMK,         oWMMWo   ,OWMMWXOkO0XWK0WMMWNK:       .kMMMMX:                ;Ol.cKc                  oWMMMWl                                                
+                      .dXXXXXXXXXXXXXXKK0ko,.     .ckXNWWWWN0l..oOKXK0:  ;0XXKo.   'kXXXx.      'lkKNWWWWWNKx:.     .dXXXO,         ,OXXXd.   .xXXXk'         cKXXKc    .lkXNWWWWN0l..o0KXX0:       .xMMMMX:                dX: ;Oc                  oWMMMWl                                                
+                       .................             .',;;,..     ....    .....     .....          .',;;;,'.         .....           .....     .....           ....        .',;;,..     ....         dWMMMNc                lK: 'Od.                 dWMMMNc                                                
+                                                                                                                                                                                                     lNMMMWd.               ;d' 'Ok.                'OMMMMX;                                                
+                                                                                                                                                                                                     ,0MMMMNd,....              .l:            ....:OWMMMWx.                                                
+                                                                                                                                                                                                      cXMMMMMNXK00:                          .o0KKNWMMMMWO,                                                 
+                                                                                                                                                                                                       ,kNMMMMMMMWo                          .kMMMMMMMWKo.                                                  
+                                                                                                                                                                                                         'cdkO0000c                          .o0000Oko:.                                                    
+                                                                                                                                                                                                              ....                             ...                                                          
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            `}
+            </pre>          </div>
+          {/* Terminal Text Content - Mobile */}
+          <div className="text-[14px] font-mono text-white overflow-y-auto h-[calc(100%-100px)] px-1.5 pt-1 pb-1.5 custom-scrollbar-mobile">
+            {renderTerminalText(typedText)}
+            {currentlyTyping && <span className="animate-blink">_</span>}
           </div>
-        </div>        {/* Desktop Layout */}
-        <div className="hidden md:block px-2 py-1 text-white">
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:block px-4 py-2 text-white h-full">
           {/* ASCII Art Logo Section - Desktop */}
-          <div className="text-left mb-1 sm:mb-2">
+          <div className="text-center mt-2"> {/* Changed mb-2 to mt-2 */}
             <pre
               ref={logoRef}
               className="text-gray-400 font-mono whitespace-pre overflow-x-auto overflow-y-hidden w-full drop-shadow-lg"
-              style={{ fontSize: '2px', lineHeight: '2px', maxWidth: '100%', textAlign: 'left', paddingLeft: '0' }}
+              style={{ fontSize: '3px', lineHeight: '3px', maxWidth: '100%', textAlign: 'center' }} // Changed textAlign to center and removed paddingLeft
             >
-              {`                                                                                                                                                                                                                                                                                             
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                     '''''                             ''''                                    
-                                                                                                                                                                                                ;ok0KXXXXO;                          ,kXXXXK0ko:                               
-                                                                                                                                                                                              :kNMMMMMMMMK:                          ,0MMMMMMMMNO:                             
-                                                                                                                                                                                             cXMMMMMWNXKKk,                          'xKKXNWMMMMMXo                            
-                                                                                                                                                                                            ;0MMMMW0l;'                                  ',cOWMMMMK:                           
-                                                                                                                                                                                            oNMMMM0;                                        'OMMMMWd                           
-                                                                          ::                                                                                   'cc         ,:,              xWMMMWx                      ;:'                 oWMMMMk'                          
-                                                                         :K0;                                                  ,xk,                            ;kx,  lOl   dNd              kMMMMWo                  :xO0NK:                 lNMMMMO'                          
-                                                                         :KK; lolodxl,  cdlodxo,   cdxxxl, :d:   :d:':dxxxdc''lONNOo, ;oxxxl'     ;d: ;dxo, co,,do,:dKWKxc'dNOodxd:        'kMMMMWo                 'kMMMMK:                 lNMMMM0,                          
-                                                                         :KK;,0WOccxXO,'OWOl:dX0;'kXkc:dK0:cK0; ;KK:,dkoldONd,;dXXd:,lXKxokX0;    :XO;xK0Ko:0K;:K0;,cOWOl,'dWKo:oKXc       'OMMMMWo                 'xNWMXo                  lNMMMM0,                          
-                                                                         :KK;,0Xc  ,0K:'ONl  'OXc:K0;   xNo'dXd,xXo :kkxdx0Wk  ;0K; 'kW0ddxOk:    ,O0o0Ol0OdKk':K0,  dNd   dNx   dNd       'OMMMMWo                  ;dXMXd:;'               cNMMMM0,                          
-                                                                         :XK;,0X:  ,0X:'OXc  'OXc,kXkccdK0: ,OKOXO''kNOlldOW0: ;0Xd;'lX0ocdkl      xXKXd,xXKXo :K0,  dNOl, dNd   dNd       'OMMMMNl              'lk0KNMMMWNXXOo;            cXMMMM0;                          
-                                                                         'ol' lo'   lo' co,   co,  cdxxdl,   ;odo;  ,oxxolcldc  :ddl' ;oxxxl,      ;odo, ;odo, 'll   ,ldd: ;o:   :d:       ,0MMMMNl           ':d0K00NMMMMNx:ldkOkdol:,      :XMMMMK:                          
-                                                                                                                                                                                           :KMMMMX:        ;lxkkdc' 'dNMMMNo     ,:loddddo,  ;0MMMMXc                          
-                                                                                                                                                                                           oNMMMMO'     cdxxoc,      ,0MMM0;            :dl'  kWMMMWd                          
-                                                                                                                            ;;;                                                           :KMMMMXl    ,od:'      ';cokNMMMNxc:::::;;'         :KMMMMXc                         
-        'xKKKKKKKKKKKKKKKK0kdc,                              dKKK0l    :OKKKx,                                           'c0NWN0c                                                       ,oKMMMMXo           'oO0KXNWMMMMMMMMWWWWWWNKx,         lXMMMMXd;                       
-        ,0MMMMMMMMMMMMMMMMMMMWXd,                           'kMMMWd    lNMMM0;                                          'cOMMMMMO'                                                  :dx0XWMMMNO:             ck0NWMMMMMMMMMMMMWWXOo;            ;kNMMMMN0kd:                   
-         cddkNMMMMKkxxxxxOXWMMMWO,                          'kMMMWd    lNMMM0;                                            c0NNN0c                                                   xWMMMMW0d;                  ,ldkXWMMMMMW0oc:,                 ,o0WMMMMMk                   
-            ;0MMMWd       ,kWMMMXc                          'OMMMWd    lNMMM0;                                              ,;,                                                     xWMMMMW0d;                      cXMMMMMXl                     ,o0WMMMMMk                   
-            ;KMMMWd        lNMMMXc      ;lxO0000Oko:'       'OMMMWd    lNMMM0;       'cdkO000Okdc,       ,odddl''cdxxd;   ,odddl'    cdddd; 'cdkkkkxo:'          ;lxk0000Okdc'      :dk0NWMMMNk:                    ,OMMMMWk'                   ;xXMMMMNKkx:                   
-            ;KMMMWd      ':OWMMWx'    cONMMMMWWMMMMWKo      'OMMMWd    lNMMM0;     ;xKWMMMMMMMMMWXx;     cXMMMXO0WMMMNo   cXMMMK:    kMMMWOdKWMMMMMMMW0l       :ONMMMMMWMMMMWKo         ;dXMMMMXl                    dWMMMK:                   cKMMMMXx;                       
-            ;KMMMMX0OOOO0KNMWNOl     oNMMMXxlcclxKWMMNd     'OMMMWd    lNMMM0;    lKMMMWKxdoox0NMMMXl    cXMMMMMWX0OOk:   cXMMMK:    kMMMMWWXOdddx0NMMMWx'    lXMMMXklccldKWMMWx          :KMMMMXc                   lNMMNl                   :KMMMMXc                         
-            ;KMMMMMMMMMMMMMMNx;      ,ldkk:      cKMMMK:    'OMMMWd    lNMMM0;   cXMMMXo'      lKMMMXc   cXMMMW0c'        cXMMMK:   'kMMMMWk,      oXMMMNl    ,cdkkc      :KMMMX:          oNMMMMO'                  oNMWk                    xWMMMWd                          
-            ;KMMMMXOOOOOO0NWMWKx;       ;clllllllxXMMMXc    'OMMMWd    lNMMM0;   xWMMMXxoooooooxKMMMMk   cXMMMXc          cXMMMK:    kMMMMO,       'kMMMWd       ;cllllllldXMMMXc          :KMMMMK:                 ,0MMWx                   ;0MMMMXc                          
-            ;KMMMWd       ;kWMMM0;   ;d0NWMMMMMMMMMMMMXc    'OMMMWd    lNMMM0;  ,OMMMMMMMMMMMMMMMMMMMO,  cXMMMK:          cXMMMK:    kMMMWx         xMMMWx    ;d0NWMMMMMMMMMMMMXc          ,0MMMMNl                 oWMMWx                   cXMMMMK:                          
-            ;KMMMWd        :KMMMNo  cXMMMW0kxdxxdkNMMMXc    'OMMMWd    lNMMM0;  'kMMMMKdoooooooooooooc   cXMMMK:          cXMMMK:    kMMMWd         xMMMWx   cKMMMWKkxdxxdkNMMMXc          ,OMMMMWo                 dWMMM0,                  lNMMMMK;                          
-            ;KMMMWd       'dNMMMNo 'kMMMWx'      cXMMMXc    'OMMMWd    lNMMM0;   oNMMMK:        :l:      cXMMMK:          cXMMMK:    kMMMWd         xMMMWx  'kMMMWk,      :KMMMXc          'OMMMMWo                 lNNXWK:                  lNMMMM0,                          
-         cookNMMMWKxddddxkKWMMMW0; 'kWMMW0c'  ';dKMMMMNxc;  'OMMMWd    lNMMM0;   'xWMMMXxc;,,;ckNMNKl    cXMMMK:          cXMMMK:    kMMMWd         xMMMWx   xWMMM0c'  ';oKWMMMWkc;        'OMMMMWo                 cKd:0K:                  lNMMMM0,                          
-        ,0MMMMMMMMMMMMMMMMMMMMXx;   :0WMMMWXKKXNWX0XMMMMW0; 'OMMMWd    lNMMM0;    'oKWMMMWNNNNWMMMNk;    cXMMMK:          cXMMMK:    kMMMWd         xMMMWx   ;OWMMMWXKKXNWXOXMMMMWK:       'kMMMMWd                'kO; dK:                  lNMMMM0,                          
-        ,kXXXXXXXKKXKKXXKKKOxl;      'lOKNWWWWNKx; ckKKKKk;  dKXKKl    :0XKXk,      'lkKXWWWWWNXOd;      ;OXXXk;          :OXXXO;    dKKKKo         oKKKKo    'lkKNWWWWNKx; :kKKXXO;        kMMMMWd                ;0O' o0:                  lNMMMMO'                          
-          '''''''''''''''               ';::::;       '''     ''''       '''            ,;::::;'           '''              '''       ''''           ''''        ';:c::;'      '''          xWMMMWx                ,OO' cKo                  oWMMMMk                           
-                                                                                                                                                                                            oNMMMM0,               'ol  cKo                 'kMMMMWd                           
-                                                                                                                                                                                            ;KMMMMWOc,                  ;o;               ,ckWMMMMXc                           
-                                                                                                                                                                                             lXMMMMMWXK00x,                          'd00KXWMMMMMNo                            
-                                                                                                                                                                                              :ONMMMMMMMMK;                          ,0MMMMMMMMWOc                             
-                                                                                                                                                                                                :ok0XXXNNO;                          ,kNNNNXKOd:                               
-                                                                                                                                                                                                    '',,,'                            ',,,''                                   
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                               `}
-            </pre>
-          </div>          {/* Desktop Text Content Section with Typing Animation  */}
-          <div className="text-sm sm:text-sm md:text-base font-mono rounded p-2 min-h-[180px]">
-            <div className="whitespace-pre-line">
-              {renderTerminalText(typedText)}
-              {!animationCompleted && (
-                <span
-                  className={`ml-1 font-bold text-green-400 transition-all duration-150 ${currentlyTyping ? 'opacity-100 animate-none' : 'cursor-blink'
-                    }`}
-                >
-                  █
-                </span>
-              )}
-            </div>
+              {`,c.                                        
+                                                                                                                                                                                                                                                                ,0O'  .;llc;.  ,ccccc:.                     
+                                                                                                                                                                                                               ...                             ...              .:.  ,O0oco0O'.OXxlllc'                     
+                                                                                                                                                                                                         'cdkO00K0c                          .oK000Oxo:.             ':.  .kX:'OKocll,.                     
+                                                                                                                                                                                                       ,xNMMMMMMMWo                          .kMMMMMMMWKd.            .;ldkkc..cdl::xKo.                    
+                                                                                                                                                                                                      :KMMMMMWXK00:                          .o0KKXWMMMMWO,          ,00o:'.  .ol.  ;Kk.                    
+                                                                                                                                                                                                     '0MMMMNx;....                             ....:kWMMMMx.         lK0xdddo'.cOkdxOk,                     
+                                                                                                                                                                                                     cNMMMWx.                                       .OMMMMK,         ........   ..,'.                       
+                                                                                      ',.                                                 .                              .:,    .    .,.             dWMMMNc                   ..,c'                 dWMMMN:                                                
+                                                                                     .kK,                                                :Oc                             'xl. .lk,  .xK;            .xMMMMX:                 .xKKNNl                 oWMMMNl                                                
+                                                                                     .OK, ;dllddl. .cdlldd:.  ,odddo, .o:. .co..:dddd;..l0W0o, .cdddo,.     .cl..oxo..lc..dc.,dKNOl..xNxlddl.       .xMMMMX:                 lNMMMNc                 oWMMMWl                                                
+                                                                                     .OK,.dNx,.lXx..ONo''xXl ;Kk;.,kK:.xK; :Kx..lxllKK;..dNx'..kNkodKXO:    .dK:l0k0l:Kd.,Kx..,kXo. .xNx'.oXd.      .xMMMMX:                 ,kKWNo.                 oWMMMWl                                                
+                                                                                     .OK,.dX:  '0k..O0'  :Xo.lXo.  oXl ,0x;k0, :OxloKX:  cXo  '0Nxclddo,     cKdkk:kkdKc ,Kx. .dX:  .xX;  ,Kk.      .xMMMMX;               ..,cOWW0ol:'              oWMMMWo                                                
+                                                                                     .k0, oK;  'Ox..kO'  :Ko .dOxoxOd.  l000l  c0kllkKx. ;00o'.:Okodxc'.     ,OK0l.l0KO, ,0x.  lKkc..d0;  ,0x.      .kMMMMX;             .lOXNWMMMMX0KKOl,.          oWMMMWd.                                               
+                                                                                      ..  ...   ..  ..   ...   .,;,.     .'.    .,;...'.  .''.  .';,.         .''. .''.   ..    .'.  ..    ..       .OMMMMK,         .'cdOkolOWMMMWk..,codddooc;.    cNMMMMx.                                               
+                                                                                                                                                                                                    ,KMMMMO.      .:odxo:.   .kMMMNl      ..',:ldd,  ;KMMMMO.                                               
+                                                                                                                                                                                                    oNMMMNo    .:ool;.       .dWMMXc            .,'. .kMMMMX:                                               
+                       ';;;;;;;;;;;;;;;,'.                               .;;;;.    .,;;;'                                           .;loc'                                                        .lXMMMWk.    ':'   ..,;cldkKNMMMMXkddddddoc.        ;KMMMM0:                                              
+                      .kWWWWWWWWWWWMMWWWNKOl.                            :XWWWx.   ,KWWWO'                                         .xWMMMX:                                                   ..,lOWMMMNx.           ,ONWMMMMMMMMMMMMMMMMWKxc.         ,OWMMMNkc,..                                         
+                      .xXXNWMMMMWNNNNNWMMMMMKc                           :NMMMx.   ,KMMM0'                                         .xWMMMX:                                                  ,OXWMMMWKx;              .:lkKNWMMMMMMMWKOkdc.             .:kXWMMMWXx.                                        
+                       ...cXMMMXl''''',cOWMMMK;                          :NMMMx.   ,KMMM0'                                          .:ddo,                                                   :XMMMMWO;                    .'lKMMMMMWk'                    .c0WMMMM0'                                        
+                          ,KMMMK;       ,0MMMNc       .';:cc:;'.         :NMMMx.   ,KMMM0'        ..,:cc:;'.         ...'.  ..'''.   .'''.     ...'.    .',;;'.             .';:cc:;'.       ,ONWMMMWKd,                    .dWMMMMX:                   .:kXWMMMNXk.                                        
+                          ,KMMMK;       :KMMMK,    .:xKNWMMMMWNKx;.      :NMMMx.   ,KMMM0'      ,d0XWMMMMWNKx:.     .xNNN0ccOXNNK;  ,0NNNx.   .kNNNk,;oxKNWWWNXOl.       .:xKNWMMMMWNKx;      ..;l0WMMMNx.                   ;XMMMWx.                  ,kWMMMNkc,..                                         
+                          ,KMMMNxccccclxXMMNO;    'kWMMWKkxxkXWMMNd.     :NMMMx.   ,KMMM0'    .xNMMMNKOO0XWMMWO;    .kMMMWNWMWNNK;  ;XMMMk.   '0MMMNKNMNK00KNWMMW0:     'OWMMWKkxxkXWMMNd.        .oXMMMWk.                  .OMMM0'                  ,0MMMMK:                                              
+                          ,KMMMMMMMMMMMMMNk;.     ,dOXKl.    'xWMMNc     :NMMMx.   ,KMMM0'   'OWMMXd,.  ..c0MMMK;   .kMMMMNx:,'..   ;XMMMk.   '0MMMMNxc,.. .'dNMMMK,    ,dOXKl.    'kWMMNc         .dWMMMNl                  .OMMK;                  .xWMMMX:                                               
+                          ,KMMMWNXXXXXNWMWKx:.      .';'.....'oNMMWd.    :NMMMx.   ,KMMM0'   oWMMMO:,,,,,,;dNMMMk.  .kMMMNo         ;XMMMk.   '0MMMK,         oWMMWo    .;dOKXNNNNNNWMMMWd          '0MMMMK,                .OMMMO.                  :NMMMMx.                                               
+                          ,KMMMXc......;xNMMWk.   .;dOKXNNNNNNWMMMWd.    :NMMMx.   ,KMMM0'  .kMMMMWWWWWWWWWWMMMM0'  .kMMMX;         ;XMMMk.   '0MMMK,         oWMMWo   'kWMMWX0OOOOOKWMMWd.         .OMMMMX;                ,KMMMK;                  lNMMMWd                                                
+                          ,KMMMK;       .kMMMNl  .kWMMWX0OOOOOKWMMWd.    :NMMMx.   ,KMMM0'  .kMMMWKxxxxxxxxxxxxxl.  .kMMMX;         ;XMMMk.   '0MMMK,         oWMMWo   oWMMWx.     .oWMMWd          .kMMMMX:                '0WNWNl                  lWMMMWo                                                
+                       '::dNMMMNxccccllxKWMMMK;  oWMMWk'   .'oXMMMMO;.   :NMMMx.   ,KMMM0'   .kWMMWOc'....:ONNOl.   .kMMMX;         ;XMMMk.   '0MMMK,         oWMMWo  .dWMMWx'   .'oXMMMMO;..       .kMMMMX:                .x0lkNl                  oWMMMWl                                                
+                      .OMMMMMMMMMMMMMMMMMMMNO;   'OWMMWXOkO0XW00WMMWNK:  :NMMMx.   ,KMMM0'    .oXMMMWNKKKXWMMW0:    .kMMMX;         ;XMMMk.   '0MMMK,         oWMMWo   ,OWMMWXOkO0XWK0WMMWNK:       .kMMMMX:                ;Ol.cKc                  oWMMMWl                                                
+                      .dXXXXXXXXXXXXXXKK0ko,.     .ckXNWWWWN0l..oOKXK0:  ;0XXKo.   'kXXXx.      'lkKNWWWWWNKx:.     .dXXXO,         ,OXXXd.   .xXXXk'         cKXXKc    .lkXNWWWWN0l..o0KXX0:       .xMMMMX:                dX: ;Oc                  oWMMMWl                                                
+                       .................             .',;;,..     ....    .....     .....          .',;;;,'.         .....           .....     .....           ....        .',;;,..     ....         dWMMMNc                lK: 'Od.                 dWMMMNc                                                
+                                                                                                                                                                                                     lNMMMWd.               ;d' 'Ok.                'OMMMMX;                                                
+                                                                                                                                                                                                     ,0MMMMNd,....              .l:            ....:OWMMMWx.                                                
+                                                                                                                                                                                                      cXMMMMMNXK00:                          .o0KKNWMMMMWO,                                                 
+                                                                                                                                                                                                       ,kNMMMMMMMWo                          .kMMMMMMMWKo.                                                  
+                                                                                                                                                                                                         'cdkO0000c                          .o0000Oko:.                                                    
+                                                                                                                                                                                                              ....                             ...                                                          
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                            `}
+            </pre>          </div>
+          {/* Terminal Text Content - Desktop */}
+          <div className="text-sm sm:text-sm md:text-lg font-mono text-white overflow-y-auto h-[calc(100%-160px)] px-4 pt-2 pb-0 custom-scrollbar">
+            {renderTerminalText(typedText)}
+            {currentlyTyping && <span className="animate-blink">|</span>}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
