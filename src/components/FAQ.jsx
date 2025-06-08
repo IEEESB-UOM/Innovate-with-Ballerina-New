@@ -54,64 +54,73 @@ const FAQ = () => {
     })
   }
 
+  // Split FAQ data into two columns
+  const leftColumn = faqData.slice(0, 3)
+  const rightColumn = faqData.slice(3, 6)
+
+  // Separate open state for each column
+  const [openLeft, setOpenLeft] = useState([])
+  const [openRight, setOpenRight] = useState([])
+
+  // Toggle for left column
+  const toggleLeft = (index) => {
+    setOpenLeft((prev) => {
+      if (prev.includes(index)) {
+        return [];
+      } else {
+        setOpenRight([]); // Close all right column cards
+        return [index];
+      }
+    });
+  };
+  // Toggle for right column
+  const toggleRight = (index) => {
+    setOpenRight((prev) => {
+      if (prev.includes(index)) {
+        return [];
+      } else {
+        setOpenLeft([]); // Close all left column cards
+        return [index];
+      }
+    });
+  };
+
   return (
     <div className="h-screen w-full snap-start relative overflow-hidden">
       {/* Section 1: Background with start color */}
       <div className="absolute inset-0 bg-[#0A2324] z-0"></div>
 
-      {/* Section 2: Bottom radial ellipse with end color */}
-      {/* <div
-        className="absolute left-1/2 bottom-[-40%] -translate-x-1/2 z-0 pointer-events-none"
-        style={{
-          width: "120vw",
-          height: "60vh",
-          background: "radial-gradient(ellipse at center, #277E57 0%, transparent 70%)",
-          opacity: 0.85,
-        }}
-      ></div> */}
-
-      {/* Top left decorative image */}
+      {/* Decorative images (unchanged) */}
       <img
         src={topleft}
         alt="Top left decoration"
         className="absolute top-0 left-0 object-contain opacity-80 hidden lg:block z-10"
         style={{ height: "30rem" }}
       />
-
-      {/* Bottom left decorative grid placeholder */}
       <img
         src={bottomleft}
         alt="Top left decoration"
         className="absolute bottom-0 left-0 object-contain opacity-80 hidden lg:block z-10"
         style={{ height: "11rem" }}
       />
-
-      {/* Right side spiral placeholder */}
       <img
         src={spiral}
         alt="Spiral decoration"
         className="absolute right-0 bottom-1/4 object-contain opacity-80 hidden lg:block z-10 animate-pulse"
         style={{ height: "11rem" }}
       />
-
-      {/* Star decorative elements placeholder */}
       <img
         src={flower}
         alt="Flower decoration"
         className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block animate-spin-slow"
         style={{ height: "11rem", bottom: "-1.2rem", zIndex: 0 }}
       />
-
-      {/* Mobile decorative elements */}
-      {/* Right side spiral placeholder */}
       <img
         src={spiral}
         alt="Spiral decoration"
         className="absolute right-0 bottom-0 object-contain opacity-80 lg:hidden z-10 animate-pulse"
         style={{ height: "8rem" }}
       />
-
-      {/* Star decorative elements placeholder */}
       <img
         src={flower}
         alt="Flower decoration"
@@ -119,18 +128,17 @@ const FAQ = () => {
         style={{ height: "5rem", bottom: "1.5rem" }}
       />
 
-
       {/* Main content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center mx-16 lg:px-8">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center mx-4 lg:mx-16 lg:px-8 pl-3 pr-3 lg:pl-0 lg:pr-0">
         <h2
-          className="gradient-text text-left pt-8 w-full lg:text-center lg:pt-0" // Added text-left and w-full for mobile, lg:text-center for desktop
+          className="gradient-text text-left pt-2 w-full lg:text-center lg:pt-0"
           style={{
             fontSize: "2.8rem",
             fontWeight: "bold",
             display: "inline-block",
             color: "transparent",
             backgroundClip: "text",
-            marginBottom: "1rem",
+            marginBottom: "0.1rem",
             letterSpacing: "0.05em",
             animation: "fade-in 1s ease-in",
             backgroundImage: "linear-gradient(15deg, #0E9F9B, #8FC18F, #FFB34A)"
@@ -141,63 +149,166 @@ const FAQ = () => {
 
         {/* FAQ Items Container */}
         <div className="w-full max-w-6xl">
-          <div className="flex flex-col gap-4">
-            {faqData.map((item, index) => (
-              <div key={index} className="w-full animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
-                <div
-                  className={`bg-white/10 backdrop-blur-sm rounded-xl cursor-pointer transition-all duration-500 ease-out hover:bg-white/20 border border-slate-600/30 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-400/20 transform hover:scale-[1.02] ${openItems.includes(index) ? "bg-white/20 border-teal-400/40 shadow-lg shadow-teal-400/10" : ""}                    }`}
-                  onClick={() => toggleItem(index)}
-                  style={{ minHeight: "40px", padding: 0 }} // Reduced height and removed extra padding
-                >
-                  <div className="p-1 pl-2 lg:p-2 lg:pl-8 relative overflow-hidden"> {/* Added relative and overflow-hidden */}
-                    <div className="flex items-center justify-between min-h-[32px]">
-                      <span className="text-white text-sm lg:text-base font-medium transition-colors duration-300">
-                        {item.question}
-                      </span>
-
-                      {/* Semi-transparent white background layer - only shows when closed */}
-                      {!openItems.includes(index) && (
-                        <div
-                          className="absolute inset-y-0 right-0 bg-white opacity-15 hidden lg:block"
-                          style={{
-                            width: "2.3rem",
-                            borderTopRightRadius: "0.375rem", // rounded-tr-md equivalent
-                            borderBottomRightRadius: "0.375rem" // rounded-br-md equivalent
-                          }}
-                        />
-                      )}
-
-                      <div className="ml-4 flex-shrink-0 relative z-10"> {/* Added z-10 to ensure icon is above the layer */}
-                        {/* Icon container with rotation */}
-                        <div
-                          className={`relative transition-all duration-300 ease-out ${openItems.includes(index) ? "rotate-180 scale-110" : "rotate-0 scale-100"
-                            }`}
-                        >
-                          {openItems.includes(index) ? (
-                            <Minus className="w-5 h-5 text-white" />
-                          ) : (
-                            <Plus className="w-5 h-5 text-white" />
-                          )}
+          {/* Mobile: single column, Desktop: two columns */}
+          <div className="flex flex-col gap-4 lg:flex-row lg:gap-8">
+            {/* Mobile: show all in one column */}
+            <div className="flex flex-col gap-4 w-full lg:hidden pr-5">
+              {faqData.map((item, idx) => (
+                <div key={idx} className="w-full animate-fade-in-up" style={{ animationDelay: `${idx * 100}ms` }}>
+                  <div
+                    className={`bg-white/10 backdrop-blur-sm rounded-xl cursor-pointer transition-all duration-500 ease-out hover:bg-white/20 border border-slate-600/30 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-400/20 transform hover:scale-[1.02] ${openItems.includes(idx) ? "bg-white/20 border-teal-400/40 shadow-lg shadow-teal-400/10" : ""}`}
+                    onClick={() => toggleItem(idx)}
+                    style={{ minHeight: "40px", padding: 0 }}
+                  >
+                    <div className="p-1 lg:p-2 lg:pl-8 relative overflow-hidden">
+                      <div className="flex items-center justify-between min-h-[32px]">
+                        <span className="text-white text-sm lg:text-base font-medium transition-colors duration-300">
+                          {item.question}
+                        </span>
+                        {!openItems.includes(idx) && (
+                          <div
+                            className="absolute inset-y-0 right-0 bg-white opacity-15"
+                            style={{
+                              width: "2.3rem",
+                              borderTopRightRadius: "0.375rem",
+                              borderBottomRightRadius: "0.375rem"
+                            }}
+                          />
+                        )}
+                        <div className="ml-4 flex-shrink-0 relative z-10">
+                          <div
+                            className={`relative transition-all duration-300 ease-out ${openItems.includes(idx) ? "rotate-180 scale-110" : "rotate-0 scale-100"
+                              }`}
+                          >
+                            {openItems.includes(idx) ? (
+                              <Minus className="w-5 h-5 text-white" />
+                            ) : (
+                              <Plus className="w-5 h-5 text-white" />
+                            )}
+                          </div>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Expandable answer with smooth animation */}
-                    <div
-                      className={`overflow-hidden transition-all duration-500 ease-out ${openItems.includes(index) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                        }`}
-                    >
                       <div
-                        className={`pt-2 border-t border-slate-600/30 transition-all duration-300 delay-100 ${openItems.includes(index) ? "translate-y-0" : "-translate-y-2"
+                        className={`overflow-hidden transition-all duration-500 ease-out ${openItems.includes(idx) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                           }`}
                       >
-                        <p className="text-slate-300 text-xs lg:text-sm leading-relaxed">{item.answer}</p>
+                        <div
+                          className={`pt-2 border-t border-slate-600/30 transition-all duration-300 delay-100 ${openItems.includes(idx) ? "translate-y-0" : "-translate-y-2"
+                            }`}
+                        >
+                          <p className="text-slate-300 text-xs lg:text-sm leading-relaxed">{item.answer}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            {/* Desktop: two columns */}
+            <div className="hidden lg:flex flex-1 flex-col gap-4">
+              {leftColumn.map((item, idx) => (
+                <div key={idx} className="w-full animate-fade-in-up" style={{ animationDelay: `${idx * 100}ms` }}>
+                  <div
+                    className={`bg-white/10 backdrop-blur-sm rounded-xl cursor-pointer transition-all duration-500 ease-out hover:bg-white/20 border border-slate-600/30 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-400/20 transform hover:scale-[1.02] ${openLeft.includes(idx) ? "bg-white/20 border-teal-400/40 shadow-lg shadow-teal-400/10" : ""}`}
+                    onClick={() => toggleLeft(idx)}
+                    style={{ minHeight: "40px", padding: 0 }}
+                  >
+                    <div className="p-1 pl-2 lg:p-2 lg:pl-8 relative overflow-hidden">
+                      <div className="flex items-center justify-between min-h-[32px]">
+                        <span className="text-white text-sm lg:text-base font-medium transition-colors duration-300">
+                          {item.question}
+                        </span>
+                        {!openLeft.includes(idx) && (
+                          <div
+                            className="absolute inset-y-0 right-0 bg-white opacity-15 hidden lg:block"
+                            style={{
+                              width: "2.3rem",
+                              borderTopRightRadius: "0.375rem",
+                              borderBottomRightRadius: "0.375rem"
+                            }}
+                          />
+                        )}
+                        <div className="ml-4 flex-shrink-0 relative z-10">
+                          <div
+                            className={`relative transition-all duration-300 ease-out ${openLeft.includes(idx) ? "rotate-180 scale-110" : "rotate-0 scale-100"
+                              }`}
+                          >
+                            {openLeft.includes(idx) ? (
+                              <Minus className="w-5 h-5 text-white" />
+                            ) : (
+                              <Plus className="w-5 h-5 text-white" />
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`overflow-hidden transition-all duration-500 ease-out ${openLeft.includes(idx) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                          }`}
+                      >
+                        <div
+                          className={`pt-2 border-t border-slate-600/30 transition-all duration-300 delay-100 ${openLeft.includes(idx) ? "translate-y-0" : "-translate-y-2"
+                            }`}
+                        >
+                          <p className="text-slate-300 text-xs lg:text-sm leading-relaxed">{item.answer}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="hidden lg:flex flex-1 flex-col gap-4 mt-4 lg:mt-0">
+              {rightColumn.map((item, idx) => (
+                <div key={idx} className="w-full animate-fade-in-up" style={{ animationDelay: `${(idx + 3) * 100}ms` }}>
+                  <div
+                    className={`bg-white/10 backdrop-blur-sm rounded-xl cursor-pointer transition-all duration-500 ease-out hover:bg-white/20 border border-slate-600/30 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-400/20 transform hover:scale-[1.02] ${openRight.includes(idx) ? "bg-white/20 border-teal-400/40 shadow-lg shadow-teal-400/10" : ""}`}
+                    onClick={() => toggleRight(idx)}
+                    style={{ minHeight: "40px", padding: 0 }}
+                  >
+                    <div className="p-1 pl-2 lg:p-2 lg:pl-8 relative overflow-hidden">
+                      <div className="flex items-center justify-between min-h-[32px]">
+                        <span className="text-white text-sm lg:text-base font-medium transition-colors duration-300">
+                          {item.question}
+                        </span>
+                        {!openRight.includes(idx) && (
+                          <div
+                            className="absolute inset-y-0 right-0 bg-white opacity-15 hidden lg:block"
+                            style={{
+                              width: "2.3rem",
+                              borderTopRightRadius: "0.375rem",
+                              borderBottomRightRadius: "0.375rem"
+                            }}
+                          />
+                        )}
+                        <div className="ml-4 flex-shrink-0 relative z-10">
+                          <div
+                            className={`relative transition-all duration-300 ease-out ${openRight.includes(idx) ? "rotate-180 scale-110" : "rotate-0 scale-100"
+                              }`}
+                          >
+                            {openRight.includes(idx) ? (
+                              <Minus className="w-5 h-5 text-white" />
+                            ) : (
+                              <Plus className="w-5 h-5 text-white" />
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`overflow-hidden transition-all duration-500 ease-out ${openRight.includes(idx) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                          }`}
+                      >
+                        <div
+                          className={`pt-2 border-t border-slate-600/30 transition-all duration-300 delay-100 ${openRight.includes(idx) ? "translate-y-0" : "-translate-y-2"
+                            }`}
+                        >
+                          <p className="text-slate-300 text-xs lg:text-sm leading-relaxed">{item.answer}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
