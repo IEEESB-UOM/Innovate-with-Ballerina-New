@@ -150,7 +150,7 @@ const FAQ = () => {
         {/* FAQ Items Container */}
         <div className="w-full max-w-6xl">
           {/* Mobile: single column, Desktop: two columns */}
-          <div className="flex flex-col gap-4 lg:flex-row lg:gap-8">
+          <div className="flex flex-col gap-4 lg:flex-row lg:gap-8 pt-4">
             {/* Mobile: show all in one column */}
             <div className="flex flex-col gap-4 w-full lg:hidden pr-5">
               {faqData.map((item, idx) => (
