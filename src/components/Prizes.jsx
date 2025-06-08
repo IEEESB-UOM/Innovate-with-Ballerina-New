@@ -258,7 +258,7 @@ const Prizes = ({ isActive }) => {
 
       {/* Most Popular Text - Mobile Only */}
       <div className="absolute left-1/2 transform -translate-x-1/2 mt-[450px] z-20 block sm:hidden">
-        <p className="text-amber-50 text-[19px] text-center px-1">
+        <p className="text-amber-50 text-[15px] text-center px-1">
           <span className="font-semibold">Most Popular:</span> Top 10 teams win <span className="text-amber-300">WSO2 hampers</span> for social media reach.
         </p>
       </div>
