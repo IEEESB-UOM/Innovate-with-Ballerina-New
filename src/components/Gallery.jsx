@@ -148,7 +148,7 @@ const Gallery = ({ isActive }) => {
             {/* Center Card */}
             <motion.div
               key={`center-${slideIndices.center}`}
-              className="absolute w-[16rem] sm:w-[24rem] md:w-[32rem] lg:w-[40rem] h-[16rem] sm:h-[20rem] md:h-[24rem] lg:h-[24rem] rounded-2xl overflow-hidden shadow-2xl cursor-pointer transform-gpu"
+              className="absolute w-[20rem] sm:w-[24rem] md:w-[32rem] lg:w-[40rem] h-[16rem] sm:h-[20rem] md:h-[24rem] lg:h-[24rem] rounded-2xl overflow-hidden shadow-2xl cursor-pointer transform-gpu"
               initial={{ scale: 0.8, zIndex: 3 }}
               animate={{ scale: 1, zIndex: 5 }}
               transition={{
@@ -224,14 +224,14 @@ const Gallery = ({ isActive }) => {
         </div>
 
         {/* Dots Navigation */}
-        <div className="flex justify-center space-x-1 sm:space-x-2 mt-4 sm:mt-8">
+        <div className="flex justify-center space-x-1 sm:space-x-2 mt-2 sm:mt-2">
           {images.map((_, index) => (
             <motion.button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+              className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? "w-4 sm:w-6 bg-gradient-to-r from-[#FBB934] to-[#10C3BD]"
+                  ? "w-6 sm:w-8 bg-gradient-to-r from-[#FBB934] to-[#10C3BD]"
                   : "bg-gray-400/30 hover:bg-gray-400/50"
               }`}
               whileHover={{ scale: 1.2 }}
