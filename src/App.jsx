@@ -11,119 +11,149 @@ import NavigationDots from "./components/NavigationDots";
 import GradientBorderButton from "./components/common/GradientBorderButton";
 import ParticleBackground from "./components/ParticleBackground";
 import Gallery from "./components/Gallery";
+import Preloader from "./components/Preloader";
 
 function App() {
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPreloaderDone, setIsPreloaderDone] = useState(false);
   const numSections = 9;
   const scrollLock = useRef(false);
 
+  // Handle pre-loader completion
+  const handlePreloaderDone = () => {
+    setIsPreloaderDone(true);
+  };
+
   useEffect(() => {
+    // Disable scroll during pre-loader
+    if (!isPreloaderDone) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
     const container = containerRef.current;
 
-    const handleScroll = (direction) => {
-      if (scrollLock.current) return;
-      scrollLock.current = true;
+    // Only add event listeners if pre-loader is done and container exists
+    if (isPreloaderDone && container) {
+      const handleScroll = (direction) => {
+        if (scrollLock.current) return;
+        scrollLock.current = true;
 
-      setCurrentIndex((prev) => {
-        let next = prev + direction;
-        if (next < 0) next = 0;
-        if (next >= numSections) next = numSections - 1;
-        return next;
+        setCurrentIndex((prev) => {
+          let next = prev + direction;
+          if (next < 0) next = 0;
+          if (next >= numSections) next = numSections - 1;
+          return next;
+        });
+
+        setTimeout(() => {
+          scrollLock.current = false;
+        }, 1500);
+      };
+
+      const onWheel = (e) => {
+        e.preventDefault();
+        const direction = e.deltaY > 0 ? 1 : -1;
+        handleScroll(direction);
+      };
+
+      const onKeyDown = (e) => {
+        if (e.key === "ArrowDown") {
+          handleScroll(1);
+        } else if (e.key === "ArrowUp") {
+          handleScroll(-1);
+        }
+      };
+
+      container.addEventListener("wheel", onWheel, { passive: false });
+      window.addEventListener("keydown", onKeyDown);
+
+      // Cleanup event listeners
+      return () => {
+        if (container) {
+          container.removeEventListener("wheel", onWheel);
+        }
+        window.removeEventListener("keydown", onKeyDown);
+        document.body.style.overflow = "auto"; // Cleanup
+      };
+    }
+  }, [numSections, isPreloaderDone]);
+
+  useEffect(() => {
+    if (isPreloaderDone && containerRef.current) {
+      const targetY = currentIndex * window.innerHeight;
+      containerRef.current.scrollTo({
+        top: targetY,
+        behavior: "smooth",
       });
-
-      setTimeout(() => {
-        scrollLock.current = false;
-      }, 1500);
-    };
-
-    const onWheel = (e) => {
-      e.preventDefault();
-      const direction = e.deltaY > 0 ? 1 : -1;
-      handleScroll(direction);
-    };
-
-    const onKeyDown = (e) => {
-      if (e.key === "ArrowDown") {
-        handleScroll(1);
-      } else if (e.key === "ArrowUp") {
-        handleScroll(-1);
-      }
-    };
-
-    container.addEventListener("wheel", onWheel, { passive: false });
-    window.addEventListener("keydown", onKeyDown);
-
-    return () => {
-      container.removeEventListener("wheel", onWheel);
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [numSections]);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const targetY = currentIndex * window.innerHeight;
-    container.scrollTo({
-      top: targetY,
-      behavior: "smooth",
-    });
-  }, [currentIndex]);
+    }
+  }, [currentIndex, isPreloaderDone]);
 
   return (
     <div className="relative font-space-grotesk">
-      <div className="fixed top-8 left-8 z-50">
-        <img
-          src="./ballerina_icon.svg"
-          alt="Ballerina Icon"
-          className="w-auto"
-          onClick={() => setCurrentIndex(0)}
-        />
-      </div>
-      <div className="fixed top-9 right-8 z-50">
-        {currentIndex !== 5 && (
-          <GradientBorderButton onClick={() => setCurrentIndex(5)}>
-            REGISTER NOW
-          </GradientBorderButton>
-        )}
-      </div>
-      <div
-        ref={containerRef}
-        className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
-      >
-        <NavigationDots
-          currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
-          numSections={numSections}
-        />
-        <section className="snap-start h-screen flex items-center justify-center">
-          <Hero isActive={currentIndex === 0} />
-        </section>
-        <section className="snap-start h-screen flex items-center justify-center">
-          <About isActive={currentIndex === 1} />
-        </section>
-        <section className="snap-start h-screen flex items-center justify-center">
-          <Prizes isActive={currentIndex === 2} />
-        </section>
-        <section className="snap-start h-screen flex items-center justify-center">
-          <Timeline isActive={currentIndex === 3} />
-        </section>
-        <section className="snap-start h-screen flex items-center justify-center">
-          <Timeline2 isActive={currentIndex === 4} />
-        </section>{" "}
-        <section className="snap-start h-screen flex items-center justify-center">
-          <RegisterNow isActive={currentIndex === 5} />
-        </section>
-        <section className="snap-start h-screen flex items-center justify-center">
-          <Gallery isActive={currentIndex === 6} />
-        </section>
-        <section className="snap-start h-screen flex items-center justify-center">
-          <FAQ isActive={currentIndex === 7} />
-        </section>
-        <section className="snap-start h-screen flex items-center justify-center">
-          <ContactUs isActive={currentIndex === 8} />
-        </section>
-      </div>
-      <ParticleBackground />
+      {/* Show pre-loader */}
+      <Preloader onLoaded={handlePreloaderDone} />
+
+      {/* Main content, only render after pre-loader is done */}
+      {isPreloaderDone && (
+        <div>
+          <div className="fixed top-8 left-8 z-50">
+            <img
+              src="./ballerina_icon.svg"
+              alt="Ballerina Icon"
+              className="w-auto"
+              onClick={() => setCurrentIndex(0)}
+            />
+          </div>
+          <div className="fixed top-9 right-8 z-50">
+            {currentIndex !== 5 && (
+              <GradientBorderButton onClick={() => setCurrentIndex(5)}>
+                REGISTER NOW
+              </GradientBorderButton>
+            )}
+          </div>
+          <div
+            ref={containerRef}
+            className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
+          >
+            <NavigationDots
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+              numSections={numSections}
+            />
+            <section className="snap-start h-screen flex items-center justify-center">
+              <Hero isActive={currentIndex === 0} />
+            </section>
+            <section className="snap-start h-screen flex items-center justify-center">
+              <About isActive={currentIndex === 1} />
+            </section>
+            <section className="snap-start h-screen flex items-center justify-center">
+              <Prizes isActive={currentIndex === 2} />
+            </section>
+            <section className="snap-start h-screen flex items-center justify-center">
+              <Timeline isActive={currentIndex === 3} />
+            </section>
+            <section className="snap-start h-screen flex items-center justify-center">
+              <Timeline2 isActive={currentIndex === 4} />
+            </section>
+            <section className="snap-start h-screen flex items-center justify-center">
+              <RegisterNow isActive={currentIndex === 5} />
+            </section>
+            <section className="snap-start h-screen flex items-center justify-center">
+              <Gallery isActive={currentIndex === 6} />
+            </section>
+            <section className="snap-start h-screen flex items-center justify-center">
+              <FAQ isActive={currentIndex === 7} />
+            </section>
+            <section className="snap-start h-screen flex items-center justify-center">
+              <ContactUs isActive={currentIndex === 8} />
+            </section>
+          </div>
+          <ParticleBackground />
+        </div>
+      )}
     </div>
   );
 }
