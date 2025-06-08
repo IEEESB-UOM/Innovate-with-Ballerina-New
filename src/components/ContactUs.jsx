@@ -195,7 +195,7 @@ const ContactUs = () => {
               {contacts.map((person, index) => (
                 <ContactCard key={person.id} person={person} isMobile={true} index={index} />
               ))}
-              <div className="flex flex-col gap-10 items-center justify-center px-0">
+              <div className="flex flex-col gap-10 items-center justify-center px-0 z-99">
                 {logos.map((logo, index) => (
                   <div key={index} className="relative animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                     <img
@@ -361,12 +361,12 @@ const ContactCard = ({
         style={{ scale: isMobile ? 1.8 : 1.5, width: isMobile ? "90px" : "100px", height: isMobile ? "90px" : "100px" }}
       />
 
-      <div className="flex flex-col items-start gap-4">
+      <div className="flex flex-col items-center md:items-start gap-4">
         {/* Name Label */}
         <div className="bg-white text-slate-900 px-4 py-1 font-medium text-center rounded-sm mt-12 lg:mt-2">{person.name}</div>
 
         {/* Contact Details */}
-        <div className="bg-white/0 lg:backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 text-start space-y-1">
+        <div className="flex flex-col items-center md:items-start bg-white/0 lg:backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 text-start space-y-1">
           <p className="text-white text-sm">{person.title}</p>
           <p className="text-white text-xs">{person.organization}</p>
           <p className="text-gray-300 text-xs">{person.university}</p>
