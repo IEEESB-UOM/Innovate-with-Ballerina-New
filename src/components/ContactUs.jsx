@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import flower from "../assets/ContactUs/flower.png"
+// import flower from "../assets/ContactUs/flower.png"
 import topleft from "../assets/ContactUs/top_left.png"
 import ameer from "../assets/ContactUs/ameer.png"
 import sanjula from "../assets/ContactUs/sanjula.png"
@@ -9,9 +9,9 @@ import lakindu from "../assets/ContactUs/lakindu.png"
 import ishan from "../assets/ContactUs/Ishan.png"
 import dasun from "../assets/ContactUs/dasun.png"
 import grid from "../assets/ContactUs/grid.png"
-import ballerina from "../assets/ContactUs/ballerina.png"
+import ballerina from "../assets/ContactUs/ballerina-logo-white.svg"
 import ieee from "../assets/ContactUs/ieee.png"
-import wso2 from "../assets/ContactUs/wso2.png"
+import wso2 from "../assets/ContactUs/wso2.svg"
 import ieeecs from "../assets/ContactUs/ieeecs.png"
 import left from "../assets/ContactUs/left.png"
 import right from "../assets/ContactUs/right.png"
@@ -72,11 +72,11 @@ const sampleContacts = [
 
 // Partner logos - replace with your actual logos
 const partnerLogos = [
-  { name: "IEEE Computer Society", logo: ieee },
-  { name: "IEEE Student Branch", logo: ieeecs },
-  { name: "WSO2", logo: wso2 },
-  { name: "Ballerina", logo: ballerina },
-]
+  { name: "IEEE Computer Society", logo: ieee, width: 150},
+  { name: "IEEE Student Branch", logo: ieeecs, width: 110},
+  { name: "WSO2", logo: wso2, width: 70},
+  { name: "Ballerina", logo: ballerina, width: 110},
+];
 
 const ContactUs = () => {
   const contacts = sampleContacts
@@ -143,12 +143,12 @@ const ContactUs = () => {
         style={{ height: "15.8rem" }}
       />
       {/* Star decorative elements placeholder */}
-      <img
+      {/* <img
         src={flower}
         alt="Flower decoration"
         className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block z-10 animate-spin-slow"
         style={{ height: "11rem", top: "-9.8rem" }}
-      />
+      /> */}
 
       {/* Grid background image */}
       <img
@@ -253,13 +253,14 @@ const ContactUs = () => {
           ) : null}
         </div>
         {isMobile ? null : (
-          <div className="absolute bottom-10 left-0 right-0 pl-100 pr-100 flex flex-row justify-center gap-8 md:gap-10 z-11">
+          <div className="absolute bottom-10 left-0 right-0 pl-100 pr-100 flex flex-row justify-center gap-10 md:gap-12 z-11">
             {logos.map((logo, index) => (
-              <div key={index} className="relative md:w-1/4 md:h-12 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <div key={index} className="relative animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <img
                   src={logo.logo || "/placeholder.svg"}
                   alt={logo.name}
-                  className="w-full h-full object-contain hover:scale-110 duration-300"
+                  className="h-full object-contain hover:scale-110 duration-300"
+                  width={logo.width}
                 />
               </div>
             ))}
