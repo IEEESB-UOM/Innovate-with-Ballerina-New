@@ -191,26 +191,27 @@ const ContactUs = () => {
         <div className="w-full">
           {isMobile ? (
             // Mobile layout - single column
-            <div className="flex flex-col gap-20 items-center mt-520 lg:mt-50">
+            <div className="flex flex-col gap-20 items-center mt-480 lg:mt-50">
               {contacts.map((person, index) => (
                 <ContactCard key={person.id} person={person} isMobile={true} index={index} />
               ))}
-              <div className="flex flex-col gap-10 items-center justify-center">
+              <div className="flex flex-col gap-10 items-center justify-center px-0">
                 {logos.map((logo, index) => (
-                  <div key={index} className="w-3/4 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div key={index} className="relative animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                     <img
                       src={logo.logo || "/placeholder.svg"}
                       alt={logo.name}
-                      className="w-full h-full pl-15 pr-15 object-contain hover:scale-110 duration-300"
+                      className="h-full object-contain"
+                      width={logo.width * 1.5}
                     />
                   </div>
                 ))}
-                <div className="relative w-full h-40">
+                <div className="relative w-full">
                   {/* Grid background image */}
                   <img
                     src={grid}
                     alt="Grid background decoration"
-                    className="absolute w-full object-contain opacity-80 z-99 scale-[1.5] bottom-[26px] left-0"
+                    className="absolute w-full object-contain opacity-80 z-99 scale-[1.5] top-[-5rem] left-0"
                   />
                 </div>
               </div>
