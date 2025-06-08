@@ -68,9 +68,8 @@ function App() {
       behavior: "smooth",
     });
   }, [currentIndex]);
-
   return (
-    <div className="relative font-space-grotesk">
+    <div className="relative font-space-grotesk overflow-hidden">
       <div className="fixed top-8 left-8 z-50">
         <img
           src="./ballerina_icon.svg"
@@ -81,14 +80,13 @@ function App() {
       </div>
       <div className="fixed top-9 right-8 z-50">
         {currentIndex !== 5 && (
-          <GradientBorderButton onClick={() => setCurrentIndex(5)}>
+          <GradientBorderButton onClick={() => window.location.href = '/register'}>
             REGISTER NOW
           </GradientBorderButton>
         )}
-      </div>
-      <div
+      </div>      <div
         ref={containerRef}
-        className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
+        className="h-screen w-screen overflow-hidden overflow-y-auto snap-y snap-mandatory"
       >
         <NavigationDots
           currentIndex={currentIndex}

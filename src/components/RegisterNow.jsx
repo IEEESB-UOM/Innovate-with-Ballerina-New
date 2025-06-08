@@ -90,13 +90,13 @@ const RegisterNow = () => {
           className="flex flex-col sm:flex-row justify-center items-center gap-4"
         >
           <GradientBorderButton
-            onClick={() => window.open("#", "_blank")}
+            onClick={() => window.location.href = '/register'}
             className="w-full sm:w-auto"
           >
             REGISTER NOW
           </GradientBorderButton>
           <GradientBorderButton
-            onClick={() => window.open("#", "_blank")}
+            onClick={() => window.location.href = '/delegate-booklet'}
             filled={true}
             className="w-full sm:w-auto"
           >
