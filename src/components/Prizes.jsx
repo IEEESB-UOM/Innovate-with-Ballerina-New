@@ -257,8 +257,8 @@ const Prizes = ({ isActive }) => {
       </div>
 
       {/* Most Popular Text - Mobile Only */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[420px] z-20 block sm:hidden">
-        <p className="text-amber-50 text-sm text-center px-1">
+      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[450px] z-20 block sm:hidden">
+        <p className="text-amber-50 text-[19px] text-center px-1">
           <span className="font-semibold">Most Popular:</span> Top 10 teams win <span className="text-amber-300">WSO2 hampers</span> for social media reach.
         </p>
       </div>
@@ -302,7 +302,7 @@ const Prizes = ({ isActive }) => {
           </div>
         </div>
       </div>      {/* Mobile and Tablet Bottom Content */}
-      <div className='absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-full px-4 block lg:hidden'>
+      <div className='absolute bottom-10 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-full px-4 block lg:hidden'>
         <div className='text-center'>
           <div className='mb-4'>
             <span className='text-[25px] sm:text-[30px] font-semibold text-amber-50'>
