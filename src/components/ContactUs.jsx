@@ -123,7 +123,7 @@ const ContactUs = () => {
       ></div> */}
 
       {/* Grid lines */}
-      <div className="absolute inset-0 opacity-5">
+      {/* <div className="absolute inset-0 opacity-5">
         <div
           className="h-full w-full"
           style={{
@@ -132,7 +132,7 @@ const ContactUs = () => {
             backgroundSize: "100px 100px",
           }}
         ></div>
-      </div>
+      </div> */}
 
       {/* Decorative elements */}
       {/* Left curved shape */}
@@ -211,7 +211,7 @@ const ContactUs = () => {
                   <img
                     src={grid}
                     alt="Grid background decoration"
-                    className="absolute w-full object-contain opacity-80 z-99 scale-[1.5] top-[-5rem] left-0"
+                    className="absolute bottom-0 w-full object-contain opacity-80 z-10 scale-[1.5] top-[-5rem] left-0"
                   />
                 </div>
               </div>
@@ -361,7 +361,7 @@ const ContactCard = ({
         style={{ scale: isMobile ? 1.8 : 1.5, width: isMobile ? "90px" : "100px", height: isMobile ? "90px" : "100px" }}
       />
 
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-start gap-4">
         {/* Name Label */}
         <div className="bg-white text-slate-900 px-4 py-1 font-medium text-center rounded-sm mt-12 lg:mt-2">{person.name}</div>
 
