@@ -107,7 +107,7 @@ const Hero: React.FC = () => {
         style={{ translateY: scrollY * (isMobile ? -25 : -50) }}
       >
         <motion.div
-          className="absolute inset-0 flex items-center justify-center -mt-20 sm:mt-0"
+          className="absolute inset-0 flex items-center justify-center -mt-24 sm:-mt-12" // Increased negative margin
           animate={{
             y: [-10, 10, -10],
           }}
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
           }}
         >
           <motion.div
-            className="w-full h-3/5 max-w-[280px] sm:h-full md:-translate-y-12 sm:max-w-xl md:max-w-2xl lg:max-w-3xl"
+            className="w-full h-3/5 max-w-[280px] sm:h-full -translate-y-12 sm:-translate-y-16 lg:-translate-y-20" // Adjusted translate-y
             whileHover={{
               scale: 1.05,
               transition: { duration: 0.3 },

@@ -7,10 +7,10 @@ const Gallery = ({ isActive }) => {
   const [isHovered, setIsHovered] = useState(false);
   const images = [
     {
-      src: "/past-events/1.jpg",
+      src: "/past-events/10.jpg",
     },
     {
-      src: "/past-events/2.jpg",
+      src: "/past-events/11.jpg",
     },
     {
       src: "/past-events/3.jpg",
@@ -173,8 +173,8 @@ const Gallery = ({ isActive }) => {
                 className="w-full h-full object-cover transform transition-all duration-500"
               />
               <motion.div
-                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0"
-                whileHover={{ opacity: 1 }}
+                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-100"
+                whileHover={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
               />
             </motion.div>
