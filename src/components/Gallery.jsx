@@ -59,9 +59,9 @@ const Gallery = ({ isActive }) => {
   };
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41] flex flex-col items-center justify-center overflow-hidden py-8">
+    <div className="relative min-h-screen w-full bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] flex flex-col items-center justify-center overflow-hidden py-8">
       {/* Background Particles */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0 pointer-events-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -86,7 +86,7 @@ const Gallery = ({ isActive }) => {
             }}
           />
         ))}
-      </motion.div>
+      </motion.div> */}
 
       {/* Title */}
       <motion.h2
@@ -96,7 +96,7 @@ const Gallery = ({ isActive }) => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-10 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] bg-clip-text text-transparent px-2 text-center"
       >
-        Gallery
+        Innovate with Ballerina 2024
       </motion.h2>
 
       {/* Main Gallery Container */}
@@ -148,7 +148,7 @@ const Gallery = ({ isActive }) => {
             {/* Center Card */}
             <motion.div
               key={`center-${slideIndices.center}`}
-              className="absolute w-[20rem] sm:w-[24rem] md:w-[32rem] lg:w-[40rem] h-[16rem] sm:h-[20rem] md:h-[24rem] lg:h-[24rem] rounded-2xl overflow-hidden shadow-2xl cursor-pointer transform-gpu"
+              className="absolute w-[20rem] sm:w-[24rem] md:w-[32rem] lg:w-[40rem] h-[16rem] sm:h-[20rem] md:h-[24rem] lg:h-[24rem] rounded-2xl overflow-hidden shadow-2xl transform-gpu"
               initial={{ scale: 0.8, zIndex: 3 }}
               animate={{ scale: 1, zIndex: 5 }}
               transition={{
@@ -224,7 +224,7 @@ const Gallery = ({ isActive }) => {
         </div>
 
         {/* Dots Navigation */}
-        <div className="flex justify-center space-x-1 sm:space-x-2 mt-0 sm:mt-0">
+        <div className="flex justify-center space-x-3 sm:space-x-4 mt-0 sm:mt-0">
           {images.map((_, index) => (
             <motion.button
               key={index}
