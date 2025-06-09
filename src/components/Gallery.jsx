@@ -94,7 +94,7 @@ const Gallery = ({ isActive }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-10 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] bg-clip-text text-transparent px-2 text-center"
+        className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-6 bg-gradient-to-r from-[#FBB934] to-[#10C3BD] bg-clip-text text-transparent px-2 text-center"
       >
         Innovate with Ballerina 2024
       </motion.h2>
