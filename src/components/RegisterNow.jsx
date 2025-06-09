@@ -6,8 +6,8 @@ import ParticleBackground from "./ParticleBackground";
 
 const RegisterNow = () => {
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41] flex items-center justify-center overflow-hidden px-4 py-16 sm:px-6">
-      <ParticleBackground />
+    <div className="relative w-full min-h-screen bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] flex items-center justify-center overflow-hidden px-4 py-16 sm:px-6">
+      {/* <ParticleBackground /> */}
       {/* Background decorative elements */}
       <motion.img
         src="/Wrinkle.svg"
@@ -98,13 +98,14 @@ const RegisterNow = () => {
           <GradientBorderButton
             onClick={() => window.location.href = '/delegate-booklet'}
             filled={true}
+            text={true}
             className="w-full sm:w-auto"
           >
             DOWNLOAD BOOKLET
           </GradientBorderButton>
         </motion.div>
       </motion.div>
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0A1B23] to-transparent z-0"></div>
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0A2324] to-transparent z-0"></div>
     </div>
   );
 };
