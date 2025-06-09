@@ -14,7 +14,7 @@ import ieee from "../assets/ContactUs/ieee.png"
 import wso2 from "../assets/ContactUs/wso2.svg"
 import ieeecs from "../assets/ContactUs/ieeecs.png"
 import left from "../assets/ContactUs/left.png"
-import right from "../assets/ContactUs/right.png"
+// import right from "../assets/ContactUs/right.png"
 
 // Sample data structure - replace with your actual data
 const sampleContacts = [
@@ -237,19 +237,18 @@ const ContactUs = () => {
           {isMobile ? (
             <div className="flex justify-center">
               {/* Star images */}
-
               <img
                 src={left}
                 alt="Left decoration"
                 className="absolute w-full h-full object-contain top-[8rem]"
                 style={{ scale: "0.6", left: "-10rem", zIndex: -1 }}
               />
-              <img
+              {/* <img
                 src={right}
                 alt="Right decoration"
                 className="absolute w-full h-full object-contain top-[54rem]"
                 style={{ scale: "0.4", right: "-10rem", zIndex: -1 }}
-              />
+              /> */}
             </div>
           ) : null}
         </div>
