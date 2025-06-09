@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
             <motion.h1
               variants={titleVariants}
               whileHover="hover"
-              className="text-3xl text-[2.6rem] md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-4 tracking-tight"
+              className="text-3xl text-[2.6rem] md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight"
             >
               {" "}
               <motion.span
