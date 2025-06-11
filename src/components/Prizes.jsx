@@ -257,11 +257,11 @@ const Prizes = ({ isActive }) => {
       </div>
 
       {/* Most Popular Text - Mobile Only */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 mt-[450px] z-20 block sm:hidden">
+      {/* <div className="absolute left-1/2 transform -translate-x-1/2 mt-[450px] z-20 block sm:hidden">
         <p className="text-amber-50 text-[15px] text-center px-1">
           <span className="font-semibold">Most Popular:</span> Top 10 teams win <span className="text-amber-300">WSO2 hampers</span> for social media reach.
         </p>
-      </div>
+      </div> */}
 
       {/* Desktop title */}
       <span className='hidden lg:inline-block text-[2.5rem] mt-14 lg:text-[4rem] font-bold bg-gradient-to-r from-[#FFB34A] via-[#8FC18F] to-[#0E9F9B] text-transparent bg-clip-text'>
@@ -276,19 +276,19 @@ const Prizes = ({ isActive }) => {
             Most Popular Innovation
           </span>
           <p className='text-amber-50 text-sm lg:text-lg pl-7 items-center text-justify font-normal mt-4 '>
-            Seperate top 10 teams are selected based on the the reactions and community reaches through social media platforms and eligible to win exclusive <span className="text-amber-300">WSO2 gift hampers</span>  at the awarding ceremony.
+            Separate top teams are selected based on the reactions and community reaches through social media platforms and will be eligible to win at the awarding ceremony.
           </p>
-          <div className='mt-6 pl-7 text-left'>
+          <div className='mt-12 pl-7 text-left'>
             <span className='text-lg lg:text-3xl font-semibold text-amber-50 inline-block  bg-clip-text'>
               Additional Prizes Of
             </span>
-            <p className='text-amber-50 text-base lg:text-3xl font-bold mt-1'>
-              Rs 10,000 /- Each
-            </p>            <p className='text-amber-300 text-sm lg:text-3xl font-normal'>
+            <p className='text-amber-300 text-base lg:text-3xl font-bold mt-1'>
+              Rs 25,000 /- <span className='text-amber-50'>Each</span>
+            </p>            <p className='text-amber-50 text-sm lg:text-3xl font-normal'>
               For Places 4th To 10th
             </p>
           </div>
-          <div className='mt-6 pl-7 text-left'>
+          {/* <div className='mt-6 pl-7 text-left'>
             <div className='flex items-center space-x-4'>
               <span className='text-lg lg:text-2xl font-semibold bg-gradient-to-r from-[#0E9F9B] via-[#8FC18F] to-[#FFB34A] inline-block text-transparent bg-clip-text'>
                 Valuable Certificates<br /> For Every Submission
@@ -299,24 +299,24 @@ const Prizes = ({ isActive }) => {
                 className="w-8 h-8 lg:w-20 lg:h-20"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>      {/* Mobile and Tablet Bottom Content */}
-      <div className='absolute bottom-10 sm:bottom-8 left-1/2 transform -translate-x-1/2 w-full px-4 block lg:hidden'>
+      <div className='absolute left-1/2 mt-[450px] transform -translate-x-1/2 w-full px-4 block lg:hidden'>
         <div className='text-center'>
           <div className='mb-4'>
             <span className='text-[25px] sm:text-[30px] font-semibold text-amber-50'>
               Additional Prizes Of
             </span>
-            <p className='text-amber-50 text-[25px] sm:text-[30px] font-bold mt-1'>
-              Rs 10,000 /- Each
+            <p className='text-amber-300 text-[25px] sm:text-[30px] font-bold mt-1'>
+              Rs 25,000 /- <span className='text-amber-50'>Each</span>
             </p>
-            <p className='text-amber-300 text-lg sm:text-xl font-normal'>
+            <p className='text-amber-50 text-lg sm:text-xl font-normal'>
               For Places 4th To 10th
             </p>
           </div>
 
-          <div className='flex justify-center items-center space-x-2 sm:space-x-4 mb-4'>
+          {/* <div className='flex justify-center items-center space-x-2 sm:space-x-4 mb-4'>
             <span className='text-[18px] sm:text-[22px] font-semibold bg-gradient-to-r from-[#0E9F9B] via-[#8FC18F] to-[#FFB34A] inline-block text-transparent bg-clip-text text-center'>
               Valuable Certificates <br />For Every Submission
             </span>
@@ -326,7 +326,7 @@ const Prizes = ({ isActive }) => {
               alt="Arrow Vector"
               className="w-10 h-8 sm:w-12 sm:h-10"
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
