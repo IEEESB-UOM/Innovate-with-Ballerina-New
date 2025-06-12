@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 const Timeline = () => {
 
   return (
-    <div className="relative h-screen w-full bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0F262A] flex items-center justify-center text-4xl font-bold">
-      <div className="relative w-full flex flex-col items-center h-full md:block">
-        <img src="/Ellipse 7.png" className="absolute left-[0px] top-[250px] hidden md:block" />
-        <img src="/Ellipse 8.png" className="absolute left-[200px] top-[600px] hidden md:block" />
-        <img src="/Ellipse 9.png" className="absolute right-[-30px] top-[450px] hidden md:block" />
-
+    <div className="relative h-screen w-full bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] flex items-center justify-center text-4xl font-bold">
+      <div className="relative w-full flex flex-col gap-4 justify-center items-center h-full md:block">
+        {/* <img src="/Ellipse 7.png" className="absolute left-[0px] top-[250px] hidden md:block" /> */}
+        {/* <img src="/Ellipse 8.png" className="absolute left-[200px] top-[600px] hidden md:block" /> */}
+        {/* <img src="/Ellipse 9.png" className="absolute right-[-30px] top-[450px] hidden md:block" /> */}
          {/* Background Text */}
         <div className='absolute top-[10%] left-[67%] w-full hidden md:block'>
           <p className='text-[184px] font-bold leading-[101%] tracking-[3.44px] capitalize bg-gradient-to-r from-[rgba(14,159,154,0.305)] via-[rgba(143,193,143,0.305)] to-[rgba(255,179,74,0.305)] bg-clip-text text-transparent absolute'>
@@ -18,13 +17,41 @@ const Timeline = () => {
         </div>
 
         {/* Timeline Card */}
-        <div className="md:absolute md:left-[185px] md:top-[180px] md:w-auto w-4/5 mx-auto mt-[150px] md:mt-0">
+        <div className="md:absolute md:left-[185px] md:top-[75px] md:w-auto w-4/5 mx-auto md:mt-0">
           
-          <TimeLineCard text={"Registrations Opening"} month={"May"} day={"19"} />
-
+          <TimeLineCard text={"Registration Opening"} month={"May"} day={"19"} />
+          <motion.div
+            className={"absolute top-[50%] right-[-27%] w-5 h-5 rounded-full bg-teal-300 z-10 hidden xl:block"}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.8 + 0.1,
+                duration: 0.5,
+              },
+            }}
+          />
+          <motion.div
+            className="absolute top-[100%] right-[-27%] w-5 h-5 rounded-full bg-teal-300 z-10 hidden xl:block"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 1,
+                duration: 0.6,
+                ease: 'easeInOut'
+              },
+            }}
+          />
         {/* Line 1 - Desktop*/}
-           <svg
-            className="md:absolute md:left-[90%] top-[80px] hidden md:block"
+           {/* <svg
+            className="md:absolute md:left-[100%] top-0 hidden md:block"
             width="450"
             height="3"
             viewBox="0 0 450 3"
@@ -42,13 +69,13 @@ const Timeline = () => {
               strokeWidth="3"
               strokeLinejoin="round"
             />
-          </svg>
+          </svg> */}
       {/* Line 2 - desktop*/}
           <svg
-            className="md:absolute md:left-[180.5%] top-[80px] hidden md:block"
+            className="absolute right-[-25%] top-[50%] hidden xl:block"
             width="3"
-            height="127"
-            viewBox="0 0 3 127"
+            height="400"
+            viewBox="0 0 3 400"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -57,9 +84,8 @@ const Timeline = () => {
               whileInView={{ pathLength: 1 }}
               transition={{ duration: 1, ease: 'easeInOut', delay: 1}}
               x1="1.5"
-              y1="0"
               x2="1.5"
-              y2="127"
+              y2="400"
               stroke="#8FC18F55"
               strokeWidth="3"
               strokeLinejoin="round"
@@ -68,7 +94,7 @@ const Timeline = () => {
           </svg>
         </div>
     {/* Line 3 - desktop */}
-        <svg
+        {/* <svg
             className="md:absolute md:left-[655px] top-[470px] hidden md:block"
             width="230"
             height="3"
@@ -88,9 +114,9 @@ const Timeline = () => {
               strokeWidth="3"
               strokeLinejoin="round"
             />
-        </svg>
+        </svg> */}
       {/* Line 4 - desktop */}
-        <svg
+        {/* <svg
               className="md:absolute md:left-[43%] top-[470px] hidden md:block"
               width="3"
               height="105"
@@ -110,15 +136,14 @@ const Timeline = () => {
                 strokeWidth="3"
                 strokeLinejoin="round"
               />
-            </svg>
+            </svg> */}
         
 
-        <div className="md:absolute md:left-[885px] md:top-[387px] w-4/5 mx-auto md:w-auto">
-          <TimeLineCard text={"Introductory Session"} month={"June"} day={"4"} />
+        <div className="md:absolute md:right-[180px] md:top-[175px] w-4/5 mx-auto md:w-auto">
+          <TimeLineCard text={"Introductory Session"} month={"June"} day={"04"} />
         </div>
-
         {/* Line 5 - desktop */}
-        <svg
+        {/* <svg
             className="md:absolute md:left-[22.1%] top-[670px] hidden md:block"
             width="100"
             height="3"
@@ -139,9 +164,9 @@ const Timeline = () => {
               strokeLinejoin="round"
               onAnimationComplete={() => setThirdDone(true)}
             />
-        </svg>
+        </svg> */}
       {/* Line 6 - desktop*/}
-        <svg
+        {/* <svg
           className="md:absolute md:left-[22.1%] top-[670px] hidden md:block"
           width="3"
           height="105"
@@ -161,13 +186,45 @@ const Timeline = () => {
             strokeWidth="3"
             strokeLinejoin="round"
           />
-        </svg>
+        </svg> */}
 
-        <div className="md:absolute md:left-[435px] md:top-[575px] w-4/5 mx-auto md:w-auto">
-          <TimeLineCard text={"Workshop 01 & Submission Opening"} month={"July"} day={"08"} />
+        <div className="md:absolute md:left-[180px] md:top-[375px] w-4/5 mx-auto md:w-auto">
+          <TimeLineCard text={"Submission Opening"} month={"July"} day={"08"} />
+          <motion.div
+            className={"absolute top-[50%] right-[-28%] w-5 h-5 rounded-full bg-teal-300 z-10 hidden xl:block"}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.8 + 0.1,
+                duration: 0.5,
+              },
+            }}
+          />
+          <motion.div
+                className={"absolute top-[100%] right-[-28%] w-5 h-5 rounded-full bg-teal-300 z-10 hidden xl:block"}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 1 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.8 + 0.1,
+                    duration: 0.5,
+                  },
+                }}
+            />
+        </div>
+
+        <div className="md:absolute md:right-[180px] md:top-[475px] w-4/5 mx-auto md:w-auto">
+          <TimeLineCard text={"Registration Deadline"} month={"July"} day={"16"} />
         </div>
         {/* Mobile Lines */}
-        <svg
+        {/* <svg
             className="absolute left-[50%] top-[253px] md:hidden"
             width="3"
             height="60"
@@ -232,7 +289,7 @@ const Timeline = () => {
               strokeLinejoin="round"
               strokeDasharray="11 11"
             />
-          </svg>
+          </svg> */}
       </div>
     </div>
   );
