@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Timeline = () => {
   return (
     <div className='relative h-screen w-full bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] flex items-center justify-center text-4xl font-bold'>
-      <div className="relative w-full flex flex-col gap-4 items-center justify-center h-full md:block">
+      <div className="relative w-full flex flex-col gap-8 items-center justify-center h-full md:block">
         <img src="/Ellipse 7.png" className="absolute left-[0px] top-[-420px] hidden md:block" />
         <img src="/Ellipse 8.png" className="absolute left-[200px] top-[-72px] hidden md:block" />
         <img src="/Ellipse 9.png" className="absolute right-[-30px] top-[-300px] hidden md:block z-10"/>
