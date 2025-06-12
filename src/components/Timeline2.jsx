@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Timeline = () => {
   return (
     <div className='relative h-screen w-full bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] flex items-center justify-center text-4xl font-bold'>
-      <div className="relative w-full flex flex-col items-center h-full md:block">
+      <div className="relative w-full flex flex-col gap-4 items-center justify-center h-full md:block">
         <img src="/Ellipse 7.png" className="absolute left-[0px] top-[-420px] hidden md:block" />
         <img src="/Ellipse 8.png" className="absolute left-[200px] top-[-72px] hidden md:block" />
         <img src="/Ellipse 9.png" className="absolute right-[-30px] top-[-300px] hidden md:block z-10"/>
@@ -35,8 +35,57 @@ const Timeline = () => {
                 strokeLinejoin="round"
               />
         </svg> */}
-      <div className="md:absolute md:left-[185px] md:top-[75px] md:w-auto w-4/5 mx-auto mt-[150px] md:mt-0">
+      <div className="md:absolute md:left-[185px] md:top-[75px] md:w-auto w-4/5 mx-auto md:mt-0">
         <TimeLineCard text={"Workshop 01"} month={"July"} day={"21"} />
+          <motion.div
+            className={"absolute top-[50%] right-[-27%] w-5 h-5 rounded-full bg-teal-300 z-10 hidden xl:block"}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.8 + 0.1,
+                duration: 0.5,
+              },
+            }}
+          />
+          <motion.div
+              className={"absolute top-[100%] right-[-27%] w-5 h-5 rounded-full bg-teal-300 z-10 hidden xl:block"}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 1 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.8 + 0.1,
+                  duration: 0.5,
+                },
+              }}
+            />
+          <svg
+            className="absolute right-[-25%] top-[50%] hidden xl:block"
+            width="3"
+            height="400"
+            viewBox="0 0 3 400"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <motion.line
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              transition={{ duration: 1, ease: 'easeInOut', delay: 1}}
+              x1="1.5"
+              x2="1.5"
+              y2="400"
+              stroke="#8FC18F55"
+              strokeWidth="3"
+              strokeLinejoin="round"
+              strokeDasharray="11 11"
+            />
+          </svg>
       </div>
       {/* Line 2 */}
       {/* <svg
@@ -130,8 +179,36 @@ const Timeline = () => {
             />
         </svg> */}
         <div className="md:absolute md:left-[180px] md:top-[375px] w-4/5 mx-auto md:w-auto z-10">
-        <TimeLineCard text={"Submission Deadline"} month={"August"} day={"19"} />
-      </div>
+          <TimeLineCard text={"Submission Deadline"} month={"August"} day={"19"} />
+          <motion.div
+              className={"absolute top-[50%] right-[-28%] w-5 h-5 rounded-full bg-teal-300 z-10 hidden xl:block"}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 1 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.8 + 0.1,
+                  duration: 0.5,
+                },
+              }}
+            />
+            <motion.div
+              className={"absolute top-[100%] right-[-28%] w-5 h-5 rounded-full bg-teal-300 z-10 hidden xl:block"}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 1 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.8 + 0.1,
+                  duration: 0.5,
+                },
+              }}
+            />
+        </div>
       <div className="md:absolute md:right-[180px] md:top-[475px] w-4/5 mx-auto md:w-auto z-10">
         <TimeLineCard text={"Grand Finale & Award Ceremony"} month={"September"} day={"27"} />
       </div>
