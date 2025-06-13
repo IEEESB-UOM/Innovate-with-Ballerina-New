@@ -154,7 +154,7 @@ const Prizes = ({ isActive }) => {
       <img
         src="/Spring_Vector.svg"
         alt="Spring Vector"
-        className="absolute bottom-5 sm:bottom-20 lg:bottom-3 right-[-30px] sm:right-[-50px] lg:right-[-70px] w-24 h-24 sm:w-40 sm:h-30 lg:w-60 lg:h-44 opacity-80 z-0"
+        className="absolute bottom-5 sm:bottom-0 lg:bottom-3 right-[-30px] sm:right-[-50px] lg:right-[-70px] w-24 h-24 sm:w-40 sm:h-30 lg:w-60 lg:h-44 opacity-80 z-0"
       />
 
       {/* Main Title */}
@@ -256,11 +256,11 @@ const Prizes = ({ isActive }) => {
       {/* Mobile and Tablet Layout */}
       <div className="lg:hidden w-full relative">
         {/* Centered Ellipse Background */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 mt-[385px]  z-10">
+        <div className="absolute left-1/2 transform -translate-x-1/2 mt-[385px] sm:mt-[415px] z-10">
           <img
             src="/Ellipse 154.png"
             alt="Ellipse Background"
-            className="w-screen h-8 max-w-none"
+            className="w-screen sm:w-[500px] h-8 max-w-none"
           />
         </div>        {/* Place Awards - Centered */}
         <div className="relative left-1/2 transform -translate-x-1/2 mt-[205px] sm:mt-[200px] z-20">

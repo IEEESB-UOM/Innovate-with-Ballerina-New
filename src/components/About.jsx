@@ -372,13 +372,12 @@ const About = () => {
     });
   };
   return (
-    <div ref={sectionRef} className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] snap-start h-screen w-full flex items-center md:items-center justify-center p-4 pb-15 md:pb-4 font-sans relative">
-      {/* Background Vector - Left Bottom */}
+    <div ref={sectionRef} className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] snap-start h-screen w-full flex items-center md:items-center justify-center p-4 pb-15 md:pb-4 font-sans relative">      {/* Background Vector - Left Bottom */}
       <img
         ref={vectorRef}
         src="/Vector.svg"
         alt="Background Vector"
-        className="absolute bottom-7 left-1 md:bottom-48 md:left-28 w-16 h-16 sm:w-40 sm:h-40 md:w-28 md:h-28 md:opacity-80 opacity-80 z-11000000 animate-spin"
+        className="absolute bottom-7 left-1 sm:bottom-7 sm:left-1 md:bottom-48 md:left-28 w-16 h-16  sm:w-16 sm:h-28 md:w-28 md:h-28 md:opacity-80 opacity-80 z-11000000 animate-spin"
         style={{ animationDuration: '25s' }}
       />
 
