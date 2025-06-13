@@ -181,9 +181,9 @@ const FAQ = () => {
                               }`}
                           >
                             {openItems.includes(idx) ? (
-                              <Minus className="w-5 h-5 text-white" />
+                              <Minus className="w-5 h-5 text-white mr-1" />
                             ) : (
-                              <Plus className="w-5 h-5 text-white" />
+                              <Plus className="w-5 h-5 text-white mr-1" />
                             )}
                           </div>
                         </div>
