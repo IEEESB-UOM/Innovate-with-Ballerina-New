@@ -18,11 +18,11 @@ const Timeline = () => {
         </div>
 
         {/* Timeline Card */}
-        <div className="md:absolute md:left-[185px] md:top-[180px] md:w-auto w-4/5 mx-auto mt-[150px] md:mt-0">
+        <div className="md:absolute md:left-[185px] md:top-[180px] md:w-auto w-4/5 mx-auto mt-[100px] md:mt-0">
           
-          <TimeLineCard text={"Registrations Open"} month={"June"} day={"15"} />
+          <TimeLineCard text={"Registrations Open"} month={"May"} day={"19"} />
 
-        {/* Line 1 - Desktop*/}
+            {/* Line 1 - Desktop*/}
            <svg
             className="md:absolute md:left-[90%] top-[80px] hidden md:block"
             width="450"
@@ -43,7 +43,7 @@ const Timeline = () => {
               strokeLinejoin="round"
             />
           </svg>
-      {/* Line 2 - desktop*/}
+          {/* Line 2 - desktop*/}
           <svg
             className="md:absolute md:left-[180.5%] top-[80px] hidden md:block"
             width="3"
@@ -67,7 +67,7 @@ const Timeline = () => {
             />
           </svg>
         </div>
-    {/* Line 3 - desktop */}
+          {/* Line 3 - desktop */}
         <svg
             className="md:absolute md:left-[655px] top-[470px] hidden md:block"
             width="230"
@@ -113,8 +113,8 @@ const Timeline = () => {
             </svg>
         
 
-        <div className="md:absolute md:left-[885px] md:top-[387px] w-4/5 mx-auto md:w-auto">
-          <TimeLineCard text={"Registrations Open"} month={"June"} day={"15"} />
+        <div className="md:absolute md:left-[885px] md:top-[387px] w-4/5 mx-auto md:w-auto ">
+          <TimeLineCard text={"Introductory Session"} month={"June"} day={"04"} />
         </div>
 
         {/* Line 5 - desktop */}
@@ -137,7 +137,6 @@ const Timeline = () => {
               stroke= '#8FC18F55'
               strokeWidth="3"
               strokeLinejoin="round"
-              onAnimationComplete={() => setThirdDone(true)}
             />
         </svg>
       {/* Line 6 - desktop*/}
@@ -164,75 +163,12 @@ const Timeline = () => {
         </svg>
 
         <div className="md:absolute md:left-[435px] md:top-[575px] w-4/5 mx-auto md:w-auto">
-          <TimeLineCard text={"Registrations Open"} month={"June"} day={"15"} />
+          <TimeLineCard text={"Submissions Opening"} month={"July"} day={"08"} />
         </div>
-        {/* Mobile Lines */}
-        <svg
-            className="absolute left-[50%] top-[253px] md:hidden"
-            width="3"
-            height="60"
-            viewBox="0 0 3 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <motion.line
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              transition={{ duration: 1, ease: 'easeInOut'}}
-              x1="1.5"
-              y1="0"
-              x2="1.5"
-              y2="60"
-              stroke="#8FC18F55"
-              strokeWidth="3"
-              strokeLinejoin="round"
-              strokeDasharray="11 11"
-            />
-          </svg>
-          <svg
-            className="absolute left-[50%] top-[416px] md:hidden"
-            width="3"
-            height="60"
-            viewBox="0 0 3 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <motion.line
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              transition={{ duration: 1, ease: 'easeInOut', delay: 1}}
-              x1="1.5"
-              y1="0"
-              x2="1.5"
-              y2="60"
-              stroke="#8FC18F55"
-              strokeWidth="3"
-              strokeLinejoin="round"
-              strokeDasharray="11 11"
-            />
-          </svg>
-          <svg
-            className="absolute left-[50%] top-[580px] md:hidden"
-            width="3"
-            height="70"
-            viewBox="0 0 3 70"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <motion.line
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              transition={{ duration: 1, ease: 'easeInOut', delay: 2}}
-              x1="1.5"
-              y1="0"
-              x2="1.5"
-              y2="70"
-              stroke="#8FC18F55"
-              strokeWidth="3"
-              strokeLinejoin="round"
-              strokeDasharray="11 11"
-            />
-          </svg>
+        
+        <div className="md:absolute md:left-[435px] md:top-[600px] w-4/5 mx-auto md:w-auto">
+          <TimeLineCard text={"Registration Deadline"} month={"July"} day={"16"} />
+        </div>
       </div>
     </div>
   );

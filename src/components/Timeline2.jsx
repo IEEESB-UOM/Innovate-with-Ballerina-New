@@ -33,8 +33,8 @@ const Timeline = () => {
                 strokeLinejoin="round"
               />
         </svg>
-      <div className="md:absolute md:left-[185px] md:top-[90px] md:w-auto w-4/5 mx-auto mt-[150px] md:mt-0">
-        <TimeLineCard text={"Registrations Open"} month={"June"} day={"15"} />
+      <div className="md:absolute md:left-[185px] md:top-[90px] md:w-auto w-4/5 mx-auto mt-[100px] md:mt-0">
+        <TimeLineCard text={"Workshop 1"} month={"July"} day={"21"} />
       </div>
       {/* Line 2 */}
       <svg
@@ -80,7 +80,14 @@ const Timeline = () => {
           />
         </svg>
       <div className="md:absolute md:left-[755px] md:top-[227px] w-4/5 mx-auto md:w-auto">
-        <TimeLineCard text={"Registrations Open"} month={"June"} day={"15"} />
+        <TimeLineCard text={"Workshop 2"} month={"August"} day={"15"} />
+      </div>
+      
+      <div className="md:absolute md:left-[485px] md:top-[487px] w-4/5 mx-auto md:w-auto">
+        <TimeLineCard text={"Submission Deadline"} month={"August"} day={"19"} />
+      </div>
+      <div className="md:absolute md:left-[485px] md:top-[487px] w-4/5 mx-auto md:w-auto">
+        <TimeLineCard text={"Grand Finale & Award Ceremony"} month={"September"} day={"27"} />
       </div>
       {/* Line 4 */}
       <svg
@@ -124,80 +131,9 @@ const Timeline = () => {
               stroke= '#8FC18F55'
               strokeWidth="3"
               strokeLinejoin="round"
-              onAnimationComplete={() => setThirdDone(true)}
             />
         </svg>
-      <div className="md:absolute md:left-[485px] md:top-[487px] w-4/5 mx-auto md:w-auto">
-        <TimeLineCard text={"Registrations Open"} month={"June"} day={"15"} />
-      </div>
-      {/* Mobile Lines */}
-      <svg
-            className="absolute left-[50%] top-[0px] md:hidden"
-            width="3"
-            height="150"
-            viewBox="0 0 3 150"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <motion.line
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              transition={{ duration: 1, ease: 'easeInOut'}}
-              x1="1.5"
-              y1="0"
-              x2="1.5"
-              y2="150"
-              stroke="#8FC18F55"
-              strokeWidth="3"
-              strokeLinejoin="round"
-              strokeDasharray="11 11"
-            />
-          </svg>
-        <svg
-            className="absolute left-[50%] top-[253px] md:hidden"
-            width="3"
-            height="60"
-            viewBox="0 0 3 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <motion.line
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              transition={{ duration: 1, ease: 'easeInOut', delay: 1}}
-              x1="1.5"
-              y1="0"
-              x2="1.5"
-              y2="60"
-              stroke="#8FC18F55"
-              strokeWidth="3"
-              strokeLinejoin="round"
-              strokeDasharray="11 11"
-            />
-          </svg>
-          <svg
-            className="absolute left-[50%] top-[416px] md:hidden"
-            width="3"
-            height="60"
-            viewBox="0 0 3 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <motion.line
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              transition={{ duration: 1, ease: 'easeInOut', delay: 2}}
-              x1="1.5"
-              y1="0"
-              x2="1.5"
-              y2="60"
-              stroke="#8FC18F55"
-              strokeWidth="3"
-              strokeLinejoin="round"
-              strokeDasharray="11 11"
-            />
-          </svg>
-          
+
       </div>
       <style jsx>{`
         @keyframes spin-slow {
