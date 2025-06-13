@@ -14,7 +14,7 @@ import ieee from "../assets/ContactUs/ieee.png"
 import wso2 from "../assets/ContactUs/wso2.svg"
 import ieeecs from "../assets/ContactUs/ieeecs.png"
 import left from "../assets/ContactUs/left.png"
-import right from "../assets/ContactUs/right.png"
+// import right from "../assets/ContactUs/right.png"
 
 // Sample data structure - replace with your actual data
 const sampleContacts = [
@@ -123,7 +123,7 @@ const ContactUs = () => {
       ></div> */}
 
       {/* Grid lines */}
-      <div className="absolute inset-0 opacity-5">
+      {/* <div className="absolute inset-0 opacity-5">
         <div
           className="h-full w-full"
           style={{
@@ -132,7 +132,7 @@ const ContactUs = () => {
             backgroundSize: "100px 100px",
           }}
         ></div>
-      </div>
+      </div> */}
 
       {/* Decorative elements */}
       {/* Left curved shape */}
@@ -218,16 +218,16 @@ const ContactUs = () => {
             </div>
           ) : (
             // Desktop layout - two rows
-            <div className="space-y-12 mt-15">
+            <div className="space-y-12 mt-20">
               {/* First row - 2 cards */}
-              <div className="flex justify-center gap-24">
+              <div className="flex justify-center gap-32">
                 {contacts.slice(0, 2).map((person, index) => (
                   <ContactCard key={person.id} person={person} index={index} />
                 ))}
               </div>
 
               {/* Second row - 3 cards */}
-              <div className="flex justify-center gap-12">
+              <div className="flex justify-center gap-24">
                 {contacts.slice(2, 5).map((person, index) => (
                   <ContactCard key={person.id} person={person} index={index + 2} />
                 ))}
@@ -237,24 +237,23 @@ const ContactUs = () => {
           {isMobile ? (
             <div className="flex justify-center">
               {/* Star images */}
-
               <img
                 src={left}
                 alt="Left decoration"
                 className="absolute w-full h-full object-contain top-[8rem]"
                 style={{ scale: "0.6", left: "-10rem", zIndex: -1 }}
               />
-              <img
+              {/* <img
                 src={right}
                 alt="Right decoration"
                 className="absolute w-full h-full object-contain top-[54rem]"
                 style={{ scale: "0.4", right: "-10rem", zIndex: -1 }}
-              />
+              /> */}
             </div>
           ) : null}
         </div>
         {isMobile ? null : (
-          <div className="absolute bottom-10 left-0 right-0 pl-100 pr-100 flex flex-row justify-center gap-10 md:gap-12 z-11">
+          <div className="absolute bottom-5 left-0 right-0 pl-100 pr-100 flex flex-row justify-center gap-10 md:gap-12 z-11">
             {logos.map((logo, index) => (
               <div key={index} className="relative animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <img
@@ -361,12 +360,12 @@ const ContactCard = ({
         style={{ scale: isMobile ? 1.8 : 1.5, width: isMobile ? "90px" : "100px", height: isMobile ? "90px" : "100px" }}
       />
 
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center md:items-start gap-4">
         {/* Name Label */}
         <div className="bg-white text-slate-900 px-4 py-1 font-medium text-center rounded-sm mt-12 lg:mt-2">{person.name}</div>
 
         {/* Contact Details */}
-        <div className="bg-white/0 lg:backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 text-start space-y-1">
+        <div className="flex flex-col items-center md:items-start bg-white/0 lg:backdrop-blur-sm rounded-xl p-4 pl-0 pt-0 border border-slate-600/0 text-start space-y-1">
           <p className="text-white text-sm">{person.title}</p>
           <p className="text-white text-xs">{person.organization}</p>
           <p className="text-gray-300 text-xs">{person.university}</p>

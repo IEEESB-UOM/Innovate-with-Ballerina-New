@@ -95,65 +95,61 @@ function App() {
     <div className="relative font-space-grotesk">
       {/* Show pre-loader */}
       <Preloader onLoaded={handlePreloaderDone} />
-
-      {/* Main content, only render after pre-loader is done */}
-      {isPreloaderDone && (
-        <div>
-          <div className="fixed top-8 left-8 z-50">
-            <img
-              src="./ballerina_icon.svg"
-              alt="Ballerina Icon"
-              className="w-auto"
-              onClick={() => setCurrentIndex(0)}
-            />
-          </div>
-          <div className="fixed top-9 right-8 z-50">
-            {currentIndex !== 5 && (
-              <GradientBorderButton onClick={() => window.location.href = '/register'}>
-                REGISTER NOW
-              </GradientBorderButton>
-            )}
-          </div>
-          <div
-            ref={containerRef}
-            className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
-          >
-            <NavigationDots
-              currentIndex={currentIndex}
-              setCurrentIndex={setCurrentIndex}
-              numSections={numSections}
-            />
-            <section className="snap-start h-screen flex items-center justify-center">
-              <Hero isActive={currentIndex === 0} />
-            </section>
-            <section className="snap-start h-screen flex items-center justify-center">
-              <About isActive={currentIndex === 1} />
-            </section>
-            <section className="snap-start h-screen flex items-center justify-center">
-              <Prizes isActive={currentIndex === 2} />
-            </section>
-            <section className="snap-start h-screen flex items-center justify-center">
-              <Timeline isActive={currentIndex === 3} />
-            </section>
-            <section className="snap-start h-screen flex items-center justify-center">
-              <Timeline2 isActive={currentIndex === 4} />
-            </section>
-            <section className="snap-start h-screen flex items-center justify-center">
-              <RegisterNow isActive={currentIndex === 5} />
-            </section>
-            <section className="snap-start h-screen flex items-center justify-center">
-              <Gallery isActive={currentIndex === 6} />
-            </section>
-            <section className="snap-start h-screen flex items-center justify-center">
-              <FAQ isActive={currentIndex === 7} />
-            </section>
-            <section className="snap-start h-screen flex items-center justify-center">
-              <ContactUs isActive={currentIndex === 8} />
-            </section>
-          </div>
-          <ParticleBackground />
+      <div>
+        <div className="fixed top-8 left-8 z-100 md:w-auto w-12">
+          <img
+            src="./ballerina_icon.svg"
+            alt="Ballerina Icon"
+            className="w-auto"
+            onClick={() => setCurrentIndex(0)}
+          />
         </div>
-      )}
+        <div className="fixed top-9 right-8 z-100">
+          {currentIndex !== 5 && (
+            <GradientBorderButton onClick={() => window.location.href = '/register'}>
+              REGISTER NOW
+            </GradientBorderButton>
+          )}
+        </div>
+        <div
+          ref={containerRef}
+          className="h-screen w-screen overflow-hidden overflow-y-scroll snap-y snap-mandatory"
+        >
+          <NavigationDots
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+            numSections={numSections}
+          />
+          <section className="snap-start h-screen flex items-center justify-center">
+            <Hero isActive={currentIndex === 0} />
+          </section>
+          <section className="snap-start h-screen flex items-center justify-center">
+            <About isActive={currentIndex === 1} />
+          </section>
+          <section className="snap-start h-screen flex items-center justify-center">
+            <Prizes isActive={currentIndex === 2} />
+          </section>
+          <section className="snap-start h-screen flex items-center justify-center">
+            <Timeline isActive={currentIndex === 3} />
+          </section>
+          <section className="snap-start h-screen flex items-center justify-center">
+            <Timeline2 isActive={currentIndex === 4} />
+          </section>
+          <section className="snap-start h-screen flex items-center justify-center">
+            <RegisterNow isActive={currentIndex === 5} />
+          </section>
+          <section className="snap-start h-screen flex items-center justify-center">
+            <Gallery isActive={currentIndex === 6} />
+          </section>
+          <section className="snap-start h-screen flex items-center justify-center">
+            <FAQ isActive={currentIndex === 7} />
+          </section>
+          <section className="snap-start h-screen flex items-center justify-center">
+            <ContactUs isActive={currentIndex === 8} />
+          </section>
+        </div>
+        <ParticleBackground />
+      </div>
     </div>
   );
 }

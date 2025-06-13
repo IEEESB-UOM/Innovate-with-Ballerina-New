@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
       ref={heroRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative h-[100svh] w-full overflow-hidden bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41]"
+      className="relative h-[100svh] w-full overflow-hidden bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324]"
       style={{
         perspective: "1000px",
       }}
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
           }}
         >
           <motion.div
-            className="w-full h-3/5 max-w-[280px] sm:h-full -translate-y-12 sm:-translate-y-16 lg:-translate-y-20" // Adjusted translate-y
+            className="w-full h-3/5 max-w-[280px] sm:h-full -translate-y-14 sm:-translate-y-10 lg:-translate-y-6" // Adjusted translate-y
             whileHover={{
               scale: 1.05,
               transition: { duration: 0.3 },
@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="absolute inset-0 flex flex-col items-center justify-end text-center z-10 px-4 pb-32 sm:pb-28"
+          className="absolute inset-0 flex flex-col items-center justify-end text-center z-10 px-4 pb-24 sm:pb-20"
           style={{
             translateY: scrollY * -30,
           }}
@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
             <motion.h1
               variants={titleVariants}
               whileHover="hover"
-              className="text-4xl text-[2.6rem] md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 cursor-pointer tracking-tight"
+              className="text-3xl text-[2.6rem] md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-tight"
             >
               {" "}
               <motion.span
@@ -189,7 +189,7 @@ const Hero: React.FC = () => {
                 The Ultimate
               </motion.span>
               <motion.span
-                className="bg-gradient-to-r from-[#FBB934] to-[#10C3BD] text-transparent bg-clip-text"
+                className="text-4xl text-[2.6rem] md:text-6xl lg:text-7xl bg-gradient-to-r from-[#FBB934] to-[#10C3BD] text-transparent bg-clip-text"
                 initial={{
                   opacity: 0,
                   y: 50,
@@ -216,14 +216,14 @@ const Hero: React.FC = () => {
                   translateZ: scrollY * (isMobile ? 35 : 75),
                 }}
               >
-                C✽ding Challenge
+                Idea Hackath✽n
               </motion.span>
             </motion.h1>{" "}
             <motion.p
               variants={taglineVariants}
               whileHover={{ scale: isMobile ? 1.05 : 1.1 }}
               whileTap={{ scale: isMobile ? 0.98 : 0.95 }}
-              className="text-base sm:text-lg md:text-xl text-white tracking-widest mt-2 sm:mt-4 cursor-pointer"
+              className="text-base sm:text-lg md:text-xl text-white tracking-widest mt-2 sm:mt-4"
               // style={{
               //   background:
               //     "linear-gradient(to right, rgba(255,255,255,0.8) 0%, #10C3BD 50%, rgba(255,255,255,0.8) 100%)",

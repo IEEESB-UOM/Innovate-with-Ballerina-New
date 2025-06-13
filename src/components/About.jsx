@@ -297,7 +297,7 @@ const About = () => {
       charIndex = 0;
       setCurrentlyTyping(false);
       typeTerminal();
-    }, 2000);
+    }, 1000);
 
     // Cleanup function
     return () => {
@@ -372,13 +372,12 @@ const About = () => {
     });
   };
   return (
-    <div ref={sectionRef} className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#153f41] snap-start h-screen w-full flex items-center md:items-center justify-center p-4 pb-15 md:pb-4 font-sans relative">
-      {/* Background Vector - Left Bottom */}
+    <div ref={sectionRef} className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] snap-start h-screen w-full flex items-center md:items-center justify-center p-4 pb-15 md:pb-4 font-sans relative">      {/* Background Vector - Left Bottom */}
       <img
         ref={vectorRef}
         src="/Vector.svg"
         alt="Background Vector"
-        className="absolute bottom-7 left-1 md:bottom-48 md:left-28 w-16 h-16 sm:w-40 sm:h-40 md:w-28 md:h-28 md:opacity-80 opacity-80 z-11000000 animate-spin"
+        className="absolute bottom-7 left-1 sm:bottom-7 sm:left-1 md:bottom-48 md:left-28 w-16 h-16  sm:w-16 sm:h-28 md:w-28 md:h-28 md:opacity-80 opacity-80 z-11000000 animate-spin"
         style={{ animationDuration: '25s' }}
       />
 
@@ -427,9 +426,9 @@ const About = () => {
           {/* ASCII Art Logo Section - Mobile */}
           <div className="text-left mt-2">
             <pre
-              ref={logoMobileRef}
+              // ref={logoMobileRef}
               className="text-gray-300 font-mono whitespace-pre overflow-x-auto overflow-y-hidden w-full drop-shadow-lg"
-              style={{ fontSize: '1.5px', lineHeight: '1.5px', maxWidth: '100%',textAlign: 'center' }}
+              style={{ fontSize: '1.5px', lineHeight: '1.65px', maxWidth: '100%',textAlign: 'center' }}
             >
               {`,c.                                        
                                                                                                                                                                                                                                                                 ,0O'  .;llc;.  ,ccccc:.                     
@@ -488,9 +487,9 @@ const About = () => {
           {/* ASCII Art Logo Section - Desktop */}
           <div className="text-center mt-2"> {/* Changed mb-2 to mt-2 */}
             <pre
-              ref={logoRef}
+              // ref={logoRef}
               className="text-gray-400 font-mono whitespace-pre overflow-x-auto overflow-y-hidden w-full drop-shadow-lg"
-              style={{ fontSize: '3px', lineHeight: '3px', maxWidth: '100%', textAlign: 'center' }} // Changed textAlign to center and removed paddingLeft
+              style={{ fontSize: '3px', lineHeight: '3.5px', maxWidth: '100%', textAlign: 'center' }} // Changed textAlign to center and removed paddingLeft
             >
               {`,c.                                        
                                                                                                                                                                                                                                                                 ,0O'  .;llc;.  ,ccccc:.                     
