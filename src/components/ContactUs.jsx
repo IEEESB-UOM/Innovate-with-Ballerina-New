@@ -72,10 +72,10 @@ const sampleContacts = [
 
 // Partner logos - replace with your actual logos
 const partnerLogos = [
-  { name: "IEEE Computer Society", logo: ieee, width: 150},
-  { name: "IEEE Student Branch", logo: ieeecs, width: 110},
-  { name: "WSO2", logo: wso2, width: 70},
-  { name: "Ballerina", logo: ballerina, width: 110},
+  { name: "IEEE Computer Society", logo: ieee, width: 150 },
+  { name: "IEEE Student Branch", logo: ieeecs, width: 110 },
+  { name: "WSO2", logo: wso2, width: 70 },
+  { name: "Ballerina", logo: ballerina, width: 110 },
 ];
 
 const ContactUs = () => {
@@ -195,7 +195,7 @@ const ContactUs = () => {
               {contacts.map((person, index) => (
                 <ContactCard key={person.id} person={person} isMobile={true} index={index} />
               ))}
-              <div className="flex flex-col gap-10 items-center justify-center px-0 z-99">
+              <div className="flex flex-col pl-0 pr-0 gap-10 items-center justify-center">
                 {logos.map((logo, index) => (
                   <div key={index} className="relative animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                     <img
@@ -206,14 +206,14 @@ const ContactUs = () => {
                     />
                   </div>
                 ))}
-                {/* Grid background image */}
-                {/* <div className="relative w-full">
+                <div className="relative w-full">
+                  {/* Grid background image */}
                   <img
                     src={grid}
                     alt="Grid background decoration"
-                    className="absolute bottom-0 w-full object-contain opacity-80 z-10 scale-[1.5] top-[-5rem] left-0"
+                    className="absolute w-full object-contain opacity-80 z-99 scale-[1.5] top-[-5rem] left-0"
                   />
-                </div> */}
+                </div>
               </div>
             </div>
           ) : (
