@@ -97,7 +97,7 @@ const ContactUs = () => {
   }, [])
 
   return (
-    <div className="h-screen w-full snap-start relative overflow-hidden">
+    <div className="h-screen w-full relative overflow-hidden">
       {/* Background with start color */}
       <div className="absolute inset-0 bg-[#0A2324] z-0"></div>
 
@@ -160,10 +160,7 @@ const ContactUs = () => {
 
       {/* Main content */}
       <div
-        className={`relative z-10 h-full flex flex-col items-center justify-center sm:px-4 md:px-8 py-8 lg:overflow-y-auto ${isMobile ? "overflow-y-auto w-full pb-0" : ""
-          }`}
-        style={isMobile ? { maxHeight: "100vh" } : {}}
-      >
+        className="relative z-10 h-full flex flex-col items-center justify-center sm:px-4 md:px-8 py-8 w-full overflow-y-auto pb-0 md:pb-8 md:max-h-screen">
         {/* Contact Us Title */}
         {!isMobile && (
           <h2
