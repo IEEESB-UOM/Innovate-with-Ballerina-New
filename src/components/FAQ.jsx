@@ -17,7 +17,7 @@ const FAQ = () => {
     },
     {
       question: "Can a team consist of participants from different universities?",
-      answer: "No, All participants must be currently enrolled undergraduates from the same university or institution.",
+      answer: "No, all participants must be currently enrolled undergraduates from the same university or institution.",
     },
     {
       question: "Can we change our team members after registration close?",
