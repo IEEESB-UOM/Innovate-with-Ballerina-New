@@ -372,7 +372,7 @@ const About = () => {
     });
   };
   return (
-    <div ref={sectionRef} className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] snap-start h-screen w-full flex items-center md:items-center justify-center p-4 pb-15 md:pb-4 font-sans relative">      {/* Background Vector - Left Bottom */}
+    <div ref={sectionRef} className="bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] h-screen w-full flex items-center md:items-center justify-center p-4 pb-15 md:pb-4 font-sans relative">      {/* Background Vector - Left Bottom */}
       <img
         ref={vectorRef}
         src="/Vector.svg"

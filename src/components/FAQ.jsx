@@ -86,7 +86,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="h-screen w-full snap-start relative overflow-hidden">
+    <div className="h-screen w-full relative overflow-hidden">
       {/* Section 1: Background with start color */}
       <div className="absolute inset-0 bg-[#0A2324] z-0"></div>
 
