@@ -12,28 +12,28 @@ const FAQ = () => {
 
   const faqData = [
     {
-      question: "How many people can be there in a team?",
-      answer: "A team can consist of 3-4 participants.",
+      question: "How many members can a team have?",
+      answer: "A team can consist of minimum 3 - maximum 4 participants.",
     },
     {
       question: "Can a team consist of participants from different universities?",
-      answer: "No, all participants must be currently enrolled undergraduates from the same university or institution.",
+      answer: "No. All participants must be currently enrolled undergraduates from the same university or institution.",
     },
     {
-      question: "Can we change our team members after registration close?",
-      answer: "No, After the registration period, teams won’t be able to change their members. But can make changes of the team content within registration period.",
+      question: "Can we change our team members after registering?",
+      answer: "No. After the registration period ends, teams cannot change their members. However, changes can be made during the registration period.",
     },
     {
-      question: 'Does "Innovate With Ballerina" require any prior coding skills to participate in?',
-      answer: "While prior coding experience can be advantageous, it's not a requirement. Because we'll conduct 3 workshops which'll help you to get a fundamental knowledge about coding and about Ballerina language.",
+      question: 'Does "Innovate with Ballerina" require any prior Ballerina language knowledge to participate in?',
+      answer: "WSO2 provides plenty of beginner-friendly resources to learn the fundamentals of coding and the Ballerina language and we’ll be sharing all these resources along with two dedicated workshops to guide you through.",
     },
     {
       question: "Will I get a certificate of participation?",
-      answer: "Yes, all participants who have submitted their GitHub repositories  will receive certificates as recognition of their participation and contribution to the event.",
+      answer: "Yes. All teams that make a valid final submission will receive certificates in recognition of their participation and contribution.",
     },
     {
-      question: "Do the participants need to attend physically?",
-      answer: "No, All workshops and submission procedure will be in online mode.",
+      question: "Can we include a WSO2 intern or ex-intern in our team?",
+      answer: "No. Team members must not be current or former interns at WSO2.",
     },
   ]
 
@@ -91,42 +91,42 @@ const FAQ = () => {
       <div className="absolute inset-0 bg-[#0A2324] z-0"></div>
 
       {/* Decorative images (unchanged) */}
-      <img
+      {/* <img
         src={topleft}
         alt="Top left decoration"
         className="absolute top-0 left-0 object-contain opacity-80 hidden lg:block z-10"
         style={{ height: "30rem" }}
-      />
+      /> */}
       <img
         src={bottomleft}
         alt="Top left decoration"
         className="absolute bottom-0 left-0 object-contain opacity-80 hidden lg:block z-10"
         style={{ height: "11rem" }}
       />
-      <img
+      {/* <img
         src={spiral}
         alt="Spiral decoration"
         className="absolute right-0 bottom-1/4 object-contain opacity-80 hidden lg:block z-10 animate-pulse"
         style={{ height: "11rem" }}
-      />
+      /> */}
       <img
         src={flower}
         alt="Flower decoration"
-        className="absolute right-16 bottom-0 object-contain opacity-80 hidden lg:block animate-spin-slow"
+        className="absolute right-16 top-30 object-contain opacity-80 hidden lg:block animate-spin-slow"
         style={{ height: "11rem", bottom: "-1.2rem", zIndex: 0 }}
       />
-      <img
+      {/* <img
         src={spiral}
         alt="Spiral decoration"
         className="absolute right-0 bottom-0 object-contain opacity-80 lg:hidden z-10 animate-pulse"
         style={{ height: "8rem" }}
-      />
-      <img
+      /> */}
+      {/* <img
         src={flower}
         alt="Flower decoration"
         className="absolute right-8 bottom-0 object-contain opacity-80 lg:hidden z-0 animate-spin-slow"
         style={{ height: "5rem", bottom: "1.5rem" }}
-      />
+      /> */}
 
       {/* Main content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center mx-4 lg:mx-16 lg:px-8 pl-3 pr-3 lg:pl-0 lg:pr-0">

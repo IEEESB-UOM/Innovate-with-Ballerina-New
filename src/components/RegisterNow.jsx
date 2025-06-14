@@ -101,7 +101,7 @@ const RegisterNow = () => {
             text={true}
             className="w-full sm:w-auto"
           >
-            DOWNLOAD BOOKLET
+            DELEGATE BOOKLET
           </GradientBorderButton>
         </motion.div>
       </motion.div>

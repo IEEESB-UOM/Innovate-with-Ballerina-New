@@ -240,13 +240,13 @@ const Prizes = ({ isActive }) => {
             </p>
             <div className="mt-12 pl-7 text-left">
               <span className="text-3xl font-semibold text-amber-50 inline-block bg-clip-text">
-                Additional Prizes Of
+                Additional Prizes of
               </span>
               <p className="text-amber-300 text-3xl font-bold mt-1">
                 Rs 25,000 /- <span className="text-amber-50">Each</span>
               </p>
               <p className="text-amber-50 text-3xl font-normal">
-                For Places 4th To 10th
+                For Places 4th to 10th
               </p>
             </div>
           </div>
@@ -336,13 +336,13 @@ const Prizes = ({ isActive }) => {
           <div className="text-center">
             <div className="mb-4">
               <span className="text-[25px] sm:text-[30px] font-semibold text-amber-50">
-                Additional Prizes Of
+                Additional Prizes of
               </span>
               <p className="text-amber-300 text-[25px] sm:text-[30px] font-bold mt-1">
                 Rs 25,000 /- <span className="text-amber-50">Each</span>
               </p>
               <p className="text-amber-50 text-lg sm:text-xl font-normal">
-                For Places 4th To 10th
+                For Places 4th to 10th
               </p>
             </div>
           </div>

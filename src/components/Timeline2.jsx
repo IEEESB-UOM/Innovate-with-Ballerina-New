@@ -3,22 +3,30 @@ import { motion } from 'framer-motion';
 
 const Timeline = () => {
   return (
-    <div className="relative h-screen w-full bg-gradient-to-b from-[#0F262A] via-[#0F262A] to-[#153f41] flex items-center justify-center text-4xl font-bold">
+    <div className="relative h-screen w-full bg-gradient-to-b from-[#0A2324] via-[#0A2324] to-[#0A2324] flex items-center justify-center text-4xl font-bold">
       <div className="relative w-full flex flex-col items-center h-full md:block">
         <img
           src="/Ellipse 9.png"
-          className="absolute right-[-30px] top-[-300px] hidden md:block"
+          className="absolute right-[-80px] top-[-400px] hidden md:block z-0"
         />
         <img
+          src="/Ellipse 7.png"
+          className="absolute left-[0px] top-[-420px] hidden md:block"
+        />
+        <img
+          src="/Ellipse 8.png"
+          className="absolute left-[200px] top-[-75px] hidden md:block"
+        />
+        {/* <img
           src="/Ellipse 10.png"
           className="absolute right-[250px] top-[550px] h-36 animate-spin-slow hidden md:block"
-        />
-        <div className="absolute top-[65%] left-[-45%] w-full hidden md:block">
+        /> */}
+        <div className="absolute top-[65%] left-[-25%] w-full hidden md:block">
           <p className="text-[184px] font-bold leading-[101%] tracking-[3.44px] capitalize bg-gradient-to-r from-[rgba(14, 159, 154, 0.19)] via-[rgba(143,193,143,0.19)] to-[rgba(255,179,74,0.19)] bg-clip-text text-transparent absolute">
-            Stay Updated
+            Timeline
           </p>
         </div>
-        <div className="w-full md:w-[1700px] w-full mx-auto relative">
+        <div className="w-full md:w-[1700px] mx-auto relative">
           {/* Line 1 */}
           <svg
             className="md:absolute md:left-[22.1%] top-[0px] hidden md:block"
@@ -100,7 +108,7 @@ const Timeline = () => {
               day={'19'}
             />
           </div>
-          <div className="md:absolute md:left-[32%] md:top-[560px] w-4/5 mx-auto md:w-auto">
+          <div className="md:absolute md:left-[48%] md:top-[500px] w-4/5 mx-auto md:w-auto">
             <TimeLineCard
               text={'Grand Finale & Award Ceremony'}
               month={'September'}
@@ -155,8 +163,8 @@ const Timeline = () => {
           <svg
             className="md:absolute md:left-[26.5%] top-[510px] hidden md:block"
             width="3"
-            height="130"
-            viewBox="0 0 3 130"
+            height="80"
+            viewBox="0 0 3 80"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -176,10 +184,10 @@ const Timeline = () => {
 
           {/* Line 7 */}
           <svg
-            className="md:absolute md:left-[26.5%] top-[640px] hidden md:block"
-            width="94"
+            className="md:absolute md:left-[26.5%] top-[590px] hidden md:block"
+            width="366"
             height="3"
-            viewBox="0 0 94 3"
+            viewBox="0 0 366 3"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -188,7 +196,7 @@ const Timeline = () => {
               whileInView={{ pathLength: 1 }}
               transition={{ duration: 1, ease: 'easeInOut', delay: 6 }}
               y1="1.5"
-              x2="94"
+              x2="366"
               y2="1.5"
               stroke="#8FC18F55"
               strokeWidth="3"
