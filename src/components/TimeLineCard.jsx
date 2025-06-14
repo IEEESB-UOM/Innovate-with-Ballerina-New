@@ -1,6 +1,6 @@
 const TimeLineCard = ({ text, month, day }) => {
   return (
-    <div className="h-[103px] w-[100%] lg:w-[90%] mb-[40px] lg:mb-[0px] lg:h-[160px] flex-shrink-0 rounded-[20px] bg-[#ffffff11] text-[#E9E9E9] flex items-center justify-center relative overflow-hidden">
+    <div className="h-[103px] w-[100%] lg:w-[90%] mb-[40px] lg:mb-[0px] lg:h-[160px] flex-shrink-0 rounded-[20px] bg-[#ffffff11] text-[#E9E9E9] flex items-center justify-center relative overflow-hidden z-10">
       <div className="absolute left-[20px] w-[180px] lg:relative lg:w-[260px] lg:ml-[35px] lg:mr-[210px] text-[20px] lg:text-[33px] font-semibold leading-[101%] tracking-[0.331px] capitalize text-white">
         {text}
       </div>
