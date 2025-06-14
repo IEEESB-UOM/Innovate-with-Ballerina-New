@@ -130,7 +130,7 @@ const Timeline = () => {
             strokeLinejoin="round"
           />
         </svg> */}
-      <div className="md:absolute md:right-[180px] md:top-[175px] w-4/5 mx-auto md:w-auto z-20">
+      <div className="md:absolute md:left-[850px] md:top-[175px] w-4/5 mx-auto md:w-auto z-20">
         <TimeLineCard text={"Workshop 02"} month={"August"} day={"05"} />
       </div>
       {/* Line 4 */}
@@ -209,7 +209,7 @@ const Timeline = () => {
               }}
             />
         </div>
-      <div className="md:absolute md:right-[180px] md:top-[475px] w-4/5 mx-auto md:w-auto z-10">
+      <div className="md:absolute md:left-[850px] md:top-[475px] w-4/5 mx-auto md:w-auto z-10">
         <TimeLineCard text={"Grand Finale & Award Ceremony"} month={"September"} day={"27"} />
       </div>
       {/* Mobile Lines */}
