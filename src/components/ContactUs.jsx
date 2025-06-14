@@ -154,8 +154,8 @@ const ContactUs = () => {
       <img
         src={grid}
         alt="Grid background decoration"
-        className="absolute bottom-0 w-full object-contain opacity-80 hidden lg:block z-10"
-        style={{ height: "11rem", scale: "1.9" }}
+        className="absolute bottom-0 w-full object-contain opacity-80 hidden lg:block z-10 scale-[2]"
+        style={{ height: "11rem" }}
       />
 
       {/* Main content */}
@@ -211,7 +211,7 @@ const ContactUs = () => {
                   <img
                     src={grid}
                     alt="Grid background decoration"
-                    className="absolute w-full object-contain opacity-80 z-99 scale-[1.5] top-[-5rem] left-0"
+                    className="absolute w-full object-contain opacity-80 z-99 scale-[3] top-[-5rem] left-0"
                   />
                 </div>
               </div>
