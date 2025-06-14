@@ -144,7 +144,7 @@ const Prizes = ({ isActive }) => {
   }, [isActive]);
 
   return (
-    <div ref={componentRef} className='h-screen w-full snap-start bg-[#0A2324] flex flex-col items-center text-4xl font-bold relative'>
+    <div ref={componentRef} className='h-screen w-full bg-[#0A2324] flex flex-col items-center text-4xl font-bold relative'>
       {/* Background Decorative Elements */}
       <img
         src="/spiral_Vector.svg"
