@@ -95,6 +95,14 @@ function App() {
     }
   }, [currentIndex, isPreloaderDone]);
 
+  const switchSection = (index) => {
+    setCurrentIndex(index);
+    if (containerRef.current && (isSafari || isMobile)) {
+      const targetY = index * window.innerHeight;
+      containerRef.current.scrollTop = targetY;
+    }
+  }
+
   return (
     <div className="relative font-space-grotesk">
       {/* Show pre-loader */}
@@ -105,7 +113,7 @@ function App() {
             src="./ballerina_icon.svg"
             alt="Ballerina Icon"
             className="w-auto"
-            onClick={() => setCurrentIndex(0)}
+            onClick={() => switchSection(0)}
           />
         </div>
         <div className="fixed top-9 right-8 z-100">
@@ -121,7 +129,7 @@ function App() {
         >
           <NavigationDots
             currentIndex={currentIndex}
-            setCurrentIndex={setCurrentIndex}
+            setCurrentIndex={switchSection}
             numSections={numSections}
           />
           <section className="snap-start h-screen flex items-center justify-center">
