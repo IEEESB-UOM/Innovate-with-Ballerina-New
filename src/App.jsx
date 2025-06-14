@@ -17,6 +17,8 @@ function App() {
   const containerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPreloaderDone, setIsPreloaderDone] = useState(false);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   const numSections = 9;
   const scrollLock = useRef(false);
 
@@ -54,7 +56,9 @@ function App() {
       };
 
       const onWheel = (e) => {
-        e.preventDefault();
+        if (!(isSafari || isMobile)) {
+          e.preventDefault();
+        }
         const direction = e.deltaY > 0 ? 1 : -1;
         handleScroll(direction);
       };
@@ -79,10 +83,10 @@ function App() {
         document.body.style.overflow = "auto"; // Cleanup
       };
     }
-  }, [numSections, isPreloaderDone]);
+  }, [isPreloaderDone]);
 
   useEffect(() => {
-    if (isPreloaderDone && containerRef.current) {
+    if (isPreloaderDone && containerRef.current && !(isSafari || isMobile)) {
       const targetY = currentIndex * window.innerHeight;
       containerRef.current.scrollTo({
         top: targetY,
