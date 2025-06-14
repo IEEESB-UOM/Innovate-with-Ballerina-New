@@ -160,7 +160,7 @@ const ContactUs = () => {
 
       {/* Main content */}
       <div
-        className={`relative z-10 h-full flex flex-col items-center justify-center px-4 md:px-8 py-8 lg:overflow-y-auto ${isMobile ? "overflow-y-auto w-full pb-0" : ""
+        className={`relative z-10 h-full flex flex-col items-center justify-center sm:px-4 md:px-8 py-8 lg:overflow-y-auto ${isMobile ? "overflow-y-auto w-full pb-0" : ""
           }`}
         style={isMobile ? { maxHeight: "100vh" } : {}}
       >
@@ -206,14 +206,12 @@ const ContactUs = () => {
                     />
                   </div>
                 ))}
-                <div className="relative w-full">
-                  {/* Grid background image */}
-                  <img
-                    src={grid}
-                    alt="Grid background decoration"
-                    className="absolute w-full object-contain opacity-80 z-99 scale-[3] top-[-5rem] left-0"
-                  />
-                </div>
+                {/* Grid background image */}
+                <img
+                  src={grid}
+                  alt="Grid background decoration"
+                  className="w-full object-contain opacity-80 z-99"
+                />
               </div>
             </div>
           ) : (
