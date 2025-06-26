@@ -32,8 +32,8 @@ const FAQ = () => {
       answer: "Yes. All teams that make a valid final submission will receive certificates in recognition of their participation and contribution.",
     },
     {
-      question: "Can we include a WSO2 intern or ex-intern in our team?",
-      answer: "No. Team members must not be current or former interns at WSO2.",
+      question: "Can we include a WSO2 intern in our team?",
+      answer: "No. Team members must not be current interns at WSO2.",
     },
   ]
 
