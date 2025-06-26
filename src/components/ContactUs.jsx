@@ -41,7 +41,7 @@ const sampleContacts = [
   {
     id: "3",
     name: "Lakindu Kariyawasam",
-    title: "Event Chairman",
+    title: "Event Chairperson",
     organization: "Innovate with Ballerina 2025",
     university: "University of Moratuwa",
     email: "lakindu.21@cse.mrt.ac.lk",
@@ -51,7 +51,7 @@ const sampleContacts = [
   {
     id: "4",
     name: "Ishan Hansaka",
-    title: "Event Vice-Chairman",
+    title: "Event Vice-Chairperson",
     organization: "Innovate with Ballerina 2025",
     university: "University of Moratuwa",
     email: "ishanhansakasilva@gmail.com",
@@ -61,7 +61,7 @@ const sampleContacts = [
   {
     id: "5",
     name: "Dasun Randeepa",
-    title: "Event Vice-Chairman",
+    title: "Event Vice-Chairperson",
     organization: "Innovate with Ballerina 2025",
     university: "University of Moratuwa",
     email: "randeepa.22@cse.mrt.ac.lk",
