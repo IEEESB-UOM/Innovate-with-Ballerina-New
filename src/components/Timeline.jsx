@@ -223,17 +223,17 @@ const Timeline = () => {
 
           <div className="md:absolute md:left-[275px] md:top-[413px] w-4/5 mx-auto md:w-auto">
             <TimeLineCard
-              text={'Submissions Opening'}
+              text={'Registration Deadline'}
               month={'July'}
-              day={'08'}
+              day={'16'}
             />
           </div>
 
           <div className="md:absolute md:left-[935px] md:top-[550px] w-4/5 mx-auto md:w-auto">
             <TimeLineCard
-              text={'Registration Deadline'}
+              text={'Submissions Opening'}
               month={'July'}
-              day={'16'}
+              day={'24'}
             />
           </div>
         </div>
