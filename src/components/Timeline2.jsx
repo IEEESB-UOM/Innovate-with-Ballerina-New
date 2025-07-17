@@ -50,7 +50,11 @@ const Timeline = () => {
             />
           </svg>
           <div className="md:absolute md:left-[185px] md:top-[90px] md:w-auto w-4/5 mx-auto mt-[100px] md:mt-0">
-            <TimeLineCard text={'Workshop 1'} month={'July'} day={'21'} />
+            <TimeLineCard
+              text={'Submissions Opening'}
+              month={'July'}
+              day={'24'}
+            />
           </div>
 
           <div className="md:absolute md:left-[900px] md:top-[230px] w-4/5 mx-auto md:w-auto">

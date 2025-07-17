@@ -222,18 +222,14 @@ const Timeline = () => {
           </svg>
 
           <div className="md:absolute md:left-[275px] md:top-[413px] w-4/5 mx-auto md:w-auto">
-            <TimeLineCard
-              text={'Registration Deadline'}
-              month={'July'}
-              day={'23'}
-            />
+            <TimeLineCard text={'Workshop 1'} month={'July'} day={'21'} />
           </div>
 
           <div className="md:absolute md:left-[935px] md:top-[550px] w-4/5 mx-auto md:w-auto">
             <TimeLineCard
-              text={'Submissions Opening'}
+              text={'Registration Deadline'}
               month={'July'}
-              day={'24'}
+              day={'23'}
             />
           </div>
         </div>
