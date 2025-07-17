@@ -225,7 +225,7 @@ const Timeline = () => {
             <TimeLineCard
               text={'Registration Deadline'}
               month={'July'}
-              day={'16'}
+              day={'23'}
             />
           </div>
 
