@@ -118,8 +118,8 @@ function App() {
         </div>
         <div className="fixed top-9 right-8 z-100">
           {currentIndex !== 5 && (
-            <GradientBorderButton onClick={() => window.location.href = '/register'}>
-              REGISTER NOW
+            <GradientBorderButton onClick={() => window.location.href = '/submit'}>
+              SUBMIT NOW
             </GradientBorderButton>
           )}
         </div>
