@@ -109,7 +109,7 @@ const Timeline = () => {
             <TimeLineCard
               text={'Submission Deadline'}
               month={'August'}
-              day={'19'}
+              day={'31'}
             />
           </div>
           <div className="md:absolute md:left-[48%] md:top-[500px] w-4/5 mx-auto md:w-auto">
