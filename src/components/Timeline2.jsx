@@ -115,8 +115,8 @@ const Timeline = () => {
           <div className="md:absolute md:left-[48%] md:top-[500px] w-4/5 mx-auto md:w-auto">
             <TimeLineCard
               text={'Grand Finale & Award Ceremony'}
-              month={'September'}
-              day={'27'}
+              month={'October'}
+              day={'04'}
             />
           </div>
           {/* Line 5 */}
