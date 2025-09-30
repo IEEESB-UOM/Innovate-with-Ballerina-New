@@ -116,7 +116,7 @@ const Timeline = () => {
             <TimeLineCard
               text={'Grand Finale & Award Ceremony'}
               month={'October'}
-              day={'04'}
+              day={'06'}
             />
           </div>
           {/* Line 5 */}
